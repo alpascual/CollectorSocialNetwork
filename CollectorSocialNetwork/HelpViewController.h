@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  HelpViewController.h
 //  CollectorSocialNetwork
 //
 //  Created by Albert Pascual on 7/24/12.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface HelpViewController : UIViewController
 
 @end

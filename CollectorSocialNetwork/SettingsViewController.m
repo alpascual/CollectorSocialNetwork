@@ -1,18 +1,18 @@
 //
-//  FirstViewController.m
+//  SecondViewController.m
 //  CollectorSocialNetwork
 //
 //  Created by Albert Pascual on 7/24/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "SettingsViewController.h"
 
-@interface FirstViewController ()
+@interface SettingsViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation SettingsViewController
 
 - (void)viewDidLoad
 {

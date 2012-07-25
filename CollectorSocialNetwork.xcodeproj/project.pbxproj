@@ -15,12 +15,13 @@
 		76D9038F15BF8A90000FDAFB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D9038E15BF8A90000FDAFB /* AppDelegate.m */; };
 		76D9039215BF8A90000FDAFB /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76D9039015BF8A90000FDAFB /* MainStoryboard_iPhone.storyboard */; };
 		76D9039515BF8A90000FDAFB /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76D9039315BF8A90000FDAFB /* MainStoryboard_iPad.storyboard */; };
-		76D9039815BF8A90000FDAFB /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D9039715BF8A90000FDAFB /* FirstViewController.m */; };
+		76D9039815BF8A90000FDAFB /* FeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D9039715BF8A90000FDAFB /* FeedViewController.m */; };
 		76D9039A15BF8A90000FDAFB /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 76D9039915BF8A90000FDAFB /* first.png */; };
 		76D9039C15BF8A90000FDAFB /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76D9039B15BF8A90000FDAFB /* first@2x.png */; };
-		76D9039F15BF8A90000FDAFB /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D9039E15BF8A90000FDAFB /* SecondViewController.m */; };
+		76D9039F15BF8A90000FDAFB /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D9039E15BF8A90000FDAFB /* SettingsViewController.m */; };
 		76D903A115BF8A90000FDAFB /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 76D903A015BF8A90000FDAFB /* second.png */; };
 		76D903A315BF8A90000FDAFB /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76D903A215BF8A90000FDAFB /* second@2x.png */; };
+		76D903AB15BF8E61000FDAFB /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D903AA15BF8E61000FDAFB /* HelpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,14 +37,16 @@
 		76D9038E15BF8A90000FDAFB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		76D9039115BF8A90000FDAFB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		76D9039415BF8A90000FDAFB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		76D9039615BF8A90000FDAFB /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		76D9039715BF8A90000FDAFB /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		76D9039615BF8A90000FDAFB /* FeedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FeedViewController.h; sourceTree = "<group>"; };
+		76D9039715BF8A90000FDAFB /* FeedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FeedViewController.m; sourceTree = "<group>"; };
 		76D9039915BF8A90000FDAFB /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		76D9039B15BF8A90000FDAFB /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		76D9039D15BF8A90000FDAFB /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		76D9039E15BF8A90000FDAFB /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		76D9039D15BF8A90000FDAFB /* SettingsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		76D9039E15BF8A90000FDAFB /* SettingsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		76D903A015BF8A90000FDAFB /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		76D903A215BF8A90000FDAFB /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		76D903A915BF8E61000FDAFB /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
+		76D903AA15BF8E61000FDAFB /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,15 +97,17 @@
 				76D9038E15BF8A90000FDAFB /* AppDelegate.m */,
 				76D9039015BF8A90000FDAFB /* MainStoryboard_iPhone.storyboard */,
 				76D9039315BF8A90000FDAFB /* MainStoryboard_iPad.storyboard */,
-				76D9039615BF8A90000FDAFB /* FirstViewController.h */,
-				76D9039715BF8A90000FDAFB /* FirstViewController.m */,
+				76D9039615BF8A90000FDAFB /* FeedViewController.h */,
+				76D9039715BF8A90000FDAFB /* FeedViewController.m */,
 				76D9039915BF8A90000FDAFB /* first.png */,
 				76D9039B15BF8A90000FDAFB /* first@2x.png */,
-				76D9039D15BF8A90000FDAFB /* SecondViewController.h */,
-				76D9039E15BF8A90000FDAFB /* SecondViewController.m */,
+				76D9039D15BF8A90000FDAFB /* SettingsViewController.h */,
+				76D9039E15BF8A90000FDAFB /* SettingsViewController.m */,
 				76D903A015BF8A90000FDAFB /* second.png */,
 				76D903A215BF8A90000FDAFB /* second@2x.png */,
 				76D9038515BF8A90000FDAFB /* Supporting Files */,
+				76D903A915BF8E61000FDAFB /* HelpViewController.h */,
+				76D903AA15BF8E61000FDAFB /* HelpViewController.m */,
 			);
 			path = CollectorSocialNetwork;
 			sourceTree = "<group>";
@@ -187,8 +192,9 @@
 			files = (
 				76D9038B15BF8A90000FDAFB /* main.m in Sources */,
 				76D9038F15BF8A90000FDAFB /* AppDelegate.m in Sources */,
-				76D9039815BF8A90000FDAFB /* FirstViewController.m in Sources */,
-				76D9039F15BF8A90000FDAFB /* SecondViewController.m in Sources */,
+				76D9039815BF8A90000FDAFB /* FeedViewController.m in Sources */,
+				76D9039F15BF8A90000FDAFB /* SettingsViewController.m in Sources */,
+				76D903AB15BF8E61000FDAFB /* HelpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +283,7 @@
 				INFOPLIST_FILE = "CollectorSocialNetwork/CollectorSocialNetwork-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -289,6 +296,7 @@
 				INFOPLIST_FILE = "CollectorSocialNetwork/CollectorSocialNetwork-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

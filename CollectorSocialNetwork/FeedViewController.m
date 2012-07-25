@@ -1,18 +1,18 @@
 //
-//  SecondViewController.m
+//  FirstViewController.m
 //  CollectorSocialNetwork
 //
 //  Created by Albert Pascual on 7/24/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "FeedViewController.h"
 
-@interface SecondViewController ()
+@interface FeedViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation FeedViewController
 
 - (void)viewDidLoad
 {
