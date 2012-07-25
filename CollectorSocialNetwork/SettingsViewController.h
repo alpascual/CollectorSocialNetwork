@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsViewController : UIViewController
+@interface SettingsViewController : UIViewController <NSURLConnectionDataDelegate>
 
 @property (nonatomic,strong) IBOutlet UITextField *email;
 @property (nonatomic,strong) IBOutlet UITextField *password1;
