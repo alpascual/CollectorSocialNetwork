@@ -61,14 +61,22 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="vm1-Qz-JZQ">
-                                <rect key="frame" x="27" y="58" width="267" height="257"/>
+                                <rect key="frame" x="27" y="150" width="267" height="211"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="f9g-MR-RLa">
+                                <rect key="frame" x="27" y="14" width="135" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Uxv-aV-e72"/>
+                    <connections>
+                        <outlet property="tableView" destination="vm1-Qz-JZQ" id="bgD-I8-4eO"/>
+                        <outlet property="twitterImage" destination="f9g-MR-RLa" id="d1n-2V-DOe"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1093" y="498"/>
@@ -198,6 +206,10 @@
     <classes>
         <class className="AccountViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AccountViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="twitterImage" candidateClass="UIImageView"/>
+            </relationships>
         </class>
         <class className="FeedViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FeedViewController.h"/>

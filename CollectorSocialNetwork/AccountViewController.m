@@ -15,6 +15,8 @@
 @implementation AccountViewController
 
 @synthesize tableView = _tableView;
+@synthesize myArray = _myArray;
+@synthesize twitterImage = _twitterImage;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -27,13 +29,21 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [super viewDidLoad];    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    self.myArray = [[NSMutableArray alloc] init];
+    [self.myArray addObject:[defaults objectForKey:@"email"]];
+    [self.myArray addObject:[defaults objectForKey:@"twitter"]];
+    
+    //https://api.twitter.com/1/users/profile_image?screen_name=twitterapi&size=normal
+    NSString *twitterPicture = [[NSString alloc] initWithFormat:@"https://api.twitter.com/1/users/profile_image?screen_name=%@&size=normal", [defaults objectForKey:@"twitter"]];
+    
+    NSURL * imageURL = [NSURL URLWithString:twitterPicture];
+    NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+    UIImage * image = [UIImage imageWithData:imageData];
+    
+    self.twitterImage.image = image;
 }
 
 - (void)viewDidUnload

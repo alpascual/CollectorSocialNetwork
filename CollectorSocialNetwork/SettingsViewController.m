@@ -26,7 +26,8 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ( [defaults objectForKey:@"email"] == nil )
     {
-        // Redirect to another place
+        // Redirect to another place @todo check you can do that
+         [self performSegueWithIdentifier:@"segueSettingsView" sender:self];
     }
     else {
         self.email.text = [defaults objectForKey:@"email"];
