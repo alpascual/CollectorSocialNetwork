@@ -36,6 +36,7 @@
 		76D903C615BF9167000FDAFB /* 20-gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = 76D903C315BF9167000FDAFB /* 20-gear2.png */; };
 		76D903C715BF9167000FDAFB /* 90-life-buoy.png in Resources */ = {isa = PBXBuildFile; fileRef = 76D903C415BF9167000FDAFB /* 90-life-buoy.png */; };
 		76D903C915BF91D2000FDAFB /* 53-house.png in Resources */ = {isa = PBXBuildFile; fileRef = 76D903C815BF91D2000FDAFB /* 53-house.png */; };
+		8820720815C08EC10090075C /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820720715C08EC10090075C /* AccountViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,8 @@
 		76D903C315BF9167000FDAFB /* 20-gear2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear2.png"; sourceTree = "<group>"; };
 		76D903C415BF9167000FDAFB /* 90-life-buoy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "90-life-buoy.png"; sourceTree = "<group>"; };
 		76D903C815BF91D2000FDAFB /* 53-house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house.png"; sourceTree = "<group>"; };
+		8820720615C08EC10090075C /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
+		8820720715C08EC10090075C /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +140,8 @@
 				76D9038515BF8A90000FDAFB /* Supporting Files */,
 				76D903A915BF8E61000FDAFB /* HelpViewController.h */,
 				76D903AA15BF8E61000FDAFB /* HelpViewController.m */,
+				8820720615C08EC10090075C /* AccountViewController.h */,
+				8820720715C08EC10090075C /* AccountViewController.m */,
 			);
 			path = CollectorSocialNetwork;
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 				76D9039815BF8A90000FDAFB /* FeedViewController.m in Sources */,
 				76D9039F15BF8A90000FDAFB /* SettingsViewController.m in Sources */,
 				76D903AB15BF8E61000FDAFB /* HelpViewController.m in Sources */,
+				8820720815C08EC10090075C /* AccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +398,7 @@
 				76D903A815BF8A90000FDAFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

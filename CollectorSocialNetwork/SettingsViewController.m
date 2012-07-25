@@ -101,6 +101,19 @@
     // Append the new data to receivedData.
     // receivedData is an instance variable declared elsewhere.
     NSLog(@"data returned: %@", data);
+    
+    // If successful store it
+    NSString *passwordHash = [[NSString alloc] initWithFormat:@"%d", [self.password1.text hash]];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:self.email.text forKey:@"email"];
+    [defaults setObject:self.password1.text forKey:@"password"];
+    [defaults setObject:passwordHash forKey:@"passwordhash"];
+    [defaults setObject:self.twitter forKey:@"twitter"];
+    
+    [defaults synchronize];
+    
+    // Direct to another View segueSettingsView
+    [self performSegueWithIdentifier:@"segueSettingsView" sender:self];
 }
 
 - (void) alertme:(NSString*)message
