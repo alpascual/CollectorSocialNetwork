@@ -14,10 +14,23 @@
 
 @implementation SettingsViewController
 
+@synthesize email = _email;
+@synthesize password1 = _password1;
+@synthesize password2 = _password2;
+@synthesize twitter = _twitter;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ( [defaults objectForKey:@"email"] == nil )
+    {
+        // Redirect to another place
+    }
+    else {
+        self.email.text = [defaults objectForKey:@"email"];
+    }
 }
 
 - (void)viewDidUnload

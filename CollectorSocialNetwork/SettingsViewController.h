@@ -10,4 +10,9 @@
 
 @interface SettingsViewController : UIViewController
 
+@property (nonatomic,strong) IBOutlet UITextField *email;
+@property (nonatomic,strong) IBOutlet UITextField *password1;
+@property (nonatomic,strong) IBOutlet UITextField *password2;
+@property (nonatomic,strong) IBOutlet UITextField *twitter;
+
 @end
