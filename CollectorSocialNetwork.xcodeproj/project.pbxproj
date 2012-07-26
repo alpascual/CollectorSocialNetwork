@@ -43,6 +43,8 @@
 		885167D915C1D30300AC91F3 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 885167D215C1D30300AC91F3 /* Icon-Small@2x.png */; };
 		885167DA15C1D30300AC91F3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 885167D315C1D30300AC91F3 /* Icon.png */; };
 		885167DB15C1D30300AC91F3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 885167D415C1D30300AC91F3 /* Icon@2x.png */; };
+		885167E015C1DF4500AC91F3 /* camera-icon-md.png in Resources */ = {isa = PBXBuildFile; fileRef = 885167DF15C1DF4500AC91F3 /* camera-icon-md.png */; };
+		885167E315C1E28300AC91F3 /* TakePictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 885167E215C1E28300AC91F3 /* TakePictureViewController.m */; };
 		888C7B7D15C1BAF600A78E87 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */; };
 		888C7B7F15C1BB2200A78E87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
@@ -92,6 +94,9 @@
 		885167D215C1D30300AC91F3 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
 		885167D315C1D30300AC91F3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		885167D415C1D30300AC91F3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		885167DF15C1DF4500AC91F3 /* camera-icon-md.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-icon-md.png"; sourceTree = "<group>"; };
+		885167E115C1E28300AC91F3 /* TakePictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakePictureViewController.h; sourceTree = "<group>"; };
+		885167E215C1E28300AC91F3 /* TakePictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakePictureViewController.m; sourceTree = "<group>"; };
 		888C7B7B15C1BAF600A78E87 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
 		888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 		888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -162,6 +167,8 @@
 				76D903AA15BF8E61000FDAFB /* HelpViewController.m */,
 				8820720615C08EC10090075C /* AccountViewController.h */,
 				8820720715C08EC10090075C /* AccountViewController.m */,
+				885167E115C1E28300AC91F3 /* TakePictureViewController.h */,
+				885167E215C1E28300AC91F3 /* TakePictureViewController.m */,
 			);
 			path = CollectorSocialNetwork;
 			sourceTree = "<group>";
@@ -180,6 +187,7 @@
 		76D903AC15BF8F6B000FDAFB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				885167DF15C1DF4500AC91F3 /* camera-icon-md.png */,
 				885167CD15C1D30300AC91F3 /* AppIcons */,
 				76D903BF15BF902C000FDAFB /* Icons */,
 				76D903AD15BF8F6B000FDAFB /* baby-blue-solid.jpg */,
@@ -306,6 +314,7 @@
 				885167D915C1D30300AC91F3 /* Icon-Small@2x.png in Resources */,
 				885167DA15C1D30300AC91F3 /* Icon.png in Resources */,
 				885167DB15C1D30300AC91F3 /* Icon@2x.png in Resources */,
+				885167E015C1DF4500AC91F3 /* camera-icon-md.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +332,7 @@
 				76D903AB15BF8E61000FDAFB /* HelpViewController.m in Sources */,
 				8820720815C08EC10090075C /* AccountViewController.m in Sources */,
 				888C7B7D15C1BAF600A78E87 /* ODRefreshControl.m in Sources */,
+				885167E315C1E28300AC91F3 /* TakePictureViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

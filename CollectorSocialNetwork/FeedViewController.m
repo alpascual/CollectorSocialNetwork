@@ -23,6 +23,15 @@
     [super viewDidLoad];
     
     //@todo redirect if not acccount with alert first
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ( [defaults objectForKey:@"userid"] == nil )
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Need Account" message:@"You need to go to settings and create an account before accessing the posts" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+        
+        return;
+    }
+
 	
     self.refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableView];
     [self.refreshControl addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
@@ -54,5 +63,42 @@
     }
 }
 
+
+#pragma mark - Table view data source
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return 0;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"Cell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    NSUInteger row = [indexPath row];
+    
+    cell.textLabel.textColor = [UIColor grayColor];
+    cell.detailTextLabel.textColor = [UIColor blackColor];
+    cell.detailTextLabel.numberOfLines = 2;
+    
+    //@todo
+    //cell.textLabel.text = [self.labelsArray objectAtIndex:row];
+    //cell.detailTextLabel.text = [self.myArray objectAtIndex:row];
+    
+    return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    return 80;
+}
 
 @end
