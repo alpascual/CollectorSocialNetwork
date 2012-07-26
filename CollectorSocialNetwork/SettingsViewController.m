@@ -18,6 +18,7 @@
 @synthesize password1 = _password1;
 @synthesize password2 = _password2;
 @synthesize twitter = _twitter;
+@synthesize bEditing = _bEditing;
 
 - (void)viewDidLoad
 {
@@ -26,12 +27,14 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ( [defaults objectForKey:@"email"] == nil )
     {
-        // Redirect to another place @todo check you can do that
-         [self performSegueWithIdentifier:@"segueSettingsView" sender:self];
+        if ( self.bEditing == NO) {
+            // Redirect to another place @todo check you can do that
+            [self performSegueWithIdentifier:@"segueSettingsView" sender:self];
+        }
     }
-    else {
-        self.email.text = [defaults objectForKey:@"email"];
-    }
+    
+    self.email.text = [defaults objectForKey:@"email"];
+    
 }
 
 - (void)viewDidUnload
@@ -102,6 +105,8 @@
     // Append the new data to receivedData.
     // receivedData is an instance variable declared elsewhere.
     NSLog(@"data returned: %@", data);
+    NSString* newStr = [NSString stringWithUTF8String:[data bytes]];
+    NSLog(@"data returned String: %@", newStr);
     
     // If successful store it
     NSString *passwordHash = [[NSString alloc] initWithFormat:@"%d", [self.password1.text hash]];
@@ -114,6 +119,9 @@
     [defaults synchronize];
     
     // Direct to another View segueSettingsView
+//    [self dismissViewControllerAnimated:YES completion:^() {
+//        [self performSegueWithIdentifier:@"segueSettingsView" sender:self];
+//    }];
     [self performSegueWithIdentifier:@"segueSettingsView" sender:self];
 }
 

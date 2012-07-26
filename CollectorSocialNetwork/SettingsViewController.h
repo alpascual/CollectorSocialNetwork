@@ -14,5 +14,6 @@
 @property (nonatomic,strong) IBOutlet UITextField *password1;
 @property (nonatomic,strong) IBOutlet UITextField *password2;
 @property (nonatomic,strong) IBOutlet UITextField *twitter;
+@property (nonatomic) BOOL bEditing;
 
 @end

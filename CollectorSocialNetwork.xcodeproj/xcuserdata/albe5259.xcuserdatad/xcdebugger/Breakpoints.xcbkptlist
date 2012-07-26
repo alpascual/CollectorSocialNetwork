@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollectorSocialNetwork/SettingsViewController.m"
-         timestampString = "364931665.114343"
+         timestampString = "365010286.962891"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "103"
-         endingLineNumber = "103"
+         startingLineNumber = "106"
+         endingLineNumber = "106"
          landmarkName = "-connection:didReceiveData:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,12 +21,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollectorSocialNetwork/SettingsViewController.m"
-         timestampString = "364933087.17712"
+         timestampString = "365010855.989239"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "85"
-         endingLineNumber = "85"
-         landmarkName = "-createAccountPressed:"
+         startingLineNumber = "113"
+         endingLineNumber = "113"
+         landmarkName = "-connection:didReceiveData:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -34,12 +34,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "CollectorSocialNetwork/SettingsViewController.m"
-         timestampString = "364933326.545115"
+         timestampString = "365011417.225181"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "108"
-         endingLineNumber = "108"
-         landmarkName = "-alertme:"
+         startingLineNumber = "32"
+         endingLineNumber = "32"
+         landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "CollectorSocialNetwork/SettingsViewController.m"
+         timestampString = "365011431.12811"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "27"
+         endingLineNumber = "27"
+         landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

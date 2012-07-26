@@ -101,19 +101,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="FXi-eN-EXC">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="Create Account" id="LZG-VM-iTC">
-                                        <color key="tintColor" red="0.1613170683" green="0.3367957479" blue="0.57434612770000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <action selector="createAccountPressed:" destination="3" id="mca-I7-aDy"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                                <color key="tintColor" red="0.28087082079999998" green="0.58639856980000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </toolbar>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="02d-I7-ZH4">
                                 <rect key="frame" x="20" y="58" width="71" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -159,6 +146,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="FXi-eN-EXC">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Create Account" id="LZG-VM-iTC">
+                                        <color key="tintColor" red="0.1613170683" green="0.3367957479" blue="0.57434612770000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="createAccountPressed:" destination="3" id="mca-I7-aDy"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" red="0.28087082079999998" green="0.58639856980000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -169,7 +169,7 @@
                         <outlet property="password1" destination="WhT-JM-K6l" id="zEQ-ZE-Neb"/>
                         <outlet property="password2" destination="OdP-GC-L8n" id="95t-nL-wXG"/>
                         <outlet property="twitter" destination="Xwp-EB-W45" id="dY1-v7-KtB"/>
-                        <segue destination="Xkc-wv-ter" kind="push" identifier="segueSettingsView" id="T6N-qR-o4E"/>
+                        <segue destination="Xkc-wv-ter" kind="push" identifier="segueSettingsView" id="YeJ-ck-st1"/>
                     </connections>
                 </viewController>
             </objects>
@@ -189,8 +189,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="2" kind="relationship" relationship="viewControllers" id="26"/>
-                        <segue destination="3" kind="relationship" relationship="viewControllers" id="27"/>
                         <segue destination="7qH-SR-PNw" kind="relationship" relationship="viewControllers" id="CFR-4Z-Wqo"/>
+                        <segue destination="3" kind="relationship" relationship="viewControllers" id="Czq-ku-Ccv"/>
                     </connections>
                 </tabBarController>
             </objects>
@@ -220,7 +220,6 @@
         <class className="SettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="createAccountPressed:"/>
                 <relationship kind="outlet" name="email" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="password1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="password2" candidateClass="UITextField"/>
