@@ -46,6 +46,7 @@
 		885167E015C1DF4500AC91F3 /* camera-icon-md.png in Resources */ = {isa = PBXBuildFile; fileRef = 885167DF15C1DF4500AC91F3 /* camera-icon-md.png */; };
 		885167E315C1E28300AC91F3 /* TakePictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 885167E215C1E28300AC91F3 /* TakePictureViewController.m */; };
 		885167E515C1E6E600AC91F3 /* 86-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 885167E415C1E6E600AC91F3 /* 86-camera.png */; };
+		885167E815C1ED9900AC91F3 /* SelectPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 885167E715C1ED9900AC91F3 /* SelectPictureViewController.m */; };
 		888C7B7D15C1BAF600A78E87 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */; };
 		888C7B7F15C1BB2200A78E87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
@@ -99,6 +100,8 @@
 		885167E115C1E28300AC91F3 /* TakePictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakePictureViewController.h; sourceTree = "<group>"; };
 		885167E215C1E28300AC91F3 /* TakePictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakePictureViewController.m; sourceTree = "<group>"; };
 		885167E415C1E6E600AC91F3 /* 86-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "86-camera.png"; sourceTree = "<group>"; };
+		885167E615C1ED9900AC91F3 /* SelectPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPictureViewController.h; sourceTree = "<group>"; };
+		885167E715C1ED9900AC91F3 /* SelectPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPictureViewController.m; sourceTree = "<group>"; };
 		888C7B7B15C1BAF600A78E87 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
 		888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 		888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -171,6 +174,8 @@
 				8820720715C08EC10090075C /* AccountViewController.m */,
 				885167E115C1E28300AC91F3 /* TakePictureViewController.h */,
 				885167E215C1E28300AC91F3 /* TakePictureViewController.m */,
+				885167E615C1ED9900AC91F3 /* SelectPictureViewController.h */,
+				885167E715C1ED9900AC91F3 /* SelectPictureViewController.m */,
 			);
 			path = CollectorSocialNetwork;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 				8820720815C08EC10090075C /* AccountViewController.m in Sources */,
 				888C7B7D15C1BAF600A78E87 /* ODRefreshControl.m in Sources */,
 				885167E315C1E28300AC91F3 /* TakePictureViewController.m in Sources */,
+				885167E815C1ED9900AC91F3 /* SelectPictureViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

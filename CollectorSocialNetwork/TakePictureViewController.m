@@ -15,6 +15,7 @@
 @implementation TakePictureViewController
 
 @synthesize viewTimer = _viewTimer;
+@synthesize resultImage = _resultImage;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -48,9 +49,16 @@
     }
     @catch (NSException *exception)
     {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Camera" message:@"Camera is not available  " delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"No Camera" message:@"Camera is not available" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alert show];
     }
+}
+
+-(void)imagePickerController:(UIImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary*)info
+{
+    [picker dismissModalViewControllerAnimated:YES];
+    // Image created, retake, store
+    self.resultImage.image=[info objectForKey:@"UIImagePickerControllerOriginalImage"];
 }
 
 - (void)viewDidUnload

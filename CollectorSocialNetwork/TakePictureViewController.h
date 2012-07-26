@@ -11,4 +11,6 @@
 @interface TakePictureViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic,strong) NSTimer *viewTimer;
+@property (nonatomic,strong) IBOutlet UIImageView *resultImage;
+
 @end
