@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ODRefreshControl.h"
 
-@interface FeedViewController : UIViewController
+@interface FeedViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic,strong) IBOutlet UITableView *tableView;
+@property (nonatomic,strong) ODRefreshControl *refreshControl;
 
 @end

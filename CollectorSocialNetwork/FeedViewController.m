@@ -8,28 +8,36 @@
 
 #import "FeedViewController.h"
 
+
 @interface FeedViewController ()
 
 @end
 
 @implementation FeedViewController
 
+@synthesize tableView = _tableView;
+@synthesize refreshControl = _refreshControl;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //@todo redirect if not acccount with alert first
 	
-//    ODRefreshControl *refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableView];
-//    [refreshControl addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableView];
+    [self.refreshControl addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
 }
 
-//- (void)dropViewDidBeginRefreshing:(ODRefreshControl *)refreshControl
-//{
-//    double delayInSeconds = 3.0;
-//    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
-//    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-//        [refreshControl endRefreshing];
-//    });
-//}
+- (void)dropViewDidBeginRefreshing:(ODRefreshControl *)refreshControl
+{
+    double delayInSeconds = 3.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [refreshControl endRefreshing];
+    });
+    
+    //@todo add the fetching of the data here.
+}
 
 - (void)viewDidUnload
 {
