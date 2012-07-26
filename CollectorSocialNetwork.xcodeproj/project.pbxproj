@@ -24,7 +24,6 @@
 		76D903AB15BF8E61000FDAFB /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76D903AA15BF8E61000FDAFB /* HelpViewController.m */; };
 		76D903B615BF8F6B000FDAFB /* baby-blue-solid.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76D903AD15BF8F6B000FDAFB /* baby-blue-solid.jpg */; };
 		76D903B715BF8F6B000FDAFB /* blackwallpaper.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 76D903AE15BF8F6B000FDAFB /* blackwallpaper.jpeg */; };
-		76D903B815BF8F6B000FDAFB /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = 76D903AF15BF8F6B000FDAFB /* default.png */; };
 		76D903B915BF8F6B000FDAFB /* GradientFill.png in Resources */ = {isa = PBXBuildFile; fileRef = 76D903B015BF8F6B000FDAFB /* GradientFill.png */; };
 		76D903BA15BF8F6B000FDAFB /* lake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 76D903B115BF8F6B000FDAFB /* lake.jpg */; };
 		76D903BB15BF8F6B000FDAFB /* MovieTransportBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 76D903B215BF8F6B000FDAFB /* MovieTransportBackground.png */; };
@@ -64,7 +63,6 @@
 		76D903AA15BF8E61000FDAFB /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		76D903AD15BF8F6B000FDAFB /* baby-blue-solid.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "baby-blue-solid.jpg"; sourceTree = "<group>"; };
 		76D903AE15BF8F6B000FDAFB /* blackwallpaper.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = blackwallpaper.jpeg; sourceTree = "<group>"; };
-		76D903AF15BF8F6B000FDAFB /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
 		76D903B015BF8F6B000FDAFB /* GradientFill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GradientFill.png; sourceTree = "<group>"; };
 		76D903B115BF8F6B000FDAFB /* lake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lake.jpg; sourceTree = "<group>"; };
 		76D903B215BF8F6B000FDAFB /* MovieTransportBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MovieTransportBackground.png; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 				76D903BF15BF902C000FDAFB /* Icons */,
 				76D903AD15BF8F6B000FDAFB /* baby-blue-solid.jpg */,
 				76D903AE15BF8F6B000FDAFB /* blackwallpaper.jpeg */,
-				76D903AF15BF8F6B000FDAFB /* default.png */,
 				76D903B015BF8F6B000FDAFB /* GradientFill.png */,
 				76D903B115BF8F6B000FDAFB /* lake.jpg */,
 				76D903B215BF8F6B000FDAFB /* MovieTransportBackground.png */,
@@ -245,7 +242,6 @@
 				76D903A315BF8A90000FDAFB /* second@2x.png in Resources */,
 				76D903B615BF8F6B000FDAFB /* baby-blue-solid.jpg in Resources */,
 				76D903B715BF8F6B000FDAFB /* blackwallpaper.jpeg in Resources */,
-				76D903B815BF8F6B000FDAFB /* default.png in Resources */,
 				76D903B915BF8F6B000FDAFB /* GradientFill.png in Resources */,
 				76D903BA15BF8F6B000FDAFB /* lake.jpg in Resources */,
 				76D903BB15BF8F6B000FDAFB /* MovieTransportBackground.png in Resources */,

@@ -17,10 +17,11 @@
 @synthesize tableView = _tableView;
 @synthesize myArray = _myArray;
 @synthesize twitterImage = _twitterImage;
+@synthesize labelsArray = _labelsArray;
 
-- (id)initWithStyle:(UITableViewStyle)style
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithStyle:style];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
@@ -32,19 +33,32 @@
     [super viewDidLoad];    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
+    NSString *email = [defaults objectForKey:@"email"];
+    NSString *twitter = [defaults objectForKey:@"twitter"];
     self.myArray = [[NSMutableArray alloc] init];
-    [self.myArray addObject:[defaults objectForKey:@"email"]];
-    [self.myArray addObject:[defaults objectForKey:@"twitter"]];
+    [self.myArray addObject:email];
     
-    //https://api.twitter.com/1/users/profile_image?screen_name=twitterapi&size=normal
-    NSString *twitterPicture = [[NSString alloc] initWithFormat:@"https://api.twitter.com/1/users/profile_image?screen_name=%@&size=normal", [defaults objectForKey:@"twitter"]];
+    self.labelsArray = [[NSMutableArray alloc] init];
+    [self.labelsArray addObject:@"email"];
+    [self.labelsArray addObject:@"twitter"];
     
-    NSURL * imageURL = [NSURL URLWithString:twitterPicture];
-    NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
-    UIImage * image = [UIImage imageWithData:imageData];
+    if ( twitter != nil) {
+        [self.myArray addObject:twitter];
     
-    self.twitterImage.image = image;
+        //https://api.twitter.com/1/users/profile_image?screen_name=twitterapi&size=normal
+        NSString *twitterPicture = [[NSString alloc] initWithFormat:@"https://api.twitter.com/1/users/profile_image?screen_name=%@&size=bigger", [defaults objectForKey:@"twitter"]];
+        
+        NSURL * imageURL = [NSURL URLWithString:twitterPicture];
+        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+        UIImage * image = [UIImage imageWithData:imageData];
+        
+        self.twitterImage.image = image;
+    }
+    
+    [self.tableView reloadData];
 }
+
+
 
 - (void)viewDidUnload
 {
@@ -60,80 +74,43 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.myArray.count;
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    NSUInteger row = [indexPath row];
+    
+    cell.textLabel.textColor = [UIColor grayColor];
+    cell.detailTextLabel.textColor = [UIColor blackColor];
+    cell.detailTextLabel.numberOfLines = 2;
+   
+    cell.textLabel.text = [self.labelsArray objectAtIndex:row];
+    cell.detailTextLabel.text = [self.myArray objectAtIndex:row];
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return 80;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+- (IBAction)goHome:(id)sender
+{   
+    [self performSegueWithIdentifier:@"HomeFromSettings" sender:self];
 }
 
 @end

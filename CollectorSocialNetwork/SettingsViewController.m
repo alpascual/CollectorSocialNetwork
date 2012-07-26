@@ -25,12 +25,12 @@
     [super viewDidLoad];
 	
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if ( [defaults objectForKey:@"email"] == nil )
+    if ( [defaults objectForKey:@"userid"] != nil )
     {
-        if ( self.bEditing == NO) {
+        //if ( self.bEditing == NO) {
             // Redirect to another place @todo check you can do that
             [self performSegueWithIdentifier:@"segueSettingsView" sender:self];
-        }
+        //}
     }
     
     self.email.text = [defaults objectForKey:@"email"];
@@ -108,20 +108,21 @@
     NSString* newStr = [NSString stringWithUTF8String:[data bytes]];
     NSLog(@"data returned String: %@", newStr);
     
+    NSString *stringWithout = [newStr stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+    
     // If successful store it
     NSString *passwordHash = [[NSString alloc] initWithFormat:@"%d", [self.password1.text hash]];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:stringWithout forKey:@"userid"];
     [defaults setObject:self.email.text forKey:@"email"];
     [defaults setObject:self.password1.text forKey:@"password"];
     [defaults setObject:passwordHash forKey:@"passwordhash"];
-    [defaults setObject:self.twitter forKey:@"twitter"];
+    if ( self.twitter.text.length > 0)
+        [defaults setObject:self.twitter.text forKey:@"twitter"];
+    
     
     [defaults synchronize];
     
-    // Direct to another View segueSettingsView
-//    [self dismissViewControllerAnimated:YES completion:^() {
-//        [self performSegueWithIdentifier:@"segueSettingsView" sender:self];
-//    }];
     [self performSegueWithIdentifier:@"segueSettingsView" sender:self];
 }
 
