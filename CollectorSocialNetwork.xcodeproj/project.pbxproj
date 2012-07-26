@@ -36,6 +36,8 @@
 		76D903C715BF9167000FDAFB /* 90-life-buoy.png in Resources */ = {isa = PBXBuildFile; fileRef = 76D903C415BF9167000FDAFB /* 90-life-buoy.png */; };
 		76D903C915BF91D2000FDAFB /* 53-house.png in Resources */ = {isa = PBXBuildFile; fileRef = 76D903C815BF91D2000FDAFB /* 53-house.png */; };
 		8820720815C08EC10090075C /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820720715C08EC10090075C /* AccountViewController.m */; };
+		888C7B7D15C1BAF600A78E87 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */; };
+		888C7B7F15C1BB2200A78E87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,9 @@
 		76D903C815BF91D2000FDAFB /* 53-house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house.png"; sourceTree = "<group>"; };
 		8820720615C08EC10090075C /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		8820720715C08EC10090075C /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		888C7B7B15C1BAF600A78E87 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
+		888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
+		888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				888C7B7F15C1BB2200A78E87 /* QuartzCore.framework in Frameworks */,
 				76D9037F15BF8A90000FDAFB /* UIKit.framework in Frameworks */,
 				76D9038115BF8A90000FDAFB /* Foundation.framework in Frameworks */,
 				76D9038315BF8A90000FDAFB /* CoreGraphics.framework in Frameworks */,
@@ -95,6 +101,7 @@
 		76D9036F15BF8A90000FDAFB = {
 			isa = PBXGroup;
 			children = (
+				888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */,
 				76D9038415BF8A90000FDAFB /* CollectorSocialNetwork */,
 				76D9037D15BF8A90000FDAFB /* Frameworks */,
 				76D9037B15BF8A90000FDAFB /* Products */,
@@ -122,6 +129,7 @@
 		76D9038415BF8A90000FDAFB /* CollectorSocialNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				888C7B7A15C1BAF600A78E87 /* ODRefreshControl */,
 				76D903AC15BF8F6B000FDAFB /* Resources */,
 				76D9038D15BF8A90000FDAFB /* AppDelegate.h */,
 				76D9038E15BF8A90000FDAFB /* AppDelegate.m */,
@@ -181,6 +189,15 @@
 				76D903C015BF902C000FDAFB /* 001_20.png */,
 			);
 			path = Icons;
+			sourceTree = "<group>";
+		};
+		888C7B7A15C1BAF600A78E87 /* ODRefreshControl */ = {
+			isa = PBXGroup;
+			children = (
+				888C7B7B15C1BAF600A78E87 /* ODRefreshControl.h */,
+				888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */,
+			);
+			path = ODRefreshControl;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +286,7 @@
 				76D9039F15BF8A90000FDAFB /* SettingsViewController.m in Sources */,
 				76D903AB15BF8E61000FDAFB /* HelpViewController.m in Sources */,
 				8820720815C08EC10090075C /* AccountViewController.m in Sources */,
+				888C7B7D15C1BAF600A78E87 /* ODRefreshControl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

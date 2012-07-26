@@ -17,8 +17,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+//    ODRefreshControl *refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableView];
+//    [refreshControl addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
 }
+
+//- (void)dropViewDidBeginRefreshing:(ODRefreshControl *)refreshControl
+//{
+//    double delayInSeconds = 3.0;
+//    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+//    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+//        [refreshControl endRefreshing];
+//    });
+//}
 
 - (void)viewDidUnload
 {
@@ -34,5 +45,6 @@
         return YES;
     }
 }
+
 
 @end
