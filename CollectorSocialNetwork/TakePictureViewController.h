@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TakePictureViewController : UIViewController
+@interface TakePictureViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
+@property (nonatomic,strong) NSTimer *viewTimer;
 @end

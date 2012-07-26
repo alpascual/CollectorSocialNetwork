@@ -45,6 +45,7 @@
 		885167DB15C1D30300AC91F3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 885167D415C1D30300AC91F3 /* Icon@2x.png */; };
 		885167E015C1DF4500AC91F3 /* camera-icon-md.png in Resources */ = {isa = PBXBuildFile; fileRef = 885167DF15C1DF4500AC91F3 /* camera-icon-md.png */; };
 		885167E315C1E28300AC91F3 /* TakePictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 885167E215C1E28300AC91F3 /* TakePictureViewController.m */; };
+		885167E515C1E6E600AC91F3 /* 86-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 885167E415C1E6E600AC91F3 /* 86-camera.png */; };
 		888C7B7D15C1BAF600A78E87 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */; };
 		888C7B7F15C1BB2200A78E87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
@@ -97,6 +98,7 @@
 		885167DF15C1DF4500AC91F3 /* camera-icon-md.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera-icon-md.png"; sourceTree = "<group>"; };
 		885167E115C1E28300AC91F3 /* TakePictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakePictureViewController.h; sourceTree = "<group>"; };
 		885167E215C1E28300AC91F3 /* TakePictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakePictureViewController.m; sourceTree = "<group>"; };
+		885167E415C1E6E600AC91F3 /* 86-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "86-camera.png"; sourceTree = "<group>"; };
 		888C7B7B15C1BAF600A78E87 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
 		888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 		888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -205,6 +207,7 @@
 		76D903BF15BF902C000FDAFB /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				885167E415C1E6E600AC91F3 /* 86-camera.png */,
 				76D903C815BF91D2000FDAFB /* 53-house.png */,
 				76D903C215BF9167000FDAFB /* 001_04.png */,
 				76D903C315BF9167000FDAFB /* 20-gear2.png */,
@@ -315,6 +318,7 @@
 				885167DA15C1D30300AC91F3 /* Icon.png in Resources */,
 				885167DB15C1D30300AC91F3 /* Icon@2x.png in Resources */,
 				885167E015C1DF4500AC91F3 /* camera-icon-md.png in Resources */,
+				885167E515C1E6E600AC91F3 /* 86-camera.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
