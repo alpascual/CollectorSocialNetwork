@@ -26,7 +26,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    self.viewTimer = [NSTimer scheduledTimerWithTimeInterval:(0.5) target:self selector:
+                      @selector(refreshTimer:) userInfo:nil repeats:NO];
+}
+
+- (void)refreshTimer:(NSTimer *)timer
+{   
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    picker.delegate = self;
+    
+    [self presentModalViewController:picker animated:YES];
+    
+    
 }
 
 - (void)viewDidUnload

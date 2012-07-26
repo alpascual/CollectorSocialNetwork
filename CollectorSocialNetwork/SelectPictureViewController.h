@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SelectPictureViewController : UIViewController
+@interface SelectPictureViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+@property (nonatomic,strong) NSTimer *viewTimer;
+@property (nonatomic,strong) IBOutlet UIImageView *resultImage;
 
 @end

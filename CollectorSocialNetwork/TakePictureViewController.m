@@ -31,8 +31,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    self.viewTimer = [NSTimer scheduledTimerWithTimeInterval:(0.2) target:self selector:
-                     @selector(refreshTimer:) userInfo:nil repeats:YES];
+    self.viewTimer = [NSTimer scheduledTimerWithTimeInterval:(0.5) target:self selector:
+                     @selector(refreshTimer:) userInfo:nil repeats:NO];
     
     
 }
