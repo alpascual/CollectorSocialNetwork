@@ -7,12 +7,15 @@
 //
 
 #import "ShareViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface ShareViewController ()
 
 @end
 
 @implementation ShareViewController
+
+@synthesize postText = _postText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    [[self.postText layer] setBorderWidth:2.3];
+    [[self.postText layer] setCornerRadius:15];
 }
 
 - (void)viewDidUnload
