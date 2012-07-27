@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UtilsClass.h"
 
 @interface SelectPictureViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 

@@ -160,7 +160,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="TQr-Hj-mfp">
-                                <rect key="frame" x="6" y="52" width="308" height="399"/>
+                                <rect key="frame" x="6" y="50" width="308" height="356"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Red-Q5-b27">
@@ -172,6 +172,9 @@
                                     </barButtonItem>
                                     <barButtonItem systemItem="action" id="TPG-jI-OtF">
                                         <color key="tintColor" red="0.058673982097761923" green="0.42788298233695654" blue="0.082779825632117096" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="n6u-eO-3jM" kind="modal" id="46e-HV-evx"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="cancel" id="er1-Uo-ern">
                                         <color key="tintColor" red="0.086313295870000001" green="0.21277862810000001" blue="0.80791440219999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -191,7 +194,51 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1521" y="-325"/>
+            <point key="canvasLocation" x="1521" y="-319"/>
+        </scene>
+        <!--Share View Controller-->
+        <scene sceneID="qO5-t2-mBZ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="h33-CX-PeW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="n6u-eO-3jM" customClass="ShareViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uuF-jq-FEl">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="baby-blue-solid.jpg" id="Sf3-q9-O4b">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="fWh-jj-CAH">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="cancel" id="sVm-sV-ves">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="XwS-FZ-aDc"/>
+                                    <barButtonItem title="Share" id="oBY-hh-2e2">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </toolbar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Hd6-rQ-pJQ">
+                                <rect key="frame" x="33" y="63" width="260" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="postText" destination="Hd6-rQ-pJQ" id="OHG-fx-sV3"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1964" y="-319"/>
         </scene>
         <!--Account View Controller - Settings-->
         <scene sceneID="7XC-ab-Isl">
@@ -272,6 +319,9 @@
                                     </barButtonItem>
                                     <barButtonItem systemItem="action" id="RLW-BN-fLP">
                                         <color key="tintColor" red="0.058673982100000001" green="0.42788298229999999" blue="0.082779825629999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="n6u-eO-3jM" kind="modal" id="Prk-vK-JAi"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem systemItem="cancel" id="bmn-45-FyR">
                                         <color key="tintColor" red="0.086313295870000001" green="0.21277862810000001" blue="0.80791440219999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -422,7 +472,6 @@
         <class className="AccountViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AccountViewController.h"/>
             <relationships>
-                <relationship kind="action" name="goHome:"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="twitterImage" candidateClass="UIImageView"/>
             </relationships>
@@ -438,19 +487,30 @@
         </class>
         <class className="SelectPictureViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectPictureViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="resultImage" candidateClass="UIImageView"/>
+            </relationships>
         </class>
         <class className="SettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="createAccountPressed:"/>
                 <relationship kind="outlet" name="email" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="password1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="password2" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="twitter" candidateClass="UITextField"/>
             </relationships>
         </class>
+        <class className="ShareViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShareViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="postText" candidateClass="UITextView"/>
+            </relationships>
+        </class>
         <class className="TakePictureViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TakePictureViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="resultImage" candidateClass="UIImageView"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -461,5 +521,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="dMp-IV-FpX"/>
         <segue reference="egx-Ac-n9N"/>
+        <segue reference="Prk-vK-JAi"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -47,6 +47,8 @@
 		885167E315C1E28300AC91F3 /* TakePictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 885167E215C1E28300AC91F3 /* TakePictureViewController.m */; };
 		885167E515C1E6E600AC91F3 /* 86-camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 885167E415C1E6E600AC91F3 /* 86-camera.png */; };
 		885167E815C1ED9900AC91F3 /* SelectPictureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 885167E715C1ED9900AC91F3 /* SelectPictureViewController.m */; };
+		885167F115C3304900AC91F3 /* UtilsClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 885167F015C3304900AC91F3 /* UtilsClass.m */; };
+		885167F415C3470B00AC91F3 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 885167F315C3470B00AC91F3 /* ShareViewController.m */; };
 		888C7B7D15C1BAF600A78E87 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */; };
 		888C7B7F15C1BB2200A78E87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
@@ -102,6 +104,10 @@
 		885167E415C1E6E600AC91F3 /* 86-camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "86-camera.png"; sourceTree = "<group>"; };
 		885167E615C1ED9900AC91F3 /* SelectPictureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectPictureViewController.h; sourceTree = "<group>"; };
 		885167E715C1ED9900AC91F3 /* SelectPictureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectPictureViewController.m; sourceTree = "<group>"; };
+		885167EF15C3304900AC91F3 /* UtilsClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilsClass.h; sourceTree = "<group>"; };
+		885167F015C3304900AC91F3 /* UtilsClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilsClass.m; sourceTree = "<group>"; };
+		885167F215C3470B00AC91F3 /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		885167F315C3470B00AC91F3 /* ShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
 		888C7B7B15C1BAF600A78E87 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
 		888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 		888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -153,6 +159,7 @@
 		76D9038415BF8A90000FDAFB /* CollectorSocialNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				885167ED15C3301E00AC91F3 /* Utils */,
 				888C7B7A15C1BAF600A78E87 /* ODRefreshControl */,
 				76D903AC15BF8F6B000FDAFB /* Resources */,
 				76D9038D15BF8A90000FDAFB /* AppDelegate.h */,
@@ -176,6 +183,8 @@
 				885167E215C1E28300AC91F3 /* TakePictureViewController.m */,
 				885167E615C1ED9900AC91F3 /* SelectPictureViewController.h */,
 				885167E715C1ED9900AC91F3 /* SelectPictureViewController.m */,
+				885167F215C3470B00AC91F3 /* ShareViewController.h */,
+				885167F315C3470B00AC91F3 /* ShareViewController.m */,
 			);
 			path = CollectorSocialNetwork;
 			sourceTree = "<group>";
@@ -234,6 +243,15 @@
 				885167D415C1D30300AC91F3 /* Icon@2x.png */,
 			);
 			path = AppIcons;
+			sourceTree = "<group>";
+		};
+		885167ED15C3301E00AC91F3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				885167EF15C3304900AC91F3 /* UtilsClass.h */,
+				885167F015C3304900AC91F3 /* UtilsClass.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		888C7B7A15C1BAF600A78E87 /* ODRefreshControl */ = {
@@ -343,6 +361,8 @@
 				888C7B7D15C1BAF600A78E87 /* ODRefreshControl.m in Sources */,
 				885167E315C1E28300AC91F3 /* TakePictureViewController.m in Sources */,
 				885167E815C1ED9900AC91F3 /* SelectPictureViewController.m in Sources */,
+				885167F115C3304900AC91F3 /* UtilsClass.m in Sources */,
+				885167F415C3470B00AC91F3 /* ShareViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

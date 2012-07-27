@@ -38,8 +38,13 @@
     picker.delegate = self;
     
     [self presentModalViewController:picker animated:YES];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    self.resultImage.image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
-    
+    [picker dismissModalViewControllerAnimated:YES];
 }
 
 - (void)viewDidUnload
