@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
     
-    [[self.postText layer] setBorderWidth:2.3];
+    [[self.postText layer] setBorderWidth:1.5];
     [[self.postText layer] setCornerRadius:15];
 }
 

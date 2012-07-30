@@ -26,6 +26,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="FwH-Jq-L9E"/>
                                     <barButtonItem systemItem="compose" id="f1z-kC-Qvg">
                                         <color key="tintColor" red="0.10512231842857334" green="0.25914643251894037" blue="0.98397163722826086" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
