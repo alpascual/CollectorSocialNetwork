@@ -15,13 +15,12 @@
 
 @implementation FeedViewController
 
-@synthesize tableView = _tableView;
+//@synthesize tableView = _tableView;
 //@synthesize refreshControl = _refreshControl;
+@synthesize images = _images;
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    
     //@todo redirect if not acccount with alert first
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ( [defaults objectForKey:@"userid"] == nil )
@@ -32,6 +31,10 @@
         return;
     }
 
+    [super viewDidLoad];
+    
+    self.quiltView.backgroundColor = [UIColor blackColor];
+    
 	
 //    self.refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableView];
 //    [self.refreshControl addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
@@ -104,7 +107,13 @@
 
 #pragma mark - QuiltViewControllerDataSource
 
-//- (NSArray *)images {
+- (NSArray *)images {
+    
+    if ( !self.images) {
+        self.images = [[NSMutableArray alloc] init];
+        [self.images addObject:@"lake.jpg"];
+    }
+    
 //    if (!_images) {
 //        NSMutableArray *imageNames = [NSMutableArray array];
 //        for(int i = 0; i < kNumberOfCells; i++) {
@@ -113,7 +122,9 @@
 //        _images = [imageNames retain];
 //    }
 //    return _images;
-//}
+    
+    return self.images;
+}
 
 - (UIImage *)imageAtIndexPath:(NSIndexPath *)indexPath {
     return [UIImage imageNamed:[self.images objectAtIndex:indexPath.row]];

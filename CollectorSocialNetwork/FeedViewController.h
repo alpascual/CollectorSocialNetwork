@@ -12,7 +12,8 @@
 
 @interface FeedViewController : TMQuiltViewController
 
-@property (nonatomic,strong) IBOutlet UITableView *tableView;
+//@property (nonatomic,strong) IBOutlet UITableView *tableView;
 //@property (nonatomic,strong) ODRefreshControl *refreshControl;
+@property (nonatomic,strong) NSMutableArray *images;
 
 @end
