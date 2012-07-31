@@ -51,9 +51,26 @@
 		885167F415C3470B00AC91F3 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 885167F315C3470B00AC91F3 /* ShareViewController.m */; };
 		888C7B7D15C1BAF600A78E87 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */; };
 		888C7B7F15C1BB2200A78E87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */; };
-		888D4B8B15C868AA00F0C3EF /* libTMQuiltView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 888D4B8A15C868AA00F0C3EF /* libTMQuiltView.a */; };
-		888D4B8D15C868B500F0C3EF /* libTMQuiltView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 888D4B8C15C868B500F0C3EF /* libTMQuiltView.a */; };
+		888D4BAA15C86EFD00F0C3EF /* libTMQuiltView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 888D4BA715C86E3400F0C3EF /* libTMQuiltView.a */; };
+		888D4BAF15C872EF00F0C3EF /* TMPhotoQuiltViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 888D4BAE15C872EF00F0C3EF /* TMPhotoQuiltViewCell.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		888D4BA615C86E3400F0C3EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 888D4B9D15C86E3300F0C3EF /* TMQuiltView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 15F3E22215B9DC6900218C9C;
+			remoteInfo = TMQuiltView;
+		};
+		888D4BA815C86E3400F0C3EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 888D4B9D15C86E3300F0C3EF /* TMQuiltView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 15E459FD15C071310031094D;
+			remoteInfo = TMQuiltViewTests;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		76D9037A15BF8A90000FDAFB /* CollectorSocialNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectorSocialNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -113,11 +130,10 @@
 		888C7B7B15C1BAF600A78E87 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
 		888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 		888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		888D4B8A15C868AA00F0C3EF /* libTMQuiltView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTMQuiltView.a; path = CollectorSocialNetwork/Libraries/iphoneos/libTMQuiltView.a; sourceTree = "<group>"; };
-		888D4B8C15C868B500F0C3EF /* libTMQuiltView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTMQuiltView.a; path = CollectorSocialNetwork/Libraries/iphonesimulator/libTMQuiltView.a; sourceTree = "<group>"; };
-		888D4B9A15C869E500F0C3EF /* TMQuiltView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMQuiltView.h; sourceTree = "<group>"; };
-		888D4B9B15C869E500F0C3EF /* TMQuiltViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMQuiltViewCell.h; sourceTree = "<group>"; };
-		888D4B9C15C869E500F0C3EF /* TMQuiltViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMQuiltViewController.h; sourceTree = "<group>"; };
+		888D4B9D15C86E3300F0C3EF /* TMQuiltView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TMQuiltView.xcodeproj; path = CollectorSocialNetwork/TMQuiltView/TMQuiltView.xcodeproj; sourceTree = "<group>"; };
+		888D4BAB15C870E000F0C3EF /* TMQuiltView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMQuiltView.h; path = TMQuiltView/TMQuiltView/TMQuiltView.h; sourceTree = "<group>"; };
+		888D4BAD15C872EF00F0C3EF /* TMPhotoQuiltViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMPhotoQuiltViewCell.h; sourceTree = "<group>"; };
+		888D4BAE15C872EF00F0C3EF /* TMPhotoQuiltViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMPhotoQuiltViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				888D4B8D15C868B500F0C3EF /* libTMQuiltView.a in Frameworks */,
-				888D4B8B15C868AA00F0C3EF /* libTMQuiltView.a in Frameworks */,
+				888D4BAA15C86EFD00F0C3EF /* libTMQuiltView.a in Frameworks */,
 				888C7B7F15C1BB2200A78E87 /* QuartzCore.framework in Frameworks */,
 				76D9037F15BF8A90000FDAFB /* UIKit.framework in Frameworks */,
 				76D9038115BF8A90000FDAFB /* Foundation.framework in Frameworks */,
@@ -140,8 +155,7 @@
 		76D9036F15BF8A90000FDAFB = {
 			isa = PBXGroup;
 			children = (
-				888D4B8C15C868B500F0C3EF /* libTMQuiltView.a */,
-				888D4B8A15C868AA00F0C3EF /* libTMQuiltView.a */,
+				888D4B9D15C86E3300F0C3EF /* TMQuiltView.xcodeproj */,
 				888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */,
 				76D9038415BF8A90000FDAFB /* CollectorSocialNetwork */,
 				76D9037D15BF8A90000FDAFB /* Frameworks */,
@@ -170,7 +184,7 @@
 		76D9038415BF8A90000FDAFB /* CollectorSocialNetwork */ = {
 			isa = PBXGroup;
 			children = (
-				888D4B9915C869E400F0C3EF /* Includes */,
+				888D4BAC15C872EF00F0C3EF /* Quilt */,
 				885167ED15C3301E00AC91F3 /* Utils */,
 				888C7B7A15C1BAF600A78E87 /* ODRefreshControl */,
 				76D903AC15BF8F6B000FDAFB /* Resources */,
@@ -260,6 +274,7 @@
 		885167ED15C3301E00AC91F3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				888D4BAB15C870E000F0C3EF /* TMQuiltView.h */,
 				885167EF15C3304900AC91F3 /* UtilsClass.h */,
 				885167F015C3304900AC91F3 /* UtilsClass.m */,
 			);
@@ -275,15 +290,22 @@
 			path = ODRefreshControl;
 			sourceTree = "<group>";
 		};
-		888D4B9915C869E400F0C3EF /* Includes */ = {
+		888D4B9E15C86E3300F0C3EF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				888D4B9A15C869E500F0C3EF /* TMQuiltView.h */,
-				888D4B9B15C869E500F0C3EF /* TMQuiltViewCell.h */,
-				888D4B9C15C869E500F0C3EF /* TMQuiltViewController.h */,
+				888D4BA715C86E3400F0C3EF /* libTMQuiltView.a */,
+				888D4BA915C86E3400F0C3EF /* TMQuiltViewTests.app */,
 			);
-			name = Includes;
-			path = Libraries/Includes;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		888D4BAC15C872EF00F0C3EF /* Quilt */ = {
+			isa = PBXGroup;
+			children = (
+				888D4BAD15C872EF00F0C3EF /* TMPhotoQuiltViewCell.h */,
+				888D4BAE15C872EF00F0C3EF /* TMPhotoQuiltViewCell.m */,
+			);
+			path = Quilt;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,12 +346,35 @@
 			mainGroup = 76D9036F15BF8A90000FDAFB;
 			productRefGroup = 76D9037B15BF8A90000FDAFB /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 888D4B9E15C86E3300F0C3EF /* Products */;
+					ProjectRef = 888D4B9D15C86E3300F0C3EF /* TMQuiltView.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				76D9037915BF8A90000FDAFB /* CollectorSocialNetwork */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		888D4BA715C86E3400F0C3EF /* libTMQuiltView.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libTMQuiltView.a;
+			remoteRef = 888D4BA615C86E3400F0C3EF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		888D4BA915C86E3400F0C3EF /* TMQuiltViewTests.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = TMQuiltViewTests.app;
+			remoteRef = 888D4BA815C86E3400F0C3EF /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		76D9037815BF8A90000FDAFB /* Resources */ = {
@@ -386,6 +431,7 @@
 				885167E815C1ED9900AC91F3 /* SelectPictureViewController.m in Sources */,
 				885167F115C3304900AC91F3 /* UtilsClass.m in Sources */,
 				885167F415C3470B00AC91F3 /* ShareViewController.m in Sources */,
+				888D4BAF15C872EF00F0C3EF /* TMPhotoQuiltViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

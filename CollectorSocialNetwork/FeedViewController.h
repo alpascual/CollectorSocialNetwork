@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ODRefreshControl.h"
-#import "TMQuiltViewController.h"
+//#import "ODRefreshControl.h"
+#import "TMQuiltView.h"
 
 @interface FeedViewController : TMQuiltViewController
 
 @property (nonatomic,strong) IBOutlet UITableView *tableView;
-@property (nonatomic,strong) ODRefreshControl *refreshControl;
+//@property (nonatomic,strong) ODRefreshControl *refreshControl;
 
 @end
