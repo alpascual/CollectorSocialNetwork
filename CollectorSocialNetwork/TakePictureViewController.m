@@ -16,6 +16,7 @@
 
 @synthesize viewTimer = _viewTimer;
 @synthesize resultImage = _resultImage;
+@synthesize alert = _alert;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -59,6 +60,24 @@
     [picker dismissModalViewControllerAnimated:YES];
     // Image created, retake, store
     self.resultImage.image=[info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    
+    self.alert = [[UIAlertView alloc] initWithTitle:@"Upload Image" message:@"Do you want to upload this image?" delegate:self cancelButtonTitle:@"NO" otherButtonTitles:@"YES",nil];
+    self.alert.delegate = self;
+    [self.alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if ( buttonIndex == 1 )
+    {
+        // Upload here
+        UtilsClass *util = [[UtilsClass alloc] init];
+        NSString *stringID = [util uploadImage:self.resultImage];
+        NSLog(@"Picture ID %@", stringID);
+        
+        // to the share controller
+        [self performSegueWithIdentifier:@"uploadPicture" sender:self];
+    }
 }
 
 - (void)viewDidUnload
@@ -70,6 +89,14 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([[segue identifier] isEqualToString:@"uploadPicture"])
+    {
+        // Upload the picture
+    }
 }
 
 @end

@@ -15,7 +15,7 @@
     UIImage *myImage = imageView.image;
     NSData *imageData = UIImagePNGRepresentation(myImage);
     // setting up the URL to post to
-    NSString *urlString = @"http://birds.alsandbox.us/uploads/index";
+    NSString *urlString = @"http://birds.alsandbox.us/upload/send";
     
     // setting up the request object now
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];

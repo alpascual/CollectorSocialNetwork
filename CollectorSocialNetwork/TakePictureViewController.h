@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UtilsClass.h"
 
 @interface TakePictureViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic,strong) NSTimer *viewTimer;
 @property (nonatomic,strong) IBOutlet UIImageView *resultImage;
+@property (nonatomic,strong) UIAlertView *alert;
 
 @end

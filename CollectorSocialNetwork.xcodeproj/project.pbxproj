@@ -51,6 +51,8 @@
 		885167F415C3470B00AC91F3 /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 885167F315C3470B00AC91F3 /* ShareViewController.m */; };
 		888C7B7D15C1BAF600A78E87 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */; };
 		888C7B7F15C1BB2200A78E87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */; };
+		888D4B8B15C868AA00F0C3EF /* libTMQuiltView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 888D4B8A15C868AA00F0C3EF /* libTMQuiltView.a */; };
+		888D4B8D15C868B500F0C3EF /* libTMQuiltView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 888D4B8C15C868B500F0C3EF /* libTMQuiltView.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -111,6 +113,11 @@
 		888C7B7B15C1BAF600A78E87 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
 		888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 		888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		888D4B8A15C868AA00F0C3EF /* libTMQuiltView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTMQuiltView.a; path = CollectorSocialNetwork/Libraries/iphoneos/libTMQuiltView.a; sourceTree = "<group>"; };
+		888D4B8C15C868B500F0C3EF /* libTMQuiltView.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libTMQuiltView.a; path = CollectorSocialNetwork/Libraries/iphonesimulator/libTMQuiltView.a; sourceTree = "<group>"; };
+		888D4B9A15C869E500F0C3EF /* TMQuiltView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMQuiltView.h; sourceTree = "<group>"; };
+		888D4B9B15C869E500F0C3EF /* TMQuiltViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMQuiltViewCell.h; sourceTree = "<group>"; };
+		888D4B9C15C869E500F0C3EF /* TMQuiltViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMQuiltViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +125,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				888D4B8D15C868B500F0C3EF /* libTMQuiltView.a in Frameworks */,
+				888D4B8B15C868AA00F0C3EF /* libTMQuiltView.a in Frameworks */,
 				888C7B7F15C1BB2200A78E87 /* QuartzCore.framework in Frameworks */,
 				76D9037F15BF8A90000FDAFB /* UIKit.framework in Frameworks */,
 				76D9038115BF8A90000FDAFB /* Foundation.framework in Frameworks */,
@@ -131,6 +140,8 @@
 		76D9036F15BF8A90000FDAFB = {
 			isa = PBXGroup;
 			children = (
+				888D4B8C15C868B500F0C3EF /* libTMQuiltView.a */,
+				888D4B8A15C868AA00F0C3EF /* libTMQuiltView.a */,
 				888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */,
 				76D9038415BF8A90000FDAFB /* CollectorSocialNetwork */,
 				76D9037D15BF8A90000FDAFB /* Frameworks */,
@@ -159,6 +170,7 @@
 		76D9038415BF8A90000FDAFB /* CollectorSocialNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				888D4B9915C869E400F0C3EF /* Includes */,
 				885167ED15C3301E00AC91F3 /* Utils */,
 				888C7B7A15C1BAF600A78E87 /* ODRefreshControl */,
 				76D903AC15BF8F6B000FDAFB /* Resources */,
@@ -261,6 +273,17 @@
 				888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */,
 			);
 			path = ODRefreshControl;
+			sourceTree = "<group>";
+		};
+		888D4B9915C869E400F0C3EF /* Includes */ = {
+			isa = PBXGroup;
+			children = (
+				888D4B9A15C869E500F0C3EF /* TMQuiltView.h */,
+				888D4B9B15C869E500F0C3EF /* TMQuiltViewCell.h */,
+				888D4B9C15C869E500F0C3EF /* TMQuiltViewController.h */,
+			);
+			name = Includes;
+			path = Libraries/Includes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -450,6 +473,11 @@
 				GCC_PREFIX_HEADER = "CollectorSocialNetwork/CollectorSocialNetwork-Prefix.pch";
 				INFOPLIST_FILE = "CollectorSocialNetwork/CollectorSocialNetwork-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/CollectorSocialNetwork/Libraries/iphoneos\"",
+					"\"$(SRCROOT)/CollectorSocialNetwork/Libraries/iphonesimulator\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -463,6 +491,11 @@
 				GCC_PREFIX_HEADER = "CollectorSocialNetwork/CollectorSocialNetwork-Prefix.pch";
 				INFOPLIST_FILE = "CollectorSocialNetwork/CollectorSocialNetwork-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/CollectorSocialNetwork/Libraries/iphoneos\"",
+					"\"$(SRCROOT)/CollectorSocialNetwork/Libraries/iphonesimulator\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
