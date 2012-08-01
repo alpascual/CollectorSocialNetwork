@@ -7,13 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "ODRefreshControl.h"
-#import "TMQuiltView.h"
+#import "ODRefreshControl.h"
+//#import "TMQuiltView.h"
 
-@interface FeedViewController : TMQuiltViewController
+@interface FeedViewController : UIViewController
 
-//@property (nonatomic,strong) IBOutlet UITableView *tableView;
-//@property (nonatomic,strong) ODRefreshControl *refreshControl;
-@property (nonatomic,strong) NSMutableArray *images;
+@property (nonatomic,strong) IBOutlet UITableView *tableView;
+@property (nonatomic,strong) ODRefreshControl *refreshControl;
+//@property (nonatomic,strong) NSMutableArray *images;
 
 @end

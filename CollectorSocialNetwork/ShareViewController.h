@@ -11,5 +11,6 @@
 @interface ShareViewController : UIViewController
 
 @property (nonatomic,strong) IBOutlet UITextView *postText;
+@property (nonatomic,strong) IBOutlet UIImageView *imageThumbnail;
 
 @end

@@ -16,6 +16,7 @@
 @implementation ShareViewController
 
 @synthesize postText = _postText;
+@synthesize imageThumbnail = _imageThumbnail;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

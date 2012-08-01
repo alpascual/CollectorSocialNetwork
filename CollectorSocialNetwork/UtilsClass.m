@@ -27,7 +27,7 @@
     [request addValue:contentType forHTTPHeaderField: @"Content-Type"];
     
     NSString *guid = [self stringWithUUID];
-    NSString *filename = [[NSString alloc] initWithFormat:@"Content-Disposition: form-data; name=\"userfile\"; filename=\"%@.png\"\r\n", guid];
+    NSString *filename = [[NSString alloc] initWithFormat:@"Content-Disposition: form-data; name=\"file\"; filename=\"%@.png\"\r\n", guid];
     /*
      now lets create the body of the post
      */

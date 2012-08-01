@@ -62,6 +62,12 @@
         NSString *stringID = [util uploadImage:self.resultImage];
         NSLog(@"Picture ID %@", stringID);
         
+        if ( stringID.length < 200) {
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:stringID forKey:@"lastupload"];
+            [defaults synchronize];
+        }
+        
         // to the share controller
         [self performSegueWithIdentifier:@"uploadPicture" sender:self];
     }
