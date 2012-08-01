@@ -38,7 +38,11 @@
     
     if ( [defaults objectForKey:@"lastupload"] != nil) {
         NSString *filename = [defaults objectForKey:@"lastupload"];
-        //@todo 
+        
+        NSString *
+        NSURL * imageURL = [NSURL URLWithString:@"http://birds.alsandbox.us/LC.jpg"];
+        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+        UIImage * image = [UIImage imageWithData:imageData];
     }
 }
 
