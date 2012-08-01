@@ -37,12 +37,12 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     if ( [defaults objectForKey:@"lastupload"] != nil) {
-        NSString *filename = [defaults objectForKey:@"lastupload"];
-        
-        NSString *
-        NSURL * imageURL = [NSURL URLWithString:@"http://birds.alsandbox.us/LC.jpg"];
+        NSString *filename = [defaults objectForKey:@"lastupload"];        
+        NSString *fullUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/get?filename=%@", filename];
+        NSURL * imageURL = [NSURL URLWithString:fullUrl];
         NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
         UIImage * image = [UIImage imageWithData:imageData];
+        self.imageThumbnail.image = image;
     }
 }
 
