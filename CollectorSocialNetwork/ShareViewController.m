@@ -33,6 +33,13 @@
     
     [[self.postText layer] setBorderWidth:1.5];
     [[self.postText layer] setCornerRadius:15];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if ( [defaults objectForKey:@"lastupload"] != nil) {
+        NSString *filename = [defaults objectForKey:@"lastupload"];
+        //@todo 
+    }
 }
 
 - (void)viewDidUnload
