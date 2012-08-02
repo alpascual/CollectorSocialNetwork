@@ -58,7 +58,31 @@
 {
     //@todo get all data here
     self.fetchedDataArray = [[NSMutableArray alloc] init];
-    //@todo
+    
+    NSString *fetchUrl = @"http://birds.alsandbox.us/api/LastPosts?many=50";
+    NSURL * nURL = [NSURL URLWithString:fetchUrl];
+    NSURLRequest *aReq = [NSURLRequest requestWithURL:nURL];
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:aReq delegate:self];
+    if (theConnection) {
+        
+    } else {
+        // inform the user that the download could not be made
+        NSLog(@"cannot fetch now");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"Cannot access the feed, internet down or problem on the server" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    // Append the new data to receivedData.
+    // receivedData is an instance variable declared elsewhere.
+    NSLog(@"data returned: %@", data);
+    NSString* newStr = [NSString stringWithUTF8String:[data bytes]];
+    NSLog(@"data returned String: %@", newStr);
+    
+    //parse the json string.
+    
 }
 
 - (void)viewDidUnload

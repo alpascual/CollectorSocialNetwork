@@ -130,7 +130,7 @@
             NSString *deleteUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/upload/delete?filename=%@", filename];
             NSURL * delURL = [NSURL URLWithString:deleteUrl];
             NSURLRequest *aReq = [NSURLRequest requestWithURL:delURL];
-            NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:aReq delegate:self];
+            NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:aReq delegate:nil];
             if (theConnection) {
                 
             } else {
