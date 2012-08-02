@@ -82,6 +82,25 @@
     NSLog(@"data returned String: %@", newStr);
     
     //parse the json string.
+    NSError *error = nil;
+    NSArray *theJSONArray = [NSDictionary dictionaryWithJSONString:newStr error:&error];
+    
+    NSLog(@"How many items %d", theJSONArray.count);
+    
+    for(int i=0; i < theJSONArray.count; i++) {
+        NSDictionary *itemDic = [theJSONArray objectAtIndex:i];
+        FeedItems *item = [[FeedItems alloc] init];
+        item.ID = [itemDic objectForKey:@"ID"];
+        item.UserID = [itemDic objectForKey:@"UserID"];
+        item.Title = [itemDic objectForKey:@"Title"];
+        item.Comment = [itemDic objectForKey:@"Comment"];
+        
+        [self.fetchedDataArray addObject:item];
+    }
+    
+//    NSDictionary *data = [theDictionary objectForKey:@"data"];
+//    NSArray *currentDictionaty = [data objectForKey:@"current_condition"];    
+//    NSDictionary *temp = [currentDictionaty objectAtIndex:0];
     
 }
 

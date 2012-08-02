@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "ODRefreshControl.h"
 //#import "TMQuiltView.h"
+#import "CJSONDeserializer.h"
+#import "NSDictionary_JSONExtensions.h"
+#import "FeedItems.h"
 
 @interface FeedViewController : UIViewController
 
