@@ -14,4 +14,6 @@
 @property (nonatomic,strong) IBOutlet UIImageView *imageThumbnail;
 @property (nonatomic,strong) NSString *fullImageUrl;
 
+- (IBAction)postPressed:(id)sender;
+
 @end

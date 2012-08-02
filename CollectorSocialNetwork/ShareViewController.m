@@ -98,7 +98,7 @@
     if (theConnection) {
     } else {
         // Inform the user that the connection failed.
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Post Failed" message:@"The message cannot be posted, server returned error" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Post Failed" message:@"The message cannot be posted, server returned error or no connection available" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];        
     }
 }
@@ -111,7 +111,10 @@
     NSString* newStr = [NSString stringWithUTF8String:[data bytes]];
     NSLog(@"data returned String: %@", newStr);
     
-    //@todo redirect to main screen?
+    if ( [newStr isEqualToString:@"Posted"] == NO) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Post Failed" message:@"The message cannot be posted, server returned error or no internet available" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+    }
 }
 
 
@@ -127,9 +130,17 @@
             NSString *deleteUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/upload/delete?filename=%@", filename];
             NSURL * delURL = [NSURL URLWithString:deleteUrl];
             NSURLRequest *aReq = [NSURLRequest requestWithURL:delURL];
-            //@todo check request
-            //[[NSURLConnection alloc] initWithRequest:aReq delegate:nil];
+            NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:aReq delegate:self];
+            if (theConnection) {
+                
+            } else {
+                // inform the user that the download could not be made
+                NSLog(@"cannot delete image");
+            }
         }
+    }
+    else if ([[segue identifier] isEqualToString:@"sharePressed"]) {
+        [self postPressed:nil];
     }
 }
 

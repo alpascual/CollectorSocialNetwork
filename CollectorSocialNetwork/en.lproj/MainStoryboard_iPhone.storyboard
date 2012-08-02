@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E2620" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
@@ -11,7 +11,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
                 <viewController title="First" id="2" customClass="FeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="16">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="GradientFill.png" id="O4A-0m-nRG">
@@ -84,7 +84,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="itv-Uw-j34" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="lpf-Jz-I3g" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vjs-x2-NLN">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" alpha="0.60000000000000009" contentMode="scaleToFill" image="raindrops.jpg" id="BIN-ar-Hh7">
@@ -203,7 +203,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h33-CX-PeW" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="n6u-eO-3jM" customClass="ShareViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uuF-jq-FEl">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="baby-blue-solid.jpg" id="Sf3-q9-O4b">
@@ -224,7 +224,7 @@
                                     <barButtonItem title="Share" id="oBY-hh-2e2">
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <action selector="postPressed:" destination="n6u-eO-3jM" id="8MB-AR-0qN"/>
+                                            <segue destination="2" kind="modal" identifier="sharePressed" id="hsN-Ma-TKx"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -311,7 +311,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1JH-k7-21l" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Y7e-Gy-Fbr" customClass="SelectPictureViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZlI-aC-dMk">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="baby-blue-solid.jpg" id="LfP-yU-K9G">
@@ -538,9 +538,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="DP9-DD-msH"/>
-        <segue reference="Prk-vK-JAi"/>
         <segue reference="BQX-ku-LSc"/>
+        <segue reference="hsN-Ma-TKx"/>
+        <segue reference="Prk-vK-JAi"/>
         <segue reference="egx-Ac-n9N"/>
     </inferredMetricsTieBreakers>
 </document>
