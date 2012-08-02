@@ -216,6 +216,9 @@
                                 <items>
                                     <barButtonItem systemItem="cancel" id="sVm-sV-ves">
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="2" kind="modal" identifier="shareCancelSegue" id="DP9-DD-msH"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="XwS-FZ-aDc"/>
                                     <barButtonItem title="Share" id="oBY-hh-2e2">
@@ -517,6 +520,7 @@
         <class className="ShareViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ShareViewController.h"/>
             <relationships>
+                <relationship kind="action" name="postPressed:"/>
                 <relationship kind="outlet" name="imageThumbnail" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="postText" candidateClass="UITextView"/>
             </relationships>
@@ -534,8 +538,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="BQX-ku-LSc"/>
+        <segue reference="DP9-DD-msH"/>
         <segue reference="Prk-vK-JAi"/>
+        <segue reference="BQX-ku-LSc"/>
         <segue reference="egx-Ac-n9N"/>
     </inferredMetricsTieBreakers>
 </document>

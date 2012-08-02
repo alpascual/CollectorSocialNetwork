@@ -59,6 +59,7 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+
 - (IBAction)postPressed:(id)sender {
     
     if ( self.postText.text.length == 0 ) {
@@ -112,5 +113,25 @@
     
     //@todo redirect to main screen?
 }
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([[segue identifier] isEqualToString:@"shareCancelSegue"])
+    {
+        // Delete the picture
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        
+        if ( [defaults objectForKey:@"lastupload"] != nil) {
+            NSString *filename = [defaults objectForKey:@"lastupload"];
+            NSString *deleteUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/upload/delete?filename=%@", filename];
+            NSURL * delURL = [NSURL URLWithString:deleteUrl];
+            NSURLRequest *aReq = [NSURLRequest requestWithURL:delURL];
+            //@todo check request
+            //[[NSURLConnection alloc] initWithRequest:aReq delegate:nil];
+        }
+    }
+}
+
 
 @end
