@@ -17,6 +17,7 @@
 
 @synthesize tableView = _tableView;
 @synthesize refreshControl = _refreshControl;
+@synthesize fetchedDataArray = _fetchedDataArray;
 //@synthesize images = _images;
 
 - (void)viewDidLoad
@@ -35,6 +36,8 @@
     
     //self.quiltView.backgroundColor = [UIColor blackColor];
     
+    [self fetchData];
+    
 	
     self.refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableView];
     [self.refreshControl addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
@@ -48,7 +51,14 @@
         [refreshControl endRefreshing];
     });
     
-    //@todo add the fetching of the data here.
+    [self fetchData];
+}
+
+- (void) fetchData
+{
+    //@todo get all data here
+    self.fetchedDataArray = [[NSMutableArray alloc] init];
+    //@todo
 }
 
 - (void)viewDidUnload

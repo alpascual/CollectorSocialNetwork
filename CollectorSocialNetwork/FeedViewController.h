@@ -14,6 +14,10 @@
 
 @property (nonatomic,strong) IBOutlet UITableView *tableView;
 @property (nonatomic,strong) ODRefreshControl *refreshControl;
+@property (nonatomic,strong) NSMutableArray *fetchedDataArray;
 //@property (nonatomic,strong) NSMutableArray *images;
+
+
+- (void) fetchData;
 
 @end
