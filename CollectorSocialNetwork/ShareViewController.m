@@ -8,6 +8,7 @@
 
 #import "ShareViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "JFUrlUtil.h"
 
 @interface ShareViewController ()
 
@@ -59,6 +60,12 @@
 }
 
 - (IBAction)postPressed:(id)sender {
+    
+    if ( self.postText.text.length == 0 ) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Empty Message" message:@"The message cannot be posted without a message" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];
+        return;
+    }
     //post the message with the image
     
     //CreatePost(string userid, string title, string comment, string pictureUrl)
@@ -68,13 +75,42 @@
     
     NSMutableString *postUrl = [[NSMutableString alloc] init];
     [postUrl appendString:@"http://birds.alsandbox.us/api/CreatePost?userid="];
-    [postUrl appendString:sUserID];
+    
+    NSString *encodedUserID = [JFUrlUtil encodeUrl:sUserID];
+    [postUrl appendString:encodedUserID];
     [postUrl appendString:@"&title="];
     [postUrl appendString:@"&comment="];
-    [postUrl appendString:self.postText.text];
-    [postUrl appendString:@"&pictureUrl="];
-    [postUrl appendString:self.fullImageUrl];
     
+    NSString *encodedPostText = [JFUrlUtil encodeUrl:self.postText.text];
+    [postUrl appendString:encodedPostText];
+    [postUrl appendString:@"&pictureUrl="];
+    
+    NSString *encodedFullImageUrl = [JFUrlUtil encodeUrl:self.fullImageUrl];
+    [postUrl appendString:encodedFullImageUrl];
+   
+    // Post the big url to the server
+    NSURL *urlToOpen = [[NSURL alloc] initWithString:postUrl];
+    
+    NSURLRequest *aReq = [NSURLRequest requestWithURL:urlToOpen];
+    NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:aReq delegate:self];
+    
+    if (theConnection) {
+    } else {
+        // Inform the user that the connection failed.
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Post Failed" message:@"The message cannot be posted, server returned error" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [alert show];        
+    }
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    // Append the new data to receivedData.
+    // receivedData is an instance variable declared elsewhere.
+    NSLog(@"data returned: %@", data);
+    NSString* newStr = [NSString stringWithUTF8String:[data bytes]];
+    NSLog(@"data returned String: %@", newStr);
+    
+    //@todo redirect to main screen?
 }
 
 @end

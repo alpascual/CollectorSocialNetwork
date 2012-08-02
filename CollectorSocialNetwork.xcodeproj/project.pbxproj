@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		769337AE15CA27E1006B0947 /* JFUrlUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 769337AD15CA27E1006B0947 /* JFUrlUtil.m */; };
 		76D9037F15BF8A90000FDAFB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D9037E15BF8A90000FDAFB /* UIKit.framework */; };
 		76D9038115BF8A90000FDAFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D9038015BF8A90000FDAFB /* Foundation.framework */; };
 		76D9038315BF8A90000FDAFB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D9038215BF8A90000FDAFB /* CoreGraphics.framework */; };
@@ -73,6 +74,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		769337AC15CA27E1006B0947 /* JFUrlUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JFUrlUtil.h; path = Utils/JFUrlUtil.h; sourceTree = "<group>"; };
+		769337AD15CA27E1006B0947 /* JFUrlUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JFUrlUtil.m; path = Utils/JFUrlUtil.m; sourceTree = "<group>"; };
 		76D9037A15BF8A90000FDAFB /* CollectorSocialNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectorSocialNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76D9037E15BF8A90000FDAFB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		76D9038015BF8A90000FDAFB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -274,6 +277,8 @@
 		885167ED15C3301E00AC91F3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				769337AC15CA27E1006B0947 /* JFUrlUtil.h */,
+				769337AD15CA27E1006B0947 /* JFUrlUtil.m */,
 				888D4BAB15C870E000F0C3EF /* TMQuiltView.h */,
 				885167EF15C3304900AC91F3 /* UtilsClass.h */,
 				885167F015C3304900AC91F3 /* UtilsClass.m */,
@@ -432,6 +437,7 @@
 				885167F115C3304900AC91F3 /* UtilsClass.m in Sources */,
 				885167F415C3470B00AC91F3 /* ShareViewController.m in Sources */,
 				888D4BAF15C872EF00F0C3EF /* TMPhotoQuiltViewCell.m in Sources */,
+				769337AE15CA27E1006B0947 /* JFUrlUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
