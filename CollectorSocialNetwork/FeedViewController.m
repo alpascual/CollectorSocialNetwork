@@ -91,17 +91,17 @@
         NSDictionary *itemDic = [theJSONArray objectAtIndex:i];
         FeedItems *item = [[FeedItems alloc] init];
         item.ID = [itemDic objectForKey:@"ID"];
-        item.UserID = [itemDic objectForKey:@"UserID"];
+        item.UserID = [itemDic objectForKey:@"UserId"];
         item.Title = [itemDic objectForKey:@"Title"];
         item.Comment = [itemDic objectForKey:@"Comment"];
+        item.When = [itemDic objectForKey:@"When"];
+        item.PictureUrl = [itemDic objectForKey:@"PictureUrl"];
+        item.NumberOfComments = [[itemDic objectForKey:@"NumberOfComments"] intValue];
         
         [self.fetchedDataArray addObject:item];
     }
     
-//    NSDictionary *data = [theDictionary objectForKey:@"data"];
-//    NSArray *currentDictionaty = [data objectForKey:@"current_condition"];    
-//    NSDictionary *temp = [currentDictionaty objectAtIndex:0];
-    
+    [self.tableView reloadData];    
 }
 
 - (void)viewDidUnload
@@ -125,7 +125,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 0;
+    return self.fetchedDataArray.count;
 }
 
 
@@ -140,14 +140,20 @@
     }
     
     NSUInteger row = [indexPath row];
+    FeedItems *item = [self.fetchedDataArray objectAtIndex:row];
     
     cell.textLabel.textColor = [UIColor grayColor];
     cell.detailTextLabel.textColor = [UIColor blackColor];
     cell.detailTextLabel.numberOfLines = 2;
     
     //@todo
-    //cell.textLabel.text = [self.labelsArray objectAtIndex:row];
-    //cell.detailTextLabel.text = [self.myArray objectAtIndex:row];
+    cell.textLabel.text = item.ID;
+    cell.detailTextLabel.text = item.Comment;
+    
+    NSURL * imageURL = [NSURL URLWithString:item.PictureUrl];
+    NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+    UIImage * image = [UIImage imageWithData:imageData];
+    cell.imageView.image = image;
     
     return cell;
 }
