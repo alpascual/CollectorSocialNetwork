@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E53" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
@@ -220,6 +220,9 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="XwS-FZ-aDc"/>
                                     <barButtonItem title="Share" id="oBY-hh-2e2">
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="postPressed:" destination="n6u-eO-3jM" id="8MB-AR-0qN"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -239,6 +242,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="imageThumbnail" destination="E5F-Tc-2xg" id="A6J-id-fw9"/>
                         <outlet property="postText" destination="Hd6-rQ-pJQ" id="OHG-fx-sV3"/>
                     </connections>
                 </viewController>
@@ -513,6 +517,7 @@
         <class className="ShareViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ShareViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="imageThumbnail" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="postText" candidateClass="UITextView"/>
             </relationships>
         </class>

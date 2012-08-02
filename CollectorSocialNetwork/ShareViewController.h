@@ -12,5 +12,6 @@
 
 @property (nonatomic,strong) IBOutlet UITextView *postText;
 @property (nonatomic,strong) IBOutlet UIImageView *imageThumbnail;
+@property (nonatomic,strong) NSString *fullImageUrl;
 
 @end
