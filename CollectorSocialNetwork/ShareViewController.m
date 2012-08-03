@@ -20,6 +20,7 @@
 @synthesize imageThumbnail = _imageThumbnail;
 @synthesize fullImageUrl = _fullImageUrl;
 @synthesize imageName = _imageName;
+@synthesize charactersLeft = _charactersLeft;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,6 +34,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.postText.delegate = self;
     
     [[self.postText layer] setBorderWidth:1.5];
     [[self.postText layer] setCornerRadius:15];
@@ -152,6 +155,21 @@
     }
     else if ([[segue identifier] isEqualToString:@"sharePressed"]) {
         [self postPressed:nil];
+    }
+}
+
+- (void)textViewDidChange:(UITextView *)textView
+{
+    NSLog(@"number of characters %d", textView.text.length);
+   
+    NSInteger left = 250 - textView.text.length;
+    if ( left < 0 )
+    {
+        //@todo disable something
+    }
+    else
+    {
+        self.charactersLeft.text = [[NSString alloc] initWithFormat:@"%d characters left", left];
     }
 }
 

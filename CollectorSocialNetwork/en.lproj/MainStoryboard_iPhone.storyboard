@@ -241,10 +241,18 @@
                                 <rect key="frame" x="33" y="199" width="72" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="250 characters" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="TpH-pp-DV6">
+                                <rect key="frame" x="189" y="192" width="104" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="charactersLeft" destination="TpH-pp-DV6" id="Cn0-Hb-EGp"/>
                         <outlet property="imageThumbnail" destination="E5F-Tc-2xg" id="A6J-id-fw9"/>
                         <outlet property="postText" destination="Hd6-rQ-pJQ" id="OHG-fx-sV3"/>
                     </connections>
@@ -521,6 +529,7 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ShareViewController.h"/>
             <relationships>
                 <relationship kind="action" name="postPressed:"/>
+                <relationship kind="outlet" name="charactersLeft" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="imageThumbnail" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="postText" candidateClass="UITextView"/>
             </relationships>
