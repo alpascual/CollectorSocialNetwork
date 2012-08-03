@@ -16,6 +16,7 @@
 @property (nonatomic,strong) NSString *UserID;
 @property (nonatomic,strong) NSString *Username;
 @property (nonatomic,strong) NSString *PictureUrl;
+@property (nonatomic,strong) NSString *UsernamePictureUrl;
 @property (nonatomic) NSInteger NumberOfComments;
 @property (nonatomic,strong) NSDate *When;
 

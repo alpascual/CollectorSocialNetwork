@@ -18,5 +18,6 @@
 @synthesize PictureUrl = _PictureUrl;
 @synthesize NumberOfComments = _NumberOfComments;
 @synthesize When = _When;
+@synthesize UsernamePictureUrl = _UsernamePictureUrl;
 
 @end

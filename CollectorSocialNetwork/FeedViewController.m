@@ -94,6 +94,7 @@
         item.UserID = [itemDic objectForKey:@"UserId"];
         item.Title = [itemDic objectForKey:@"Title"];
         item.Comment = [itemDic objectForKey:@"Comment"];
+        item.UsernamePictureUrl = [itemDic objectForKey:@"UsernamePictureUrl"];
         
         NSString *timeString = [itemDic objectForKey:@"When"];
         timeString = [timeString stringByReplacingOccurrencesOfString:@"/Date(" withString:@""];
@@ -179,21 +180,31 @@
     cell.detailTextLabel.font = [UIFont fontWithName:@"Verdana" size:12];
     cell.detailTextLabel.text = item.Comment;
     
+    // User image first
+    UtilsClass *util = [[UtilsClass alloc] init];
+    NSURL *userImageUrl = [NSURL URLWithString:item.UsernamePictureUrl];
+    NSData * userImageData = [NSData dataWithContentsOfURL:userImageUrl];
+    UIImage * userImage = [UIImage imageWithData:userImageData];
+    UIImage *userThumb = [util thumbnailOfSize:CGSizeMake(50,50) image:userImage];
+    cell.imageView.image = userThumb;
+    
+    // Picture uploaded
     NSString *fullImageUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/upload/get?filename=%@", item.PictureUrl];
     NSURL * imageURL = [NSURL URLWithString:fullImageUrl];
     NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
-    UIImage * image = [UIImage imageWithData:imageData];
+    UIImage * image = [UIImage imageWithData:imageData];    
+    UIImage *thumb = [util thumbnailOfSize:CGSizeMake(40,40) image:image];
     
-    UtilsClass *util = [[UtilsClass alloc] init];
-    UIImage *thumb = [util thumbnailOfSize:CGSizeMake(50,50) image:image];    
-    cell.imageView.image = thumb;
+    UIImageView *uploadCellImage=[[UIImageView alloc] initWithFrame:CGRectMake(200, 3, 40, 40)];
+    uploadCellImage.image=thumb;
+    [cell.contentView addSubview:uploadCellImage];
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    return 100;
+    return 110;
 }
 
 

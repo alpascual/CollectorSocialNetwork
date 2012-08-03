@@ -25,6 +25,7 @@
     [super viewDidLoad];
 	
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        
     if ( [defaults objectForKey:@"userid"] != nil )
     {
         //if ( self.bEditing == NO) {
