@@ -187,6 +187,8 @@
     UIImage * userImage = [UIImage imageWithData:userImageData];
     UIImage *userThumb = [util thumbnailOfSize:CGSizeMake(50,50) image:userImage];
     cell.imageView.image = userThumb;
+    cell.imageView.layer.masksToBounds = YES;
+    cell.imageView.layer.cornerRadius = 5;
     
     // Picture uploaded
     NSString *fullImageUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/upload/get?filename=%@", item.PictureUrl];
@@ -197,6 +199,8 @@
     
     UIImageView *uploadCellImage=[[UIImageView alloc] initWithFrame:CGRectMake(200, 3, 40, 40)];
     uploadCellImage.image=thumb;
+    uploadCellImage.layer.masksToBounds = YES;
+    uploadCellImage.layer.cornerRadius = 5;
     [cell.contentView addSubview:uploadCellImage];
     
     return cell;
