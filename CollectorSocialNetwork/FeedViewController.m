@@ -97,6 +97,7 @@
         item.When = [itemDic objectForKey:@"When"];
         item.PictureUrl = [itemDic objectForKey:@"PictureUrl"];
         item.NumberOfComments = [[itemDic objectForKey:@"NumberOfComments"] intValue];
+        item.Username = [itemDic objectForKey:@"Username"];
         
         [self.fetchedDataArray addObject:item];
     }
@@ -144,24 +145,27 @@
     
     cell.textLabel.textColor = [UIColor grayColor];
     cell.detailTextLabel.textColor = [UIColor blackColor];
-    cell.detailTextLabel.numberOfLines = 2;
+    cell.detailTextLabel.numberOfLines = 10;
     
     //@todo
-    cell.textLabel.text = item.ID;
+    cell.textLabel.text = item.Username;
     cell.detailTextLabel.text = item.Comment;
     
     NSString *fullImageUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/upload/get?filename=%@", item.PictureUrl];
     NSURL * imageURL = [NSURL URLWithString:fullImageUrl];
     NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
     UIImage * image = [UIImage imageWithData:imageData];
-    cell.imageView.image = image;
+    
+    UtilsClass *util = [[UtilsClass alloc] init];
+    UIImage *thumb = [util thumbnailOfSize:CGSizeMake(50,50) image:image];    
+    cell.imageView.image = thumb;
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    return 80;
+    return 100;
 }
 
 

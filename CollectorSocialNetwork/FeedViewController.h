@@ -12,6 +12,7 @@
 #import "CJSONDeserializer.h"
 #import "NSDictionary_JSONExtensions.h"
 #import "FeedItems.h"
+#import "UtilsClass.h"
 
 @interface FeedViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 

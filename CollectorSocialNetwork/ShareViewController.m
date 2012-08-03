@@ -90,6 +90,9 @@
     NSString *cleanImageName = [self.imageName stringByReplacingOccurrencesOfString:@"\"" withString:@""];
     NSString *encodedFullImageUrl = [JFUrlUtil encodeUrl:cleanImageName];
     [postUrl appendString:encodedFullImageUrl];
+    
+    [postUrl appendString:@"&username="];
+    [postUrl appendString:[defaults objectForKey:@"email"]];
    
     // Post the big url to the server
     NSURL *urlToOpen = [[NSURL alloc] initWithString:postUrl];

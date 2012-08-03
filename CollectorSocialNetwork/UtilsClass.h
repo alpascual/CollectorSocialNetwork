@@ -12,5 +12,6 @@
 
 - (NSString *) uploadImage:(UIImageView*)imageView;
 - (NSString*) stringWithUUID;
+- (UIImage *)thumbnailOfSize:(CGSize)size image:(UIImage*)bigImage;
 
 @end

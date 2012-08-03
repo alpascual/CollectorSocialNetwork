@@ -59,4 +59,23 @@
     return uuidString;
 }
 
+- (UIImage *)thumbnailOfSize:(CGSize)size image:(UIImage*)bigImage{
+   
+    
+    UIGraphicsBeginImageContext(size);
+    
+    // draw scaled image into thumbnail context
+    [bigImage drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    
+    UIImage *newThumbnail = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // pop the context
+    UIGraphicsEndImageContext();
+    
+    if(newThumbnail == nil)
+        NSLog(@"could not scale image");
+    
+    return newThumbnail;
+}
+
 @end

@@ -14,6 +14,7 @@
 @synthesize Title = _Title;
 @synthesize Comment = _Comment;
 @synthesize UserID = _UserID;
+@synthesize Username = _Username;
 @synthesize PictureUrl = _PictureUrl;
 @synthesize NumberOfComments = _NumberOfComments;
 @synthesize When = _When;
