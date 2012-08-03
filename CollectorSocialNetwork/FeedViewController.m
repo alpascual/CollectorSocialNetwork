@@ -137,11 +137,15 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        //@todo
+        
     }
     
     NSUInteger row = [indexPath row];
     FeedItems *item = [self.fetchedDataArray objectAtIndex:row];
+    
+    if ( item.NumberOfComments > 0 )
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     cell.textLabel.textColor = [UIColor grayColor];
     cell.detailTextLabel.textColor = [UIColor blackColor];
@@ -149,6 +153,8 @@
     
     //@todo
     cell.textLabel.text = item.Username;
+    cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:13];
+    cell.detailTextLabel.font = [UIFont fontWithName:@"Verdana" size:12];
     cell.detailTextLabel.text = item.Comment;
     
     NSString *fullImageUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/upload/get?filename=%@", item.PictureUrl];
