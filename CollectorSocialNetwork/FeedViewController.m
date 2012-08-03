@@ -94,7 +94,13 @@
         item.UserID = [itemDic objectForKey:@"UserId"];
         item.Title = [itemDic objectForKey:@"Title"];
         item.Comment = [itemDic objectForKey:@"Comment"];
-        item.When = [itemDic objectForKey:@"When"];
+        
+        NSString *timeString = [itemDic objectForKey:@"When"];
+        timeString = [timeString stringByReplacingOccurrencesOfString:@"/Date(" withString:@""];
+        timeString = [timeString stringByReplacingOccurrencesOfString:@")/" withString:@""];
+        NSTimeInterval intervalForTimer = [timeString doubleValue] / 1000.0;
+        item.When = [[NSDate alloc] initWithTimeIntervalSince1970:intervalForTimer];
+        
         item.PictureUrl = [itemDic objectForKey:@"PictureUrl"];
         item.NumberOfComments = [[itemDic objectForKey:@"NumberOfComments"] intValue];
         item.Username = [itemDic objectForKey:@"Username"];
@@ -137,7 +143,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-        //@todo
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
     }
     
@@ -145,7 +151,23 @@
     FeedItems *item = [self.fetchedDataArray objectAtIndex:row];
     
     if ( item.NumberOfComments > 0 )
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    {
+        //add a converstation logo somewhere
+        UIImageView *backgroundCellImage=[[UIImageView alloc] initWithFrame:CGRectMake(260, 3, 14, 12)];
+        backgroundCellImage.image=[UIImage imageNamed:@"09-chat-2.png"];
+        [cell.contentView addSubview:backgroundCellImage];
+    }
+    
+    // add the time in a label
+    UILabel *timelabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 3, 55, 22)];
+    timelabel.textColor = [UIColor grayColor];
+    timelabel.backgroundColor = [UIColor clearColor];
+    timelabel.font = [UIFont fontWithName:@"Verdana" size:9];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"mm/dd/yyyy"];
+    NSString *stringFromDate = [formatter stringFromDate:item.When];
+    timelabel.text = stringFromDate;
+    [cell.contentView addSubview:timelabel];
     
     cell.textLabel.textColor = [UIColor grayColor];
     cell.detailTextLabel.textColor = [UIColor blackColor];

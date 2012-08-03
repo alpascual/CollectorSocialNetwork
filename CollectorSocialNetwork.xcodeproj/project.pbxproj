@@ -60,6 +60,7 @@
 		8856627215CB1A130085AC32 /* CDataScanner_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8856626715CB1A130085AC32 /* CDataScanner_Extensions.m */; };
 		8856627315CB1A130085AC32 /* NSDictionary_JSONExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8856626915CB1A130085AC32 /* NSDictionary_JSONExtensions.m */; };
 		8856627715CB1DAF0085AC32 /* FeedItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 8856627615CB1DAF0085AC32 /* FeedItems.m */; };
+		8856627C15CC65790085AC32 /* 09-chat-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8856627B15CC65790085AC32 /* 09-chat-2.png */; };
 		888C7B7D15C1BAF600A78E87 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */; };
 		888C7B7F15C1BB2200A78E87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */; };
 		888D4BAA15C86EFD00F0C3EF /* libTMQuiltView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 888D4BA715C86E3400F0C3EF /* libTMQuiltView.a */; };
@@ -161,6 +162,7 @@
 		8856626A15CB1A130085AC32 /* JSONRepresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONRepresentation.h; sourceTree = "<group>"; };
 		8856627515CB1DAF0085AC32 /* FeedItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedItems.h; sourceTree = "<group>"; };
 		8856627615CB1DAF0085AC32 /* FeedItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedItems.m; sourceTree = "<group>"; };
+		8856627B15CC65790085AC32 /* 09-chat-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "09-chat-2.png"; sourceTree = "<group>"; };
 		888C7B7B15C1BAF600A78E87 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
 		888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 		888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -265,6 +267,7 @@
 		76D903AC15BF8F6B000FDAFB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8856627B15CC65790085AC32 /* 09-chat-2.png */,
 				885167DF15C1DF4500AC91F3 /* camera-icon-md.png */,
 				885167CD15C1D30300AC91F3 /* AppIcons */,
 				76D903BF15BF902C000FDAFB /* Icons */,
@@ -499,6 +502,7 @@
 				885167DB15C1D30300AC91F3 /* Icon@2x.png in Resources */,
 				885167E015C1DF4500AC91F3 /* camera-icon-md.png in Resources */,
 				885167E515C1E6E600AC91F3 /* 86-camera.png in Resources */,
+				8856627C15CC65790085AC32 /* 09-chat-2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
