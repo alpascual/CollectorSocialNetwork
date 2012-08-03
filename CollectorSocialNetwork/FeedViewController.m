@@ -150,7 +150,8 @@
     cell.textLabel.text = item.ID;
     cell.detailTextLabel.text = item.Comment;
     
-    NSURL * imageURL = [NSURL URLWithString:item.PictureUrl];
+    NSString *fullImageUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/upload/get?filename=%@", item.PictureUrl];
+    NSURL * imageURL = [NSURL URLWithString:fullImageUrl];
     NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
     UIImage * image = [UIImage imageWithData:imageData];
     cell.imageView.image = image;

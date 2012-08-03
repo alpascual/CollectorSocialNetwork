@@ -19,6 +19,7 @@
 @synthesize postText = _postText;
 @synthesize imageThumbnail = _imageThumbnail;
 @synthesize fullImageUrl = _fullImageUrl;
+@synthesize imageName = _imageName;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,8 +40,8 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     if ( [defaults objectForKey:@"lastupload"] != nil) {
-        NSString *filename = [defaults objectForKey:@"lastupload"];        
-        self.fullImageUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/upload/get?filename=%@", filename];
+        self.imageName = [defaults objectForKey:@"lastupload"];
+        self.fullImageUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/upload/get?filename=%@", self.imageName];
         NSURL * imageURL = [NSURL URLWithString:self.fullImageUrl];
         NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
         UIImage * image = [UIImage imageWithData:imageData];
@@ -86,7 +87,8 @@
     [postUrl appendString:encodedPostText];
     [postUrl appendString:@"&pictureUrl="];
     
-    NSString *encodedFullImageUrl = [JFUrlUtil encodeUrl:self.fullImageUrl];
+    NSString *cleanImageName = [self.imageName stringByReplacingOccurrencesOfString:@"\"" withString:@""];
+    NSString *encodedFullImageUrl = [JFUrlUtil encodeUrl:cleanImageName];
     [postUrl appendString:encodedFullImageUrl];
    
     // Post the big url to the server
@@ -111,10 +113,16 @@
     NSString* newStr = [NSString stringWithUTF8String:[data bytes]];
     NSLog(@"data returned String: %@", newStr);
     
-    if ( [newStr isEqualToString:@"Posted"] == NO) {
+    if ( newStr.length > 10) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Post Failed" message:@"The message cannot be posted, server returned error or no internet available" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
     }
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Post Failed" message:@"The message cannot be posted, server returned error or no internet available" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    [alert show];
 }
 
 
