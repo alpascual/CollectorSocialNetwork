@@ -21,6 +21,7 @@
 @synthesize fullImageUrl = _fullImageUrl;
 @synthesize imageName = _imageName;
 @synthesize charactersLeft = _charactersLeft;
+@synthesize shareButton = _shareButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -162,13 +163,15 @@
 {
     NSLog(@"number of characters %d", textView.text.length);
    
-    NSInteger left = 250 - textView.text.length;
+    NSInteger left = 150 - textView.text.length;
     if ( left < 0 )
     {
-        //@todo disable something
+        //disable something
+        self.shareButton.enabled = NO;
     }
     else
     {
+        self.shareButton.enabled = YES;
         self.charactersLeft.text = [[NSString alloc] initWithFormat:@"%d characters left", left];
     }
 }

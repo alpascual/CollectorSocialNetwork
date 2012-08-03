@@ -37,7 +37,7 @@
                                 <color key="tintColor" red="0.040203633659084144" green="0.099109574377672371" blue="0.37631623641304346" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="3MW-2i-883">
-                                <rect key="frame" x="11" y="56" width="300" height="345"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -241,7 +241,7 @@
                                 <rect key="frame" x="33" y="199" width="72" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="250 characters" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="TpH-pp-DV6">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="150 characters" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="TpH-pp-DV6">
                                 <rect key="frame" x="189" y="192" width="104" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -255,6 +255,7 @@
                         <outlet property="charactersLeft" destination="TpH-pp-DV6" id="Cn0-Hb-EGp"/>
                         <outlet property="imageThumbnail" destination="E5F-Tc-2xg" id="A6J-id-fw9"/>
                         <outlet property="postText" destination="Hd6-rQ-pJQ" id="OHG-fx-sV3"/>
+                        <outlet property="shareButton" destination="oBY-hh-2e2" id="zVa-Z2-RZo"/>
                     </connections>
                 </viewController>
             </objects>
@@ -532,6 +533,7 @@
                 <relationship kind="outlet" name="charactersLeft" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="imageThumbnail" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="postText" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="shareButton" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>
         <class className="TakePictureViewController" superclassName="UIViewController">

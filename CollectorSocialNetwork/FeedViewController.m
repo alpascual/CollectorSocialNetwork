@@ -77,7 +77,7 @@
 {
     // Append the new data to receivedData.
     // receivedData is an instance variable declared elsewhere.
-    NSLog(@"data returned: %@", data);
+    //NSLog(@"data returned: %@", data);
     NSString* newStr = [NSString stringWithUTF8String:[data bytes]];
     NSLog(@"data returned String: %@", newStr);
     
@@ -188,7 +188,7 @@
     UIImage *userThumb = [util thumbnailOfSize:CGSizeMake(50,50) image:userImage];
     cell.imageView.image = userThumb;
     cell.imageView.layer.masksToBounds = YES;
-    cell.imageView.layer.cornerRadius = 5;
+    cell.imageView.layer.cornerRadius = 7;
     
     // Picture uploaded
     NSString *fullImageUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/upload/get?filename=%@", item.PictureUrl];
@@ -208,7 +208,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    return 110;
+    return 130;
 }
 
 

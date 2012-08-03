@@ -15,6 +15,7 @@
 @property (nonatomic,strong) NSString *fullImageUrl;
 @property (nonatomic,strong) NSString *imageName;
 @property (nonatomic,strong) IBOutlet UILabel *charactersLeft;
+@property (nonatomic,strong) IBOutlet UIBarButtonItem *shareButton;
 
 - (IBAction)postPressed:(id)sender;
 
