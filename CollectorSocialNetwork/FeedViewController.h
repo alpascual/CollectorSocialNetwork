@@ -20,6 +20,7 @@
 @property (nonatomic,strong) ODRefreshControl *refreshControl;
 @property (nonatomic,strong) NSMutableArray *fetchedDataArray;
 //@property (nonatomic,strong) NSMutableArray *images;
+@property (nonatomic,strong) FeedItems *selectedItem;
 
 
 - (void) fetchData;

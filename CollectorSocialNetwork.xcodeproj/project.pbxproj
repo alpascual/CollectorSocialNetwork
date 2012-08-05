@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		767C9C9515CE278800AA87B4 /* DetailFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 767C9C9415CE278800AA87B4 /* DetailFeedViewController.m */; };
 		769337AE15CA27E1006B0947 /* JFUrlUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 769337AD15CA27E1006B0947 /* JFUrlUtil.m */; };
 		76D9037F15BF8A90000FDAFB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D9037E15BF8A90000FDAFB /* UIKit.framework */; };
 		76D9038115BF8A90000FDAFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D9038015BF8A90000FDAFB /* Foundation.framework */; };
@@ -85,6 +86,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		767C9C9315CE278800AA87B4 /* DetailFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailFeedViewController.h; sourceTree = "<group>"; };
+		767C9C9415CE278800AA87B4 /* DetailFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailFeedViewController.m; sourceTree = "<group>"; };
 		769337AC15CA27E1006B0947 /* JFUrlUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JFUrlUtil.h; path = Utils/JFUrlUtil.h; sourceTree = "<group>"; };
 		769337AD15CA27E1006B0947 /* JFUrlUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JFUrlUtil.m; path = Utils/JFUrlUtil.m; sourceTree = "<group>"; };
 		76D9037A15BF8A90000FDAFB /* CollectorSocialNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectorSocialNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +235,8 @@
 				76D9039315BF8A90000FDAFB /* MainStoryboard_iPad.storyboard */,
 				76D9039615BF8A90000FDAFB /* FeedViewController.h */,
 				76D9039715BF8A90000FDAFB /* FeedViewController.m */,
+				767C9C9315CE278800AA87B4 /* DetailFeedViewController.h */,
+				767C9C9415CE278800AA87B4 /* DetailFeedViewController.m */,
 				76D9039915BF8A90000FDAFB /* first.png */,
 				76D9039B15BF8A90000FDAFB /* first@2x.png */,
 				76D9039D15BF8A90000FDAFB /* SettingsViewController.h */,
@@ -536,6 +541,7 @@
 				8856627215CB1A130085AC32 /* CDataScanner_Extensions.m in Sources */,
 				8856627315CB1A130085AC32 /* NSDictionary_JSONExtensions.m in Sources */,
 				8856627715CB1DAF0085AC32 /* FeedItems.m in Sources */,
+				767C9C9515CE278800AA87B4 /* DetailFeedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
