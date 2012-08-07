@@ -206,6 +206,15 @@
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger row = [indexPath row];
+    self.selectedItem = [self.fetchedDataArray objectAtIndex:row];
+    
+    [self performSegueWithIdentifier:@"detailSegue" sender:self];
+    //@todo do the detailSegue and add the selecteditem
+}
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
     return 130;

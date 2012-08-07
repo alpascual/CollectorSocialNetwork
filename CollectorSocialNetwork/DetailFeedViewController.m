@@ -15,6 +15,9 @@
 @implementation DetailFeedViewController
 
 @synthesize detailedImage = _detailedImage;
+@synthesize userImage = _userImage;
+@synthesize userName = _userName;
+@synthesize detailText = _detailText;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,6 +33,9 @@
     [super viewDidLoad];
 	
     self.detailedImage.layer.cornerRadius = 5;
+    self.userImage.layer.cornerRadius = 3;
+    
+    // get the item in the right places
 }
 
 - (void)viewDidUnload

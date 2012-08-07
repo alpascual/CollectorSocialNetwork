@@ -32,18 +32,44 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="otW-vT-J49">
-                                <rect key="frame" x="14" y="119" width="291" height="326"/>
+                                <rect key="frame" x="14" y="155" width="291" height="290"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="bln-KZ-SfY">
+                                <rect key="frame" x="14" y="71" width="81" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="MovieTransportBackground.png" id="0AZ-9d-qGo">
+                                <rect key="frame" x="103" y="50" width="202" height="98"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="empty" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="10" id="1sF-4t-VKp">
+                                <rect key="frame" x="108" y="50" width="192" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="8ik-MV-gbm">
+                                <rect key="frame" x="14" y="50" width="86" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="detailText" destination="1sF-4t-VKp" id="UPe-85-OFG"/>
                         <outlet property="detailedImage" destination="otW-vT-J49" id="6ug-Am-g8F"/>
+                        <outlet property="userImage" destination="bln-KZ-SfY" id="bm9-yl-wlA"/>
+                        <outlet property="userName" destination="8ik-MV-gbm" id="p1Y-LU-6M4"/>
+                        <segue destination="n6u-eO-3jM" kind="modal" identifier="detailSegue" id="L6k-3S-KHh"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="653" y="-718"/>
+            <point key="canvasLocation" x="1981" y="-992"/>
         </scene>
         <!--Feed View Controller - First-->
         <scene sceneID="11">
@@ -565,7 +591,10 @@
         <class className="DetailFeedViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailFeedViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="detailText" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="detailedImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="userImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="userName" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="FeedViewController" superclassName="UIViewController">
@@ -586,6 +615,7 @@
         <class className="SettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="createAccountPressed:"/>
                 <relationship kind="outlet" name="email" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="password1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="password2" candidateClass="UITextField"/>
@@ -616,7 +646,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="IIi-CW-kOL"/>
-        <segue reference="46e-HV-evx"/>
+        <segue reference="L6k-3S-KHh"/>
         <segue reference="egx-Ac-n9N"/>
     </inferredMetricsTieBreakers>
 </document>

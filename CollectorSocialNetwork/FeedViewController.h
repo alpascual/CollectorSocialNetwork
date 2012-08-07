@@ -23,6 +23,7 @@
 @property (nonatomic,strong) FeedItems *selectedItem;
 
 
+
 - (void) fetchData;
 
 @end
