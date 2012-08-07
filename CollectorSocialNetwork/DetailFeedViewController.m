@@ -18,6 +18,7 @@
 @synthesize userImage = _userImage;
 @synthesize userName = _userName;
 @synthesize detailText = _detailText;
+@synthesize selectedItem = _selectedItem;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

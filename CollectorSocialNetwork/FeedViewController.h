@@ -13,6 +13,7 @@
 #import "NSDictionary_JSONExtensions.h"
 #import "FeedItems.h"
 #import "UtilsClass.h"
+#import "DetailFeedViewController.h"
 
 @interface FeedViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 

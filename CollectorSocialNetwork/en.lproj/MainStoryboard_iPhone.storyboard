@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E2620" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
@@ -65,7 +65,6 @@
                         <outlet property="detailedImage" destination="otW-vT-J49" id="6ug-Am-g8F"/>
                         <outlet property="userImage" destination="bln-KZ-SfY" id="bm9-yl-wlA"/>
                         <outlet property="userName" destination="8ik-MV-gbm" id="p1Y-LU-6M4"/>
-                        <segue destination="n6u-eO-3jM" kind="modal" identifier="detailSegue" id="L6k-3S-KHh"/>
                     </connections>
                 </viewController>
             </objects>
@@ -118,6 +117,7 @@
                     <navigationItem key="navigationItem" id="NKk-AT-rK1"/>
                     <connections>
                         <outlet property="tableView" destination="3MW-2i-883" id="AJX-1n-YOy"/>
+                        <segue destination="XKY-WL-dwP" kind="modal" identifier="detailSegue" id="XSq-85-rCS"/>
                     </connections>
                 </viewController>
             </objects>
@@ -646,7 +646,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="IIi-CW-kOL"/>
-        <segue reference="L6k-3S-KHh"/>
+        <segue reference="Prk-vK-JAi"/>
         <segue reference="egx-Ac-n9N"/>
     </inferredMetricsTieBreakers>
 </document>
