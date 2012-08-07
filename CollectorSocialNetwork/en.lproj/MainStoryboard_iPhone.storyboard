@@ -20,10 +20,16 @@
                                 <items>
                                     <barButtonItem title="Back" id="Qfk-aE-fTc">
                                         <color key="tintColor" red="0.051274213110000001" green="0.71195652170000001" blue="0.16891940650000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="4" kind="modal" id="0v8-aG-OHd"/>
+                                        </connections>
                                     </barButtonItem>
                                     <barButtonItem width="146" style="plain" systemItem="fixedSpace" id="Xhp-DF-aHC"/>
                                     <barButtonItem title="Add Comment" id="rMk-7N-cLZ">
                                         <color key="tintColor" red="0.19241296950876213" green="0.4017173796016163" blue="0.68505859375" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="xaA-AI-w4R" kind="modal" id="DYK-N0-OEc"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
@@ -69,6 +75,54 @@
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1981" y="-992"/>
+        </scene>
+        <!--Add Comment View Controller-->
+        <scene sceneID="t8B-Ng-vl5">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Cb-DP-IDZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="xaA-AI-w4R" customClass="AddCommentViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3pk-B7-GSC">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="GradientFill.png" id="cwy-Mk-Tr4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="150 characters" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="dmr-sx-Udr">
+                                <rect key="frame" x="186" y="210" width="104" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="fbn-D7-56b">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="cancel" id="eRb-gR-m4c">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="faF-nK-J8o"/>
+                                    <barButtonItem title="Share Comment" id="gcW-so-C0G">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" red="0.39205238698195471" green="0.59451299322960904" blue="0.76258916440217395" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="1tf-1n-kTc">
+                                <rect key="frame" x="30" y="74" width="260" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2513" y="-992"/>
         </scene>
         <!--Feed View Controller - First-->
         <scene sceneID="11">
@@ -587,6 +641,9 @@
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="twitterImage" candidateClass="UIImageView"/>
             </relationships>
+        </class>
+        <class className="AddCommentViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddCommentViewController.h"/>
         </class>
         <class className="DetailFeedViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailFeedViewController.h"/>

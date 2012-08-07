@@ -53,7 +53,6 @@
         NSData * userImageData = [NSData dataWithContentsOfURL:userImageUrl];
         UIImage * userImage = [UIImage imageWithData:userImageData];
         self.userImage.image = userImage;
-        
     }
 }
 
