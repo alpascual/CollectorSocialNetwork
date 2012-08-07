@@ -37,6 +37,24 @@
     self.userImage.layer.cornerRadius = 3;
     
     // get the item in the right places
+    if ( self.selectedItem != nil ) {
+        self.userName.text = self.selectedItem.Username;
+        self.detailText.text = self.selectedItem.Comment;
+        
+        //add the images from url
+        // Picture uploaded
+        NSString *fullImageUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/upload/get?filename=%@", self.selectedItem.PictureUrl];
+        NSURL * imageURL = [NSURL URLWithString:fullImageUrl];
+        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+        UIImage * image = [UIImage imageWithData:imageData];
+        self.detailedImage.image = image;
+        
+        NSURL *userImageUrl = [NSURL URLWithString:self.selectedItem.UsernamePictureUrl];
+        NSData * userImageData = [NSData dataWithContentsOfURL:userImageUrl];
+        UIImage * userImage = [UIImage imageWithData:userImageData];
+        self.userImage.image = userImage;
+        
+    }
 }
 
 - (void)viewDidUnload
