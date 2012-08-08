@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddCommentViewController : UIViewController
+#import "FeedItems.h"
+#import "JFUrlUtil.h"
+
+@interface AddCommentViewController : UIViewController <UITextViewDelegate>
+
+@property (nonatomic,strong) IBOutlet UITextView *postText;
+@property (nonatomic,strong) IBOutlet UIBarButtonItem *commentButton;
+@property (nonatomic,strong) IBOutlet UILabel *charactersLeft;
+@property (nonatomic,strong) FeedItems *selectedItem;
 
 @end

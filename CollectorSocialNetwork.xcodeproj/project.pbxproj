@@ -240,6 +240,8 @@
 				76D9039715BF8A90000FDAFB /* FeedViewController.m */,
 				767C9C9315CE278800AA87B4 /* DetailFeedViewController.h */,
 				767C9C9415CE278800AA87B4 /* DetailFeedViewController.m */,
+				885662CC15D190090085AC32 /* AddCommentViewController.h */,
+				885662CD15D190090085AC32 /* AddCommentViewController.m */,
 				76D9039915BF8A90000FDAFB /* first.png */,
 				76D9039B15BF8A90000FDAFB /* first@2x.png */,
 				76D9039D15BF8A90000FDAFB /* SettingsViewController.h */,
@@ -257,8 +259,6 @@
 				885167E715C1ED9900AC91F3 /* SelectPictureViewController.m */,
 				885167F215C3470B00AC91F3 /* ShareViewController.h */,
 				885167F315C3470B00AC91F3 /* ShareViewController.m */,
-				885662CC15D190090085AC32 /* AddCommentViewController.h */,
-				885662CD15D190090085AC32 /* AddCommentViewController.m */,
 			);
 			path = CollectorSocialNetwork;
 			sourceTree = "<group>";

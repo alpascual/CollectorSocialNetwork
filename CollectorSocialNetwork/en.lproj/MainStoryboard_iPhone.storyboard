@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E2620" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
@@ -28,7 +28,7 @@
                                     <barButtonItem title="Add Comment" id="rMk-7N-cLZ">
                                         <color key="tintColor" red="0.19241296950876213" green="0.4017173796016163" blue="0.68505859375" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="xaA-AI-w4R" kind="modal" id="DYK-N0-OEc"/>
+                                            <segue destination="xaA-AI-w4R" kind="modal" identifier="shareCommentShowSegue" id="DYK-N0-OEc"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -101,11 +101,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem systemItem="cancel" id="eRb-gR-m4c">
-                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.38052983282222341" green="0.60302734375" blue="0.13636921362584492" alpha="1" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="faF-nK-J8o"/>
                                     <barButtonItem title="Share Comment" id="gcW-so-C0G">
-                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="0.60302734375" green="0.084186774155774025" blue="0.094823685504642166" alpha="1" colorSpace="calibratedRGB"/>
                                     </barButtonItem>
                                 </items>
                                 <color key="tintColor" red="0.39205238698195471" green="0.59451299322960904" blue="0.76258916440217395" alpha="1" colorSpace="calibratedRGB"/>
@@ -120,6 +120,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="charactersLeft" destination="dmr-sx-Udr" id="p27-II-a4g"/>
+                        <outlet property="commentButton" destination="gcW-so-C0G" id="a2a-1C-bbR"/>
+                        <outlet property="postText" destination="1tf-1n-kTc" id="Fgh-KN-mhl"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="2513" y="-992"/>
@@ -637,13 +642,18 @@
         <class className="AccountViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AccountViewController.h"/>
             <relationships>
-                <relationship kind="action" name="goHome:"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="twitterImage" candidateClass="UIImageView"/>
             </relationships>
         </class>
         <class className="AddCommentViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddCommentViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="postPressed:"/>
+                <relationship kind="outlet" name="charactersLeft" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="commentButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="postText" candidateClass="UITextView"/>
+            </relationships>
         </class>
         <class className="DetailFeedViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailFeedViewController.h"/>
@@ -672,7 +682,6 @@
         <class className="SettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
             <relationships>
-                <relationship kind="action" name="createAccountPressed:"/>
                 <relationship kind="outlet" name="email" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="password1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="password2" candidateClass="UITextField"/>

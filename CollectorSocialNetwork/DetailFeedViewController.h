@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-
+#import "AddCommentViewController.h"
 #import "FeedItems.h"
 
 @interface DetailFeedViewController : UIViewController

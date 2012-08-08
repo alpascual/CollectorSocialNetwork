@@ -56,6 +56,14 @@
     }
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ( [segue.identifier isEqualToString:@"shareCommentShowSegue"] == YES ) {
+        AddCommentViewController  *itemController = [segue destinationViewController];
+        itemController.selectedItem = self.selectedItem;
+    }
+}
+
 - (void)viewDidUnload
 {
     [super viewDidUnload];
