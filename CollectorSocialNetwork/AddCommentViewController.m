@@ -77,7 +77,7 @@
 - (IBAction)postPressed:(id)sender {
     
     if ( self.postText.text.length == 0 ) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Empty Message" message:@"The message cannot be posted without a message" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Empty Message" message:@"The comment cannot be posted without a message" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [alert show];
         return;
     }
