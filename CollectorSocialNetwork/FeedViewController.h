@@ -14,6 +14,7 @@
 #import "FeedItems.h"
 #import "UtilsClass.h"
 #import "DetailFeedViewController.h"
+#import "SVStatusHUD.h"
 
 @interface FeedViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
@@ -22,7 +23,7 @@
 @property (nonatomic,strong) NSMutableArray *fetchedDataArray;
 //@property (nonatomic,strong) NSMutableArray *images;
 @property (nonatomic,strong) FeedItems *selectedItem;
-@property (nonatomic,strong) UIActivityIndicatorView *activityView;
+@property (nonatomic,strong) IBOutlet UIActivityIndicatorView *activityView;
 
 
 

@@ -63,6 +63,7 @@
 		8856627715CB1DAF0085AC32 /* FeedItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 8856627615CB1DAF0085AC32 /* FeedItems.m */; };
 		8856627C15CC65790085AC32 /* 09-chat-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8856627B15CC65790085AC32 /* 09-chat-2.png */; };
 		885662CE15D190090085AC32 /* AddCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 885662CD15D190090085AC32 /* AddCommentViewController.m */; };
+		8887987715D439E90016D3B3 /* SVStatusHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8887987615D439E90016D3B3 /* SVStatusHUD.m */; };
 		888C7B7D15C1BAF600A78E87 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */; };
 		888C7B7F15C1BB2200A78E87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */; };
 		888D4BAA15C86EFD00F0C3EF /* libTMQuiltView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 888D4BA715C86E3400F0C3EF /* libTMQuiltView.a */; };
@@ -169,6 +170,8 @@
 		8856627B15CC65790085AC32 /* 09-chat-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "09-chat-2.png"; sourceTree = "<group>"; };
 		885662CC15D190090085AC32 /* AddCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddCommentViewController.h; sourceTree = "<group>"; };
 		885662CD15D190090085AC32 /* AddCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCommentViewController.m; sourceTree = "<group>"; };
+		8887987515D439E90016D3B3 /* SVStatusHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVStatusHUD.h; sourceTree = "<group>"; };
+		8887987615D439E90016D3B3 /* SVStatusHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVStatusHUD.m; sourceTree = "<group>"; };
 		888C7B7B15C1BAF600A78E87 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
 		888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 		888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -226,6 +229,7 @@
 		76D9038415BF8A90000FDAFB /* CollectorSocialNetwork */ = {
 			isa = PBXGroup;
 			children = (
+				8887987415D439E90016D3B3 /* SVStatusHUD */,
 				8856627415CB1D980085AC32 /* Model */,
 				8856625515CB1A130085AC32 /* JSON */,
 				888D4BAC15C872EF00F0C3EF /* Quilt */,
@@ -381,6 +385,15 @@
 				8856627615CB1DAF0085AC32 /* FeedItems.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		8887987415D439E90016D3B3 /* SVStatusHUD */ = {
+			isa = PBXGroup;
+			children = (
+				8887987515D439E90016D3B3 /* SVStatusHUD.h */,
+				8887987615D439E90016D3B3 /* SVStatusHUD.m */,
+			);
+			path = SVStatusHUD;
 			sourceTree = "<group>";
 		};
 		888C7B7A15C1BAF600A78E87 /* ODRefreshControl */ = {
@@ -548,6 +561,7 @@
 				8856627715CB1DAF0085AC32 /* FeedItems.m in Sources */,
 				767C9C9515CE278800AA87B4 /* DetailFeedViewController.m in Sources */,
 				885662CE15D190090085AC32 /* AddCommentViewController.m in Sources */,
+				8887987715D439E90016D3B3 /* SVStatusHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

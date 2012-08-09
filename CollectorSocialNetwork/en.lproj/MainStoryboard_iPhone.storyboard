@@ -175,9 +175,10 @@
                                     <outlet property="delegate" destination="2" id="5Y6-nS-gRc"/>
                                 </connections>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="vsa-f1-cmV">
-                                <rect key="frame" x="0.0" y="187" width="320" height="37"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" id="vsa-f1-cmV">
+                                <rect key="frame" x="142" y="186" width="37" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -185,6 +186,7 @@
                     <tabBarItem key="tabBarItem" title="Feed" image="53-house.png" id="7"/>
                     <navigationItem key="navigationItem" id="NKk-AT-rK1"/>
                     <connections>
+                        <outlet property="activityView" destination="vsa-f1-cmV" id="vJr-zd-DN8"/>
                         <outlet property="tableView" destination="3MW-2i-883" id="AJX-1n-YOy"/>
                         <segue destination="XKY-WL-dwP" kind="modal" identifier="detailSegue" id="XSq-85-rCS"/>
                     </connections>
@@ -659,6 +661,7 @@
         <class className="AddCommentViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddCommentViewController.h"/>
             <relationships>
+                <relationship kind="action" name="postPressed:"/>
                 <relationship kind="outlet" name="charactersLeft" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="commentButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="postText" candidateClass="UITextView"/>
@@ -676,6 +679,7 @@
         <class className="FeedViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FeedViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="activityView" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
@@ -691,6 +695,7 @@
         <class className="SettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="createAccountPressed:"/>
                 <relationship kind="outlet" name="email" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="password1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="password2" candidateClass="UITextField"/>

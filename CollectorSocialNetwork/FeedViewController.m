@@ -56,7 +56,10 @@
 }
 
 - (void) fetchData
-{
+{   
+    [self.activityView startAnimating];
+    self.activityView.hidden = NO;
+    
     //@todo get all data here
     self.fetchedDataArray = [[NSMutableArray alloc] init];
     
@@ -86,7 +89,21 @@
     NSError *error = nil;
     NSArray *theJSONArray = [NSDictionary dictionaryWithJSONString:newStr error:&error];
     
-    NSLog(@"How many items %d", theJSONArray.count);
+    if ( theJSONArray == nil)
+        return;
+    
+    @try {
+        NSLog(@"How many items %d", theJSONArray.count);
+    }
+    @catch (NSException *exception) {
+        
+        [self.activityView stopAnimating];
+        self.activityView.hidden = YES;
+        
+        [SVStatusHUD showWithoutImage:@"Failed! Try again"];
+        
+        return;
+    }
     
     for(int i=0; i < theJSONArray.count; i++) {
         NSDictionary *itemDic = [theJSONArray objectAtIndex:i];
@@ -154,8 +171,12 @@
     FeedItems *item = [self.fetchedDataArray objectAtIndex:row];
     
     // the last item to be displayed, stop the animation
-    if ( row == self.fetchedDataArray.count-1)
-        [self.activityView stopAnimating];
+    if ( row == 0) {
+        if ( self.activityView.hidden == NO) {
+            [self.activityView stopAnimating];
+            self.activityView.hidden = YES;
+        }
+    }
     
     if ( item.NumberOfComments > 0 )
     {
