@@ -18,6 +18,7 @@
 @synthesize tableView = _tableView;
 @synthesize refreshControl = _refreshControl;
 @synthesize fetchedDataArray = _fetchedDataArray;
+@synthesize activityView = _activityView;
 //@synthesize images = _images;
 
 - (void)viewDidLoad
@@ -109,7 +110,8 @@
         [self.fetchedDataArray addObject:item];
     }
     
-    [self.tableView reloadData];    
+    [self.tableView reloadData];
+    
 }
 
 - (void)viewDidUnload
@@ -150,6 +152,10 @@
     
     NSUInteger row = [indexPath row];
     FeedItems *item = [self.fetchedDataArray objectAtIndex:row];
+    
+    // the last item to be displayed, stop the animation
+    if ( row == self.fetchedDataArray.count-1)
+        [self.activityView stopAnimating];
     
     if ( item.NumberOfComments > 0 )
     {

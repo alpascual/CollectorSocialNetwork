@@ -22,6 +22,7 @@
 @property (nonatomic,strong) NSMutableArray *fetchedDataArray;
 //@property (nonatomic,strong) NSMutableArray *images;
 @property (nonatomic,strong) FeedItems *selectedItem;
+@property (nonatomic,strong) UIActivityIndicatorView *activityView;
 
 
 
