@@ -90,6 +90,7 @@
     //parse the json string.
     NSError *error = nil;
     NSArray *theJSONArray = [NSDictionary dictionaryWithJSONString:newStr error:&error];
+    self.collectedData = nil;
     
     if ( theJSONArray == nil)
     {   
