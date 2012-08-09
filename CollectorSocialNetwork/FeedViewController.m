@@ -19,6 +19,7 @@
 @synthesize refreshControl = _refreshControl;
 @synthesize fetchedDataArray = _fetchedDataArray;
 @synthesize activityView = _activityView;
+@synthesize collectedData = _collectedData;
 //@synthesize images = _images;
 
 - (void)viewDidLoad
@@ -62,6 +63,7 @@
     
     //@todo get all data here
     self.fetchedDataArray = [[NSMutableArray alloc] init];
+    self.collectedData = [[NSMutableData alloc] init];
     
     NSString *fetchUrl = @"http://birds.alsandbox.us/api/LastPosts?many=50";
     NSURL * nURL = [NSURL URLWithString:fetchUrl];
@@ -77,12 +79,12 @@
     }
 }
 
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
     // Append the new data to receivedData.
     // receivedData is an instance variable declared elsewhere.
     //NSLog(@"data returned: %@", data);
-    NSString* newStr = [NSString stringWithUTF8String:[data bytes]];
+    NSString* newStr = [NSString stringWithUTF8String:[self.collectedData bytes]];
     NSLog(@"data returned String: %@", newStr);
     
     //parse the json string.
@@ -90,7 +92,13 @@
     NSArray *theJSONArray = [NSDictionary dictionaryWithJSONString:newStr error:&error];
     
     if ( theJSONArray == nil)
+    {   
+        [self.activityView stopAnimating];
+        self.activityView.hidden = YES;
+        
+        [SVStatusHUD showWithoutImage:@"Failed! Try again"];
         return;
+    }
     
     @try {
         NSLog(@"How many items %d", theJSONArray.count);
@@ -128,7 +136,11 @@
     }
     
     [self.tableView reloadData];
-    
+}
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{  
+    [self.collectedData appendData:data];
 }
 
 - (void)viewDidUnload
@@ -224,7 +236,7 @@
     UIImage * image = [UIImage imageWithData:imageData];    
     UIImage *thumb = [util thumbnailOfSize:CGSizeMake(40,40) image:image];
     
-    UIImageView *uploadCellImage=[[UIImageView alloc] initWithFrame:CGRectMake(200, 3, 40, 40)];
+    UIImageView *uploadCellImage=[[UIImageView alloc] initWithFrame:CGRectMake(255, 3, 40, 40)];
     uploadCellImage.image=thumb;
     uploadCellImage.layer.masksToBounds = YES;
     uploadCellImage.layer.cornerRadius = 5;
