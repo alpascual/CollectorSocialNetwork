@@ -72,6 +72,8 @@
     [self.activityView startAnimating];
     self.activityView.hidden = NO;
     
+    self.collectedData = nil;
+    
     //@todo get all data here
     self.fetchedDataArray = [[NSMutableArray alloc] init];
     self.collectedData = [[NSMutableData alloc] init];
@@ -151,8 +153,9 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
-{  
-    [self.collectedData appendData:data];
+{
+    if ( data )
+        [self.collectedData appendData:data];
 }
 
 - (void)viewDidUnload
@@ -192,6 +195,9 @@
     }
     
     NSUInteger row = [indexPath row];
+    if ( row > self.fetchedDataArray.count)
+        return nil;
+    
     FeedItems *item = [self.fetchedDataArray objectAtIndex:row];
     
     // the last item to be displayed, stop the animation
@@ -206,40 +212,39 @@
     // Picture View Implementation
     if ( self.bPictureView == YES) {
         // add the time in a label
-        UILabel *timelabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 3, 55, 22)];
-        timelabel.textColor = [UIColor grayColor];
-        timelabel.backgroundColor = [UIColor clearColor];
-        timelabel.font = [UIFont fontWithName:@"Verdana" size:9];
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:@"mm/dd/yyyy"];
-        NSString *stringFromDate = [formatter stringFromDate:item.When];
-        timelabel.text = stringFromDate;
-        [cell.contentView addSubview:timelabel];
+//        UILabel *timelabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 3, 55, 22)];
+//        timelabel.textColor = [UIColor grayColor];
+//        timelabel.backgroundColor = [UIColor clearColor];
+//        timelabel.font = [UIFont fontWithName:@"Verdana" size:9];
+//        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//        [formatter setDateFormat:@"mm/dd/yyyy"];
+//        NSString *stringFromDate = [formatter stringFromDate:item.When];
+//        timelabel.text = stringFromDate;
+//        [cell.contentView addSubview:timelabel];
         
         // User image first
-        NSURL *userImageUrl = [NSURL URLWithString:item.UsernamePictureUrl];
-        NSData * userImageData = [NSData dataWithContentsOfURL:userImageUrl];
-        UIImage * userImage = [UIImage imageWithData:userImageData];
-        UIImage *userThumb = [util thumbnailOfSize:CGSizeMake(50,50) image:userImage];
-        UIImageView *userAvatarImage= [[UIImageView alloc] initWithFrame:CGRectMake(10, 2, 50, 50)];
-        userAvatarImage.image = userThumb;
-        userAvatarImage.layer.masksToBounds = YES;
-        userAvatarImage.layer.cornerRadius = 7;
-        [cell.contentView addSubview:userAvatarImage];
+//        NSURL *userImageUrl = [NSURL URLWithString:item.UsernamePictureUrl];
+//        NSData * userImageData = [NSData dataWithContentsOfURL:userImageUrl];
+//        UIImage * userImage = [UIImage imageWithData:userImageData];
+//        UIImage *userThumb = [util thumbnailOfSize:CGSizeMake(50,50) image:userImage];
+//        UIImageView *userAvatarImage= [[UIImageView alloc] initWithFrame:CGRectMake(10, 2, 50, 50)];
+//        userAvatarImage.image = userThumb;
+//        userAvatarImage.layer.masksToBounds = YES;
+//        userAvatarImage.layer.cornerRadius = 7;
+//        [cell.contentView addSubview:userAvatarImage];
         
         // Picture uploaded
-        NSString *fullImageUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/upload/get?filename=%@", item.PictureUrl];
-        NSURL * imageURL = [NSURL URLWithString:fullImageUrl];
-        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
-        UIImage * image = [UIImage imageWithData:imageData];
-        UIImage *thumb = [util thumbnailOfSize:CGSizeMake(100,100) image:image];
-        
-        UIImageView *uploadCellImage=[[UIImageView alloc] initWithFrame:CGRectMake(15, 10, 100, 100)];
-        uploadCellImage.image=thumb;
-        uploadCellImage.layer.masksToBounds = YES;
-        uploadCellImage.layer.cornerRadius = 5;
-        [cell.contentView addSubview:uploadCellImage];
-        
+//        NSString *fullImageUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/upload/get?filename=%@", item.PictureUrl];
+//        NSURL * imageURL = [NSURL URLWithString:fullImageUrl];
+//        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+//        UIImage * image = [UIImage imageWithData:imageData];
+//        UIImage *thumb = [util thumbnailOfSize:CGSizeMake(100,100) image:image];
+//        UIImageView *uploadCellImage=[[UIImageView alloc] initWithFrame:CGRectMake(15, 10, 100, 100)];
+//        uploadCellImage.image=thumb;
+//        uploadCellImage.layer.masksToBounds = YES;
+//        uploadCellImage.layer.cornerRadius = 5;
+//        [cell.contentView addSubview:uploadCellImage];
+//        
         //@todo add the labels as subviews better
         UILabel *usernameLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 2, 50, 50)];
         usernameLabel.text = item.Username;
@@ -249,6 +254,14 @@
         UILabel *commentLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 110, 150, 150)];
         commentLabel.text = item.Comment;
         [cell.contentView addSubview:commentLabel];
+        
+        if ( item.NumberOfComments > 0 )
+        {
+            //add a converstation logo somewhere
+            UIImageView *backgroundCellImage=[[UIImageView alloc] initWithFrame:CGRectMake(100, 3, 14, 12)];
+            backgroundCellImage.image=[UIImage imageNamed:@"09-chat-2.png"];
+            [cell.contentView addSubview:backgroundCellImage];
+        }
     }
     
     else {
@@ -332,6 +345,22 @@
         return 200;
     else
         return 130;
+}
+
+- (IBAction)tableChanged:(id)sender {
+    UISegmentedControl *tableSwitch = (UISegmentedControl*) sender;
+    
+    if ( tableSwitch.selectedSegmentIndex == 0 )
+        self.bPictureView = NO;
+    else
+        self.bPictureView = YES;
+    
+    [self.tableView clearsContextBeforeDrawing];
+    
+    self.fetchedDataArray = nil;
+    [self.tableView reloadData];
+    
+    [self fetchData];
 }
 
 

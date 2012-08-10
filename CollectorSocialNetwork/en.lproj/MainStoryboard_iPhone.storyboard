@@ -164,6 +164,9 @@
                                                 <segment title="" image="179-notepad.png"/>
                                                 <segment title="" image="41-picture-frame.png"/>
                                             </segments>
+                                            <connections>
+                                                <action selector="tableChanged:" destination="2" eventType="valueChanged" id="mz4-Rf-0su"/>
+                                            </connections>
                                         </segmentedControl>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="FwH-Jq-L9E"/>
@@ -672,6 +675,7 @@
         <class className="AddCommentViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddCommentViewController.h"/>
             <relationships>
+                <relationship kind="action" name="postPressed:"/>
                 <relationship kind="outlet" name="charactersLeft" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="commentButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="postText" candidateClass="UITextView"/>
@@ -705,6 +709,7 @@
         <class className="SettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="createAccountPressed:"/>
                 <relationship kind="outlet" name="email" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="password1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="password2" candidateClass="UITextField"/>
