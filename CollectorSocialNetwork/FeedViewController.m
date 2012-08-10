@@ -241,8 +241,14 @@
         [cell.contentView addSubview:uploadCellImage];
         
         //@todo add the labels as subviews better
+        UILabel *usernameLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 2, 50, 50)];
+        usernameLabel.text = item.Username;
+        [cell.contentView addSubview:usernameLabel];
         
         //@todo add the comment box as well
+        UILabel *commentLabel = [[UILabel alloc] initWithFrame:CGRectMake(15, 110, 150, 150)];
+        commentLabel.text = item.Comment;
+        [cell.contentView addSubview:commentLabel];
     }
     
     else {
