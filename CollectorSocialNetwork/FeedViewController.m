@@ -239,6 +239,8 @@
         uploadCellImage.layer.masksToBounds = YES;
         uploadCellImage.layer.cornerRadius = 5;
         [cell.contentView addSubview:uploadCellImage];
+        
+        //@todo add the labels as subviews better
     }
     
     else {
@@ -267,7 +269,7 @@
         cell.detailTextLabel.textColor = [UIColor blackColor];
         cell.detailTextLabel.numberOfLines = 10;
         
-        //@todo
+        // title and detail text
         cell.textLabel.text = item.Username;
         cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:13];
         cell.detailTextLabel.font = [UIFont fontWithName:@"Verdana" size:12];
