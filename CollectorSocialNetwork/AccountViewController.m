@@ -30,7 +30,17 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];    
+    [super viewDidLoad];
+    
+    AppDelegate *app = [[UIApplication sharedApplication] delegate];
+    NetworkStatus netStatus = [app.internetReachability currentReachabilityStatus];
+    if (netStatus == NotReachable)
+    {
+        [SVStatusHUD showWithoutImage:@"No internet"];
+        return;
+    }
+    
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     NSString *email = [defaults objectForKey:@"email"];

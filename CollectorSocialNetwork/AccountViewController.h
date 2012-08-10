@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Reachability.h"
+#import "AppDelegate.h"
+#import "SVStatusHUD.h"
 
 @interface AccountViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 

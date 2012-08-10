@@ -64,6 +64,9 @@
 		8856627C15CC65790085AC32 /* 09-chat-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8856627B15CC65790085AC32 /* 09-chat-2.png */; };
 		885662CE15D190090085AC32 /* AddCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 885662CD15D190090085AC32 /* AddCommentViewController.m */; };
 		8887987715D439E90016D3B3 /* SVStatusHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8887987615D439E90016D3B3 /* SVStatusHUD.m */; };
+		8887987F15D4C4460016D3B3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8887987E15D4C4460016D3B3 /* Reachability.m */; };
+		8887988115D4C5210016D3B3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8887988015D4C5210016D3B3 /* CFNetwork.framework */; };
+		8887988315D4C54C0016D3B3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8887988215D4C54C0016D3B3 /* SystemConfiguration.framework */; };
 		888C7B7D15C1BAF600A78E87 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */; };
 		888C7B7F15C1BB2200A78E87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */; };
 		888D4BAA15C86EFD00F0C3EF /* libTMQuiltView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 888D4BA715C86E3400F0C3EF /* libTMQuiltView.a */; };
@@ -172,6 +175,10 @@
 		885662CD15D190090085AC32 /* AddCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddCommentViewController.m; sourceTree = "<group>"; };
 		8887987515D439E90016D3B3 /* SVStatusHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVStatusHUD.h; sourceTree = "<group>"; };
 		8887987615D439E90016D3B3 /* SVStatusHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVStatusHUD.m; sourceTree = "<group>"; };
+		8887987D15D4C4460016D3B3 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		8887987E15D4C4460016D3B3 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		8887988015D4C5210016D3B3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		8887988215D4C54C0016D3B3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		888C7B7B15C1BAF600A78E87 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
 		888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 		888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -186,6 +193,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8887988315D4C54C0016D3B3 /* SystemConfiguration.framework in Frameworks */,
+				8887988115D4C5210016D3B3 /* CFNetwork.framework in Frameworks */,
 				888D4BAA15C86EFD00F0C3EF /* libTMQuiltView.a in Frameworks */,
 				888C7B7F15C1BB2200A78E87 /* QuartzCore.framework in Frameworks */,
 				76D9037F15BF8A90000FDAFB /* UIKit.framework in Frameworks */,
@@ -200,6 +209,8 @@
 		76D9036F15BF8A90000FDAFB = {
 			isa = PBXGroup;
 			children = (
+				8887988215D4C54C0016D3B3 /* SystemConfiguration.framework */,
+				8887988015D4C5210016D3B3 /* CFNetwork.framework */,
 				888D4B9D15C86E3300F0C3EF /* TMQuiltView.xcodeproj */,
 				888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */,
 				76D9038415BF8A90000FDAFB /* CollectorSocialNetwork */,
@@ -229,7 +240,8 @@
 		76D9038415BF8A90000FDAFB /* CollectorSocialNetwork */ = {
 			isa = PBXGroup;
 			children = (
-				8887987415D439E90016D3B3 /* SVStatusHUD */,
+				8887987C15D4C4460016D3B3 /* Reachability */,
+				8887987415D439E90016D3B3 /* SVStatusHUB */,
 				8856627415CB1D980085AC32 /* Model */,
 				8856625515CB1A130085AC32 /* JSON */,
 				888D4BAC15C872EF00F0C3EF /* Quilt */,
@@ -387,13 +399,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		8887987415D439E90016D3B3 /* SVStatusHUD */ = {
+		8887987415D439E90016D3B3 /* SVStatusHUB */ = {
 			isa = PBXGroup;
 			children = (
 				8887987515D439E90016D3B3 /* SVStatusHUD.h */,
 				8887987615D439E90016D3B3 /* SVStatusHUD.m */,
 			);
+			name = SVStatusHUB;
 			path = SVStatusHUD;
+			sourceTree = "<group>";
+		};
+		8887987C15D4C4460016D3B3 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				8887987D15D4C4460016D3B3 /* Reachability.h */,
+				8887987E15D4C4460016D3B3 /* Reachability.m */,
+			);
+			path = Reachability;
 			sourceTree = "<group>";
 		};
 		888C7B7A15C1BAF600A78E87 /* ODRefreshControl */ = {
@@ -562,6 +584,7 @@
 				767C9C9515CE278800AA87B4 /* DetailFeedViewController.m in Sources */,
 				885662CE15D190090085AC32 /* AddCommentViewController.m in Sources */,
 				8887987715D439E90016D3B3 /* SVStatusHUD.m in Sources */,
+				8887987F15D4C4460016D3B3 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
