@@ -241,6 +241,8 @@
         [cell.contentView addSubview:uploadCellImage];
         
         //@todo add the labels as subviews better
+        
+        //@todo add the comment box as well
     }
     
     else {
