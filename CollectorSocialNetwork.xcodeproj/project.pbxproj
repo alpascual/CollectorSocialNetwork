@@ -67,6 +67,8 @@
 		8887987F15D4C4460016D3B3 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8887987E15D4C4460016D3B3 /* Reachability.m */; };
 		8887988115D4C5210016D3B3 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8887988015D4C5210016D3B3 /* CFNetwork.framework */; };
 		8887988315D4C54C0016D3B3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8887988215D4C54C0016D3B3 /* SystemConfiguration.framework */; };
+		8887988615D4D0720016D3B3 /* 41-picture-frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 8887988415D4D0720016D3B3 /* 41-picture-frame.png */; };
+		8887988715D4D0720016D3B3 /* 179-notepad.png in Resources */ = {isa = PBXBuildFile; fileRef = 8887988515D4D0720016D3B3 /* 179-notepad.png */; };
 		888C7B7D15C1BAF600A78E87 /* ODRefreshControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */; };
 		888C7B7F15C1BB2200A78E87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */; };
 		888D4BAA15C86EFD00F0C3EF /* libTMQuiltView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 888D4BA715C86E3400F0C3EF /* libTMQuiltView.a */; };
@@ -179,6 +181,8 @@
 		8887987E15D4C4460016D3B3 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		8887988015D4C5210016D3B3 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		8887988215D4C54C0016D3B3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8887988415D4D0720016D3B3 /* 41-picture-frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "41-picture-frame.png"; sourceTree = "<group>"; };
+		8887988515D4D0720016D3B3 /* 179-notepad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "179-notepad.png"; sourceTree = "<group>"; };
 		888C7B7B15C1BAF600A78E87 /* ODRefreshControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ODRefreshControl.h; sourceTree = "<group>"; };
 		888C7B7C15C1BAF600A78E87 /* ODRefreshControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ODRefreshControl.m; sourceTree = "<group>"; };
 		888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -293,6 +297,8 @@
 		76D903AC15BF8F6B000FDAFB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8887988415D4D0720016D3B3 /* 41-picture-frame.png */,
+				8887988515D4D0720016D3B3 /* 179-notepad.png */,
 				8856627B15CC65790085AC32 /* 09-chat-2.png */,
 				885167DF15C1DF4500AC91F3 /* camera-icon-md.png */,
 				885167CD15C1D30300AC91F3 /* AppIcons */,
@@ -548,6 +554,8 @@
 				885167E015C1DF4500AC91F3 /* camera-icon-md.png in Resources */,
 				885167E515C1E6E600AC91F3 /* 86-camera.png in Resources */,
 				8856627C15CC65790085AC32 /* 09-chat-2.png in Resources */,
+				8887988615D4D0720016D3B3 /* 41-picture-frame.png in Resources */,
+				8887988715D4D0720016D3B3 /* 179-notepad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

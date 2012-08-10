@@ -20,10 +20,21 @@
 @synthesize fetchedDataArray = _fetchedDataArray;
 @synthesize activityView = _activityView;
 @synthesize collectedData = _collectedData;
+@synthesize bPictureView = _bPictureView;
 //@synthesize images = _images;
 
 - (void)viewDidLoad
 {
+    self.bPictureView = NO;
+    
+    AppDelegate *app = [[UIApplication sharedApplication] delegate];
+    NetworkStatus netStatus = [app.internetReachability currentReachabilityStatus];
+    if (netStatus == NotReachable)
+    {
+        [SVStatusHUD showWithoutImage:@"No internet"];
+        return;
+    }
+    
     //@todo redirect if not acccount with alert first
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ( [defaults objectForKey:@"userid"] == nil )
@@ -190,58 +201,100 @@
             self.activityView.hidden = YES;
         }
     }
+    UtilsClass *util = [[UtilsClass alloc] init];
     
-    if ( item.NumberOfComments > 0 )
-    {
-        //add a converstation logo somewhere
-        UIImageView *backgroundCellImage=[[UIImageView alloc] initWithFrame:CGRectMake(260, 3, 14, 12)];
-        backgroundCellImage.image=[UIImage imageNamed:@"09-chat-2.png"];
-        [cell.contentView addSubview:backgroundCellImage];
+    // Picture View Implementation
+    if ( self.bPictureView == YES) {
+        // add the time in a label
+        UILabel *timelabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 3, 55, 22)];
+        timelabel.textColor = [UIColor grayColor];
+        timelabel.backgroundColor = [UIColor clearColor];
+        timelabel.font = [UIFont fontWithName:@"Verdana" size:9];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"mm/dd/yyyy"];
+        NSString *stringFromDate = [formatter stringFromDate:item.When];
+        timelabel.text = stringFromDate;
+        [cell.contentView addSubview:timelabel];
+        
+        // User image first
+        NSURL *userImageUrl = [NSURL URLWithString:item.UsernamePictureUrl];
+        NSData * userImageData = [NSData dataWithContentsOfURL:userImageUrl];
+        UIImage * userImage = [UIImage imageWithData:userImageData];
+        UIImage *userThumb = [util thumbnailOfSize:CGSizeMake(50,50) image:userImage];
+        UIImageView *userAvatarImage= [[UIImageView alloc] initWithFrame:CGRectMake(10, 2, 50, 50)];
+        userAvatarImage.image = userThumb;
+        userAvatarImage.layer.masksToBounds = YES;
+        userAvatarImage.layer.cornerRadius = 7;
+        [cell.contentView addSubview:userAvatarImage];
+        
+        // Picture uploaded
+        NSString *fullImageUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/upload/get?filename=%@", item.PictureUrl];
+        NSURL * imageURL = [NSURL URLWithString:fullImageUrl];
+        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+        UIImage * image = [UIImage imageWithData:imageData];
+        UIImage *thumb = [util thumbnailOfSize:CGSizeMake(100,100) image:image];
+        
+        UIImageView *uploadCellImage=[[UIImageView alloc] initWithFrame:CGRectMake(15, 10, 100, 100)];
+        uploadCellImage.image=thumb;
+        uploadCellImage.layer.masksToBounds = YES;
+        uploadCellImage.layer.cornerRadius = 5;
+        [cell.contentView addSubview:uploadCellImage];
     }
     
-    // add the time in a label
-    UILabel *timelabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 3, 55, 22)];
-    timelabel.textColor = [UIColor grayColor];
-    timelabel.backgroundColor = [UIColor clearColor];
-    timelabel.font = [UIFont fontWithName:@"Verdana" size:9];
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"mm/dd/yyyy"];
-    NSString *stringFromDate = [formatter stringFromDate:item.When];
-    timelabel.text = stringFromDate;
-    [cell.contentView addSubview:timelabel];
-    
-    cell.textLabel.textColor = [UIColor grayColor];
-    cell.detailTextLabel.textColor = [UIColor blackColor];
-    cell.detailTextLabel.numberOfLines = 10;
-    
-    //@todo
-    cell.textLabel.text = item.Username;
-    cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:13];
-    cell.detailTextLabel.font = [UIFont fontWithName:@"Verdana" size:12];
-    cell.detailTextLabel.text = item.Comment;
-    
-    // User image first
-    UtilsClass *util = [[UtilsClass alloc] init];
-    NSURL *userImageUrl = [NSURL URLWithString:item.UsernamePictureUrl];
-    NSData * userImageData = [NSData dataWithContentsOfURL:userImageUrl];
-    UIImage * userImage = [UIImage imageWithData:userImageData];
-    UIImage *userThumb = [util thumbnailOfSize:CGSizeMake(50,50) image:userImage];
-    cell.imageView.image = userThumb;
-    cell.imageView.layer.masksToBounds = YES;
-    cell.imageView.layer.cornerRadius = 7;
-    
-    // Picture uploaded
-    NSString *fullImageUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/upload/get?filename=%@", item.PictureUrl];
-    NSURL * imageURL = [NSURL URLWithString:fullImageUrl];
-    NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
-    UIImage * image = [UIImage imageWithData:imageData];    
-    UIImage *thumb = [util thumbnailOfSize:CGSizeMake(40,40) image:image];
-    
-    UIImageView *uploadCellImage=[[UIImageView alloc] initWithFrame:CGRectMake(255, 3, 40, 40)];
-    uploadCellImage.image=thumb;
-    uploadCellImage.layer.masksToBounds = YES;
-    uploadCellImage.layer.cornerRadius = 5;
-    [cell.contentView addSubview:uploadCellImage];
+    else {
+        // Normal Table implementation.
+        
+        if ( item.NumberOfComments > 0 )
+        {
+            //add a converstation logo somewhere
+            UIImageView *backgroundCellImage=[[UIImageView alloc] initWithFrame:CGRectMake(100, 3, 14, 12)];
+            backgroundCellImage.image=[UIImage imageNamed:@"09-chat-2.png"];
+            [cell.contentView addSubview:backgroundCellImage];
+        }
+        
+        // add the time in a label
+        UILabel *timelabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 3, 55, 22)];
+        timelabel.textColor = [UIColor grayColor];
+        timelabel.backgroundColor = [UIColor clearColor];
+        timelabel.font = [UIFont fontWithName:@"Verdana" size:9];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"mm/dd/yyyy"];
+        NSString *stringFromDate = [formatter stringFromDate:item.When];
+        timelabel.text = stringFromDate;
+        [cell.contentView addSubview:timelabel];
+        
+        cell.textLabel.textColor = [UIColor grayColor];
+        cell.detailTextLabel.textColor = [UIColor blackColor];
+        cell.detailTextLabel.numberOfLines = 10;
+        
+        //@todo
+        cell.textLabel.text = item.Username;
+        cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:13];
+        cell.detailTextLabel.font = [UIFont fontWithName:@"Verdana" size:12];
+        cell.detailTextLabel.text = item.Comment;
+        
+        // User image first        
+        NSURL *userImageUrl = [NSURL URLWithString:item.UsernamePictureUrl];
+        NSData * userImageData = [NSData dataWithContentsOfURL:userImageUrl];
+        UIImage * userImage = [UIImage imageWithData:userImageData];
+        UIImage *userThumb = [util thumbnailOfSize:CGSizeMake(50,50) image:userImage];
+        cell.imageView.image = userThumb;
+        cell.imageView.layer.masksToBounds = YES;
+        cell.imageView.layer.cornerRadius = 7;
+        
+        // Picture uploaded
+        NSString *fullImageUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/upload/get?filename=%@", item.PictureUrl];
+        NSURL * imageURL = [NSURL URLWithString:fullImageUrl];
+        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+        UIImage * image = [UIImage imageWithData:imageData];
+        UIImage *thumb = [util thumbnailOfSize:CGSizeMake(40,40) image:image];
+        
+        UIImageView *uploadCellImage=[[UIImageView alloc] initWithFrame:CGRectMake(255, 3, 40, 40)];
+        uploadCellImage.image=thumb;
+        uploadCellImage.layer.masksToBounds = YES;
+        uploadCellImage.layer.cornerRadius = 5;
+        [cell.contentView addSubview:uploadCellImage];
+    }
     
     return cell;
 }
@@ -265,7 +318,10 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    return 130;
+    if ( self.bPictureView == YES)
+        return 200;
+    else
+        return 130;
 }
 
 

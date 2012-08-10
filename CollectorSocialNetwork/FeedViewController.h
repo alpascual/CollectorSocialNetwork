@@ -15,6 +15,8 @@
 #import "UtilsClass.h"
 #import "DetailFeedViewController.h"
 #import "SVStatusHUD.h"
+#import "AppDelegate.h"
+#import "Reachability.h"
 
 @interface FeedViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
@@ -25,6 +27,7 @@
 @property (nonatomic,strong) FeedItems *selectedItem;
 @property (nonatomic,strong) IBOutlet UIActivityIndicatorView *activityView;
 @property (nonatomic,strong) NSMutableData *collectedData;
+@property (nonatomic) BOOL bPictureView;
 
 
 - (void) fetchData;
