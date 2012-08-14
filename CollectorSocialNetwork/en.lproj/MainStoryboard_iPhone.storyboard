@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E2620" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
         <deployment defaultVersion="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
@@ -11,7 +11,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZrZ-aP-uwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="XKY-WL-dwP" customClass="DetailFeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JvI-9I-KPZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="iM9-za-V8H">
@@ -26,7 +26,7 @@
                                     </barButtonItem>
                                     <barButtonItem title="Read Comments" id="6Mf-YS-lbV">
                                         <connections>
-                                            <segue destination="bKl-sZ-qeX" kind="modal" id="2VT-KL-oDr"/>
+                                            <segue destination="bKl-sZ-qeX" kind="modal" identifier="commentsListSegue" id="2VT-KL-oDr"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="23" style="plain" systemItem="fixedSpace" id="Xhp-DF-aHC"/>
@@ -89,7 +89,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SKU-x3-Uk4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="bKl-sZ-qeX" customClass="CommentsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a0l-Rq-MGT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="baby-blue-solid.jpg" id="6Ni-aB-fdD">
@@ -106,6 +106,13 @@
                                             <segue destination="XKY-WL-dwP" kind="modal" id="bHB-0Q-xpc"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem width="145" style="plain" systemItem="fixedSpace" id="sRs-vK-wc8"/>
+                                    <barButtonItem title="Add Comment" id="ZKY-Wx-3qr">
+                                        <color key="tintColor" red="0.1924129695" green="0.40171737959999998" blue="0.6850585938" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <segue destination="xaA-AI-w4R" kind="modal" identifier="shareCommentShowSegue2" id="hA8-ep-boB"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                                 <color key="tintColor" red="0.78804347829999999" green="0.78804347829999999" blue="0.78804347829999999" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
@@ -118,11 +125,17 @@
                                     <outlet property="delegate" destination="bKl-sZ-qeX" id="UUs-hX-WHQ"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" id="R6i-66-DUo">
+                                <rect key="frame" x="150" y="220" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" cocoaTouchSystemColor="darkTextColor"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Uwp-rA-wlg"/>
                     <connections>
+                        <outlet property="activityView" destination="R6i-66-DUo" id="1SN-Xm-3nL"/>
                         <outlet property="tableView" destination="vJA-Rn-G6Y" id="RFf-WZ-kED"/>
                     </connections>
                 </viewController>
@@ -135,7 +148,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Cb-DP-IDZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="xaA-AI-w4R" customClass="AddCommentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3pk-B7-GSC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="GradientFill.png" id="cwy-Mk-Tr4">
@@ -728,6 +741,7 @@
         <class className="AddCommentViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddCommentViewController.h"/>
             <relationships>
+                <relationship kind="action" name="postPressed:"/>
                 <relationship kind="outlet" name="charactersLeft" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="commentButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="postText" candidateClass="UITextView"/>
@@ -735,6 +749,10 @@
         </class>
         <class className="CommentsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="activityView" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
         </class>
         <class className="DetailFeedViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailFeedViewController.h"/>
@@ -794,8 +812,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="Vdr-fj-QUR"/>
+        <segue reference="hA8-ep-boB"/>
         <segue reference="bHB-0Q-xpc"/>
-        <segue reference="0v8-aG-OHd"/>
         <segue reference="egx-Ac-n9N"/>
         <segue reference="Prk-vK-JAi"/>
     </inferredMetricsTieBreakers>

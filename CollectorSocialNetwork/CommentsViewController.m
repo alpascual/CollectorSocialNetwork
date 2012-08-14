@@ -15,6 +15,8 @@
 @implementation CommentsViewController
 
 @synthesize tableView = _tableView;
+@synthesize selectedItem = _selectedItem;
+@synthesize activityView = _activityView;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,8 +30,35 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+	
+    [self fetchData];
 }
+
+- (void) fetchData
+{
+    [self.activityView startAnimating];
+    self.activityView.hidden = NO;
+    
+    //self.collectedData = nil;
+    
+    //@todo get all data here
+//    self.fetchedDataArray = [[NSMutableArray alloc] init];
+//    self.collectedData = [[NSMutableData alloc] init];
+    
+    NSString *fetchUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/api/ListComments?postid=%@", self.selectedItem.ID];
+    NSURL * nURL = [NSURL URLWithString:fetchUrl];
+    NSURLRequest *aReq = [NSURLRequest requestWithURL:nURL];
+    NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:aReq delegate:self];
+    if (theConnection) {
+        
+    } else {
+        // inform the user that the download could not be made
+        NSLog(@"cannot fetch now");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"Cannot access the feed, internet down or problem on the server" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+    }
+}
+
 
 - (void)viewDidUnload
 {
@@ -66,6 +95,14 @@
    
     
     return cell;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ( [segue.identifier isEqualToString:@"shareCommentShowSegue2"] == YES ) {
+        AddCommentViewController  *itemController = [segue destinationViewController];
+        itemController.selectedItem = self.selectedItem;
+    }
 }
 
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

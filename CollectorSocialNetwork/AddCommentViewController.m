@@ -72,6 +72,10 @@
     else if ([[segue identifier] isEqualToString:@"commentPressed"]) {
         [self postPressed:nil];
     }
+    else if ( [segue.identifier isEqualToString:@"commentsListSegue"] == YES ) {
+        CommentsViewController  *itemController = [segue destinationViewController];
+        itemController.selectedItem = self.selectedItem;
+    }
 }
 
 - (IBAction)postPressed:(id)sender {
@@ -115,6 +119,7 @@
         [alert show];
     }
 }
+
 
 
 @end

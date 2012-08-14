@@ -10,6 +10,7 @@
 
 #import "FeedItems.h"
 #import "JFUrlUtil.h"
+#import "CommentsViewController.h"
 
 @interface AddCommentViewController : UIViewController <UITextViewDelegate>
 
