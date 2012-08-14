@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		767C9C9515CE278800AA87B4 /* DetailFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 767C9C9415CE278800AA87B4 /* DetailFeedViewController.m */; };
+		7690DF7715D9FA64006E7831 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7690DF7615D9FA64006E7831 /* CommentsViewController.m */; };
 		769337AE15CA27E1006B0947 /* JFUrlUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 769337AD15CA27E1006B0947 /* JFUrlUtil.m */; };
 		76D9037F15BF8A90000FDAFB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D9037E15BF8A90000FDAFB /* UIKit.framework */; };
 		76D9038115BF8A90000FDAFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76D9038015BF8A90000FDAFB /* Foundation.framework */; };
@@ -95,6 +96,8 @@
 /* Begin PBXFileReference section */
 		767C9C9315CE278800AA87B4 /* DetailFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailFeedViewController.h; sourceTree = "<group>"; };
 		767C9C9415CE278800AA87B4 /* DetailFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailFeedViewController.m; sourceTree = "<group>"; };
+		7690DF7515D9FA64006E7831 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
+		7690DF7615D9FA64006E7831 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
 		769337AC15CA27E1006B0947 /* JFUrlUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JFUrlUtil.h; path = Utils/JFUrlUtil.h; sourceTree = "<group>"; };
 		769337AD15CA27E1006B0947 /* JFUrlUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JFUrlUtil.m; path = Utils/JFUrlUtil.m; sourceTree = "<group>"; };
 		76D9037A15BF8A90000FDAFB /* CollectorSocialNetwork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectorSocialNetwork.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -262,6 +265,8 @@
 				767C9C9415CE278800AA87B4 /* DetailFeedViewController.m */,
 				885662CC15D190090085AC32 /* AddCommentViewController.h */,
 				885662CD15D190090085AC32 /* AddCommentViewController.m */,
+				7690DF7515D9FA64006E7831 /* CommentsViewController.h */,
+				7690DF7615D9FA64006E7831 /* CommentsViewController.m */,
 				76D9039915BF8A90000FDAFB /* first.png */,
 				76D9039B15BF8A90000FDAFB /* first@2x.png */,
 				76D9039D15BF8A90000FDAFB /* SettingsViewController.h */,
@@ -593,6 +598,7 @@
 				885662CE15D190090085AC32 /* AddCommentViewController.m in Sources */,
 				8887987715D439E90016D3B3 /* SVStatusHUD.m in Sources */,
 				8887987F15D4C4460016D3B3 /* Reachability.m in Sources */,
+				7690DF7715D9FA64006E7831 /* CommentsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

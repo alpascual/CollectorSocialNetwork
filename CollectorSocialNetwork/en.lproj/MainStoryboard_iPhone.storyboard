@@ -11,7 +11,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZrZ-aP-uwf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="XKY-WL-dwP" customClass="DetailFeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JvI-9I-KPZ">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" id="iM9-za-V8H">
@@ -24,7 +24,12 @@
                                             <segue destination="4" kind="modal" id="0v8-aG-OHd"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="146" style="plain" systemItem="fixedSpace" id="Xhp-DF-aHC"/>
+                                    <barButtonItem title="Read Comments" id="6Mf-YS-lbV">
+                                        <connections>
+                                            <segue destination="bKl-sZ-qeX" kind="modal" id="2VT-KL-oDr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="23" style="plain" systemItem="fixedSpace" id="Xhp-DF-aHC"/>
                                     <barButtonItem title="Add Comment" id="rMk-7N-cLZ">
                                         <color key="tintColor" red="0.19241296950876213" green="0.4017173796016163" blue="0.68505859375" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
@@ -66,9 +71,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="EmW-fX-tdJ"/>
                     <connections>
                         <outlet property="detailText" destination="1sF-4t-VKp" id="UPe-85-OFG"/>
                         <outlet property="detailedImage" destination="otW-vT-J49" id="6ug-Am-g8F"/>
+                        <outlet property="readCommentButton" destination="6Mf-YS-lbV" id="nAn-ed-rTQ"/>
                         <outlet property="userImage" destination="bln-KZ-SfY" id="bm9-yl-wlA"/>
                         <outlet property="userName" destination="8ik-MV-gbm" id="p1Y-LU-6M4"/>
                     </connections>
@@ -76,13 +83,59 @@
             </objects>
             <point key="canvasLocation" x="1981" y="-992"/>
         </scene>
+        <!--Comments View Controller-->
+        <scene sceneID="zjq-rK-LNB">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SKU-x3-Uk4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="bKl-sZ-qeX" customClass="CommentsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a0l-Rq-MGT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="baby-blue-solid.jpg" id="6Ni-aB-fdD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="lz5-hT-SoK">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Back" id="ihA-xh-SIg">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="XKY-WL-dwP" kind="modal" id="bHB-0Q-xpc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" red="0.78804347829999999" green="0.78804347829999999" blue="0.78804347829999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vJA-Rn-G6Y">
+                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="bKl-sZ-qeX" id="8cd-3t-icV"/>
+                                    <outlet property="delegate" destination="bKl-sZ-qeX" id="UUs-hX-WHQ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Uwp-rA-wlg"/>
+                    <connections>
+                        <outlet property="tableView" destination="vJA-Rn-G6Y" id="RFf-WZ-kED"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1981" y="-1618"/>
+        </scene>
         <!--Add Comment View Controller-->
         <scene sceneID="t8B-Ng-vl5">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Cb-DP-IDZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="xaA-AI-w4R" customClass="AddCommentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3pk-B7-GSC">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="GradientFill.png" id="cwy-Mk-Tr4">
@@ -157,7 +210,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Item" style="plain" id="0CV-Pc-70B">
-                                        <segmentedControl key="customView" opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Y2O-6o-otr">
+                                        <segmentedControl key="customView" hidden="YES" opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Y2O-6o-otr">
                                             <rect key="frame" x="6" y="8" width="100" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <segments>
@@ -680,11 +733,15 @@
                 <relationship kind="outlet" name="postText" candidateClass="UITextView"/>
             </relationships>
         </class>
+        <class className="CommentsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/CommentsViewController.h"/>
+        </class>
         <class className="DetailFeedViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailFeedViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="detailText" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="detailedImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="readCommentButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="userImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="userName" candidateClass="UILabel"/>
             </relationships>
@@ -692,6 +749,7 @@
         <class className="FeedViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FeedViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="activityView" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
         </class>
@@ -736,7 +794,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Vdr-fj-QUR"/>
+        <segue reference="bHB-0Q-xpc"/>
+        <segue reference="0v8-aG-OHd"/>
         <segue reference="egx-Ac-n9N"/>
         <segue reference="Prk-vK-JAi"/>
     </inferredMetricsTieBreakers>

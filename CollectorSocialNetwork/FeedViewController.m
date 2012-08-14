@@ -357,10 +357,8 @@
     
     [self.tableView clearsContextBeforeDrawing];
     
-    self.fetchedDataArray = nil;
     [self.tableView reloadData];
     
-    [self fetchData];
 }
 
 

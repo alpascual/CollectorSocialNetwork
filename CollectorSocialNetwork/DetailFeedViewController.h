@@ -18,5 +18,6 @@
 @property (nonatomic,strong) IBOutlet UILabel *detailText;
 @property (nonatomic,strong) IBOutlet UILabel *userName;
 @property (nonatomic,strong) FeedItems *selectedItem;
+@property (nonatomic,strong) IBOutlet UIBarButtonItem *readCommentButton;
 
 @end

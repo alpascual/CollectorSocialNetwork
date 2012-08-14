@@ -19,6 +19,7 @@
 @synthesize userName = _userName;
 @synthesize detailText = _detailText;
 @synthesize selectedItem = _selectedItem;
+@synthesize readCommentButton = _readCommentButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -54,6 +55,7 @@
         UIImage * userImage = [UIImage imageWithData:userImageData];
         self.userImage.image = userImage;
     }
+    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
