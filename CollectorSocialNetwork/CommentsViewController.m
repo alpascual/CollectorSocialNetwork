@@ -17,6 +17,8 @@
 @synthesize tableView = _tableView;
 @synthesize selectedItem = _selectedItem;
 @synthesize activityView = _activityView;
+@synthesize collectedData = _collectedData;
+@synthesize fetchedDataArray = _fetchedDataArray;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,11 +41,10 @@
     [self.activityView startAnimating];
     self.activityView.hidden = NO;
     
-    //self.collectedData = nil;
-    
-    //@todo get all data here
-//    self.fetchedDataArray = [[NSMutableArray alloc] init];
-//    self.collectedData = [[NSMutableData alloc] init];
+    self.collectedData = nil;
+    self.fetchedDataArray = nil;
+    self.fetchedDataArray = [[NSMutableArray alloc] init];
+    self.collectedData = [[NSMutableData alloc] init];
     
     NSString *fetchUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/api/ListComments?postid=%@", self.selectedItem.ID];
     NSURL * nURL = [NSURL URLWithString:fetchUrl];
@@ -59,6 +60,66 @@
     }
 }
 
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    if ( data )
+        [self.collectedData appendData:data];
+}
+
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSString* newStr = [NSString stringWithUTF8String:[self.collectedData bytes]];
+    NSLog(@"data returned String: %@", newStr);
+    
+    //parse the json string.
+    NSError *error = nil;
+    NSArray *theJSONArray = [NSDictionary dictionaryWithJSONString:newStr error:&error];
+    self.collectedData = nil;
+    
+    if ( theJSONArray == nil)
+    {
+        [self.activityView stopAnimating];
+        self.activityView.hidden = YES;
+        
+        [SVStatusHUD showWithoutImage:@"Failed! Try again"];
+        return;
+    }
+    
+    @try {
+        NSLog(@"How many items %d", theJSONArray.count);
+    }
+    @catch (NSException *exception) {
+        
+        [self.activityView stopAnimating];
+        self.activityView.hidden = YES;
+        
+        [SVStatusHUD showWithoutImage:@"Failed! Try again"];
+        
+        return;
+    }
+    
+    for(int i=0; i < theJSONArray.count; i++) {
+        NSDictionary *itemDic = [theJSONArray objectAtIndex:i];
+        CommentItems *item = [[CommentItems alloc] init];
+        item.ID = [itemDic objectForKey:@"ID"];
+        item.PostID = [itemDic objectForKey:@"PostID"];
+        item.Text = [itemDic objectForKey:@"Text"];
+        item.Note1 = [itemDic objectForKey:@"Note1"];
+        item.UserId = [itemDic objectForKey:@"UserId"];
+        item.Username = [itemDic objectForKey:@"Username"];
+        NSString *timeString = [itemDic objectForKey:@"When"];
+        
+        timeString = [timeString stringByReplacingOccurrencesOfString:@"/Date(" withString:@""];
+        timeString = [timeString stringByReplacingOccurrencesOfString:@")/" withString:@""];
+        NSTimeInterval intervalForTimer = [timeString doubleValue] / 1000.0;
+        item.When = [[NSDate alloc] initWithTimeIntervalSince1970:intervalForTimer];
+        
+        [self.fetchedDataArray addObject:item];
+    }
+    
+    [self.tableView reloadData];
+}
 
 - (void)viewDidUnload
 {
@@ -76,7 +137,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 0;
+    return self.fetchedDataArray.count;
 }
 
 
@@ -92,7 +153,27 @@
     }
     
     NSUInteger row = [indexPath row];
-   
+    if ( row > self.fetchedDataArray.count)
+        return nil;
+    
+    CommentItems *item = [self.fetchedDataArray objectAtIndex:row];
+    
+    // title and detail text
+    cell.textLabel.text = item.Username;
+    cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:13];
+    cell.detailTextLabel.font = [UIFont fontWithName:@"Verdana" size:12];
+    cell.detailTextLabel.text = item.Text;
+    
+    // add the time in a label
+    UILabel *timelabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 3, 55, 22)];
+    timelabel.textColor = [UIColor grayColor];
+    timelabel.backgroundColor = [UIColor clearColor];
+    timelabel.font = [UIFont fontWithName:@"Verdana" size:9];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"mm/dd/yyyy"];
+    NSString *stringFromDate = [formatter stringFromDate:item.When];
+    timelabel.text = stringFromDate;
+    [cell.contentView addSubview:timelabel];
     
     return cell;
 }

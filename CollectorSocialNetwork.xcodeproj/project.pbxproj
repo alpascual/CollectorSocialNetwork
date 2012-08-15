@@ -39,6 +39,7 @@
 		76D903C715BF9167000FDAFB /* 90-life-buoy.png in Resources */ = {isa = PBXBuildFile; fileRef = 76D903C415BF9167000FDAFB /* 90-life-buoy.png */; };
 		76D903C915BF91D2000FDAFB /* 53-house.png in Resources */ = {isa = PBXBuildFile; fileRef = 76D903C815BF91D2000FDAFB /* 53-house.png */; };
 		8820720815C08EC10090075C /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820720715C08EC10090075C /* AccountViewController.m */; };
+		884B149615DAFBD90030A2ED /* CommentItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 884B149515DAFBD90030A2ED /* CommentItems.m */; };
 		885167D515C1D30300AC91F3 /* birdwatching.png in Resources */ = {isa = PBXBuildFile; fileRef = 885167CE15C1D30300AC91F3 /* birdwatching.png */; };
 		885167D615C1D30300AC91F3 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = 885167CF15C1D30300AC91F3 /* default.png */; };
 		885167D715C1D30300AC91F3 /* default512.png in Resources */ = {isa = PBXBuildFile; fileRef = 885167D015C1D30300AC91F3 /* default512.png */; };
@@ -137,6 +138,8 @@
 		76D903C815BF91D2000FDAFB /* 53-house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house.png"; sourceTree = "<group>"; };
 		8820720615C08EC10090075C /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		8820720715C08EC10090075C /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		884B149415DAFBD90030A2ED /* CommentItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentItems.h; sourceTree = "<group>"; };
+		884B149515DAFBD90030A2ED /* CommentItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentItems.m; sourceTree = "<group>"; };
 		885167CE15C1D30300AC91F3 /* birdwatching.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birdwatching.png; sourceTree = "<group>"; };
 		885167CF15C1D30300AC91F3 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
 		885167D015C1D30300AC91F3 /* default512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default512.png; sourceTree = "<group>"; };
@@ -406,6 +409,8 @@
 			children = (
 				8856627515CB1DAF0085AC32 /* FeedItems.h */,
 				8856627615CB1DAF0085AC32 /* FeedItems.m */,
+				884B149415DAFBD90030A2ED /* CommentItems.h */,
+				884B149515DAFBD90030A2ED /* CommentItems.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -599,6 +604,7 @@
 				8887987715D439E90016D3B3 /* SVStatusHUD.m in Sources */,
 				8887987F15D4C4460016D3B3 /* Reachability.m in Sources */,
 				7690DF7715D9FA64006E7831 /* CommentsViewController.m in Sources */,
+				884B149615DAFBD90030A2ED /* CommentItems.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
