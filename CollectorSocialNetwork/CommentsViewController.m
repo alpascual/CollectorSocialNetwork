@@ -88,6 +88,11 @@
     
     @try {
         NSLog(@"How many items %d", theJSONArray.count);
+        if ( theJSONArray.count == 0)
+        {
+            [self.activityView stopAnimating];
+            self.activityView.hidden = YES;
+        }
     }
     @catch (NSException *exception) {
         
@@ -148,11 +153,18 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        //cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         
     }
     
     NSUInteger row = [indexPath row];
+    
+    // Stop spinning
+    if ( row == 0 ) {
+        [self.activityView stopAnimating];
+        self.activityView.hidden = YES;
+    }
+    
     if ( row > self.fetchedDataArray.count)
         return nil;
     
@@ -165,7 +177,7 @@
     cell.detailTextLabel.text = item.Text;
     
     // add the time in a label
-    UILabel *timelabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 3, 55, 22)];
+    UILabel *timelabel = [[UILabel alloc] initWithFrame:CGRectMake(230, 3, 55, 22)];
     timelabel.textColor = [UIColor grayColor];
     timelabel.backgroundColor = [UIColor clearColor];
     timelabel.font = [UIFont fontWithName:@"Verdana" size:9];
@@ -195,12 +207,9 @@
 //    //@todo do the detailSegue and add the selecteditem
 //}
 
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
-//{
-//    if ( self.bPictureView == YES)
-//        return 200;
-//    else
-//        return 130;
-//}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    return 130;
+}
 
 @end

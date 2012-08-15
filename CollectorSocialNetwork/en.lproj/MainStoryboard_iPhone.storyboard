@@ -117,7 +117,7 @@
                                 <color key="tintColor" red="0.78804347829999999" green="0.78804347829999999" blue="0.78804347829999999" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="vJA-Rn-G6Y">
-                                <rect key="frame" x="0.0" y="44" width="320" height="416"/>
+                                <rect key="frame" x="7" y="44" width="306" height="416"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -741,7 +741,6 @@
         <class className="AddCommentViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddCommentViewController.h"/>
             <relationships>
-                <relationship kind="action" name="postPressed:"/>
                 <relationship kind="outlet" name="charactersLeft" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="commentButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="postText" candidateClass="UITextView"/>
@@ -812,9 +811,9 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Vdr-fj-QUR"/>
-        <segue reference="hA8-ep-boB"/>
+        <segue reference="0v8-aG-OHd"/>
         <segue reference="bHB-0Q-xpc"/>
+        <segue reference="hA8-ep-boB"/>
         <segue reference="egx-Ac-n9N"/>
         <segue reference="Prk-vK-JAi"/>
     </inferredMetricsTieBreakers>

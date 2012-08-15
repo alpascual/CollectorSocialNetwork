@@ -64,6 +64,10 @@
         AddCommentViewController  *itemController = [segue destinationViewController];
         itemController.selectedItem = self.selectedItem;
     }
+    else if ( [segue.identifier isEqualToString:@"commentsListSegue"] == YES ) {
+        CommentsViewController  *itemController = [segue destinationViewController];
+        itemController.selectedItem = self.selectedItem;
+    }
 }
 
 - (void)viewDidUnload
