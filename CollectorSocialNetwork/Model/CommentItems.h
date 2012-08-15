@@ -29,5 +29,6 @@
 @property (nonatomic,strong) NSString *UserId;
 @property (nonatomic,strong) NSString *Username;
 @property (nonatomic,strong) NSDate *When;
+@property (nonatomic,strong) NSString *UsernamePictureUrl;
 
 @end

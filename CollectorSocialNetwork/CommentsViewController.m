@@ -7,6 +7,7 @@
 //
 
 #import "CommentsViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface CommentsViewController ()
 
@@ -114,6 +115,7 @@
         item.UserId = [itemDic objectForKey:@"UserId"];
         item.Username = [itemDic objectForKey:@"Username"];
         NSString *timeString = [itemDic objectForKey:@"When"];
+        item.UsernamePictureUrl = [itemDic objectForKey:@"UsernamePictureUrl"];
         
         timeString = [timeString stringByReplacingOccurrencesOfString:@"/Date(" withString:@""];
         timeString = [timeString stringByReplacingOccurrencesOfString:@")/" withString:@""];
@@ -186,6 +188,14 @@
     NSString *stringFromDate = [formatter stringFromDate:item.When];
     timelabel.text = stringFromDate;
     [cell.contentView addSubview:timelabel];
+    
+    // User image first
+    NSURL *userImageUrl = [NSURL URLWithString:item.UsernamePictureUrl];
+    NSData * userImageData = [NSData dataWithContentsOfURL:userImageUrl];
+    UIImage * userImage = [UIImage imageWithData:userImageData];    
+    cell.imageView.image = userImage;
+    cell.imageView.layer.masksToBounds = YES;
+    cell.imageView.layer.cornerRadius = 7;
     
     return cell;
 }

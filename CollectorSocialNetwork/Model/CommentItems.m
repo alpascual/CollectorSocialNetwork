@@ -17,5 +17,6 @@
 @synthesize UserId = _UserId;
 @synthesize Username = _Username;
 @synthesize When = _When;
+@synthesize UsernamePictureUrl = _UsernamePictureUrl;
 
 @end

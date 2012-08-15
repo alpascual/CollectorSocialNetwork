@@ -7,6 +7,7 @@
 //
 
 #import "AddCommentViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface AddCommentViewController ()
 
@@ -33,6 +34,9 @@
     [super viewDidLoad];
 	
     self.postText.delegate = self;
+    
+    [[self.postText layer] setBorderWidth:1];
+    [[self.postText layer] setCornerRadius:15];
 }
 
 - (void)viewDidUnload
