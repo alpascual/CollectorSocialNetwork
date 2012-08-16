@@ -21,6 +21,7 @@
 @synthesize activityView = _activityView;
 @synthesize collectedData = _collectedData;
 @synthesize bPictureView = _bPictureView;
+@synthesize backupResponseArray = _backupResponseArray;
 //@synthesize images = _images;
 
 - (void)viewDidLoad
@@ -106,13 +107,23 @@
     self.collectedData = nil;
     
     if ( theJSONArray == nil)
-    {   
-        [self.activityView stopAnimating];
-        self.activityView.hidden = YES;
-        
-        [SVStatusHUD showWithoutImage:@"Failed! Try again"];
-        return;
+    {
+        if ( self.backupResponseArray != nil) {
+            theJSONArray = self.backupResponseArray;
+        }
+        else {
+            [self.activityView stopAnimating];
+            self.activityView.hidden = YES;
+            
+            [SVStatusHUD showWithoutImage:@"Failed! Try again"];
+            return;
+        }
     }
+    else
+    {
+        self.backupResponseArray = theJSONArray;
+    }
+    
     
     @try {
         NSLog(@"How many items %d", theJSONArray.count);
@@ -344,7 +355,7 @@
     if ( self.bPictureView == YES)
         return 200;
     else
-        return 130;
+        return 150;
 }
 
 - (IBAction)tableChanged:(id)sender {

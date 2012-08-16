@@ -27,6 +27,7 @@
 @property (nonatomic,strong) FeedItems *selectedItem;
 @property (nonatomic,strong) IBOutlet UIActivityIndicatorView *activityView;
 @property (nonatomic,strong) NSMutableData *collectedData;
+@property (nonatomic,strong) NSArray *backupResponseArray;
 @property (nonatomic) BOOL bPictureView;
 
 

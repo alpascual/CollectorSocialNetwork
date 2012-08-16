@@ -520,6 +520,15 @@
                                             <action selector="goHome:" destination="Xkc-wv-ter" id="vsC-qw-YKw"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem width="138" style="plain" systemItem="fixedSpace" id="UZ1-UU-Yq0">
+                                        <color key="tintColor" red="0.84538468070652173" green="0.20660327936436557" blue="0.17669297626916636" alpha="1" colorSpace="calibratedRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem title="Delete Account" id="QfM-cL-hUT">
+                                        <color key="tintColor" red="0.84538468069999995" green="0.20660327940000001" blue="0.1766929763" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="deleteAccount:" destination="Xkc-wv-ter" id="QF1-74-8Nj"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
@@ -811,10 +820,10 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="0v8-aG-OHd"/>
-        <segue reference="bHB-0Q-xpc"/>
-        <segue reference="hA8-ep-boB"/>
+        <segue reference="Lpo-Ht-5rU"/>
         <segue reference="egx-Ac-n9N"/>
         <segue reference="Prk-vK-JAi"/>
+        <segue reference="bHB-0Q-xpc"/>
+        <segue reference="DYK-N0-OEc"/>
     </inferredMetricsTieBreakers>
 </document>

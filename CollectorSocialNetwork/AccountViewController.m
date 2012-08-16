@@ -123,4 +123,28 @@
     [self performSegueWithIdentifier:@"HomeFromSettings" sender:self];
 }
 
+- (IBAction)deleteAccount:(id)sender {
+    // Delete the account
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ( [defaults objectForKey:@"userid"] != nil )
+    {
+        NSString *accountID = [defaults objectForKey:@"userid"];
+        
+        //@todo delete now here and then delete the keys
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Deleting Account" message:@"Are you sure? TODO right now does not delete it on the server" delegate:nil cancelButtonTitle:@"TODO" otherButtonTitles:nil];
+        [alert show];
+        
+        [defaults removeObjectForKey:@"userid"];
+        [defaults removeObjectForKey:@"email"];
+        [defaults removeObjectForKey:@"password"];
+        [defaults removeObjectForKey:@"passwordhash"];
+        [defaults removeObjectForKey:@"twitter"];
+        
+        [defaults synchronize];
+    }
+    
+    
+}
+
 @end
