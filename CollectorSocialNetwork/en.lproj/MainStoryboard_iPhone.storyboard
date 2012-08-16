@@ -103,7 +103,7 @@
                                     <barButtonItem title="Back" id="ihA-xh-SIg">
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <segue destination="XKY-WL-dwP" kind="modal" id="bHB-0Q-xpc"/>
+                                            <segue destination="XKY-WL-dwP" kind="modal" identifier="backToCommentsSegue" id="bHB-0Q-xpc"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem width="145" style="plain" systemItem="fixedSpace" id="sRs-vK-wc8"/>

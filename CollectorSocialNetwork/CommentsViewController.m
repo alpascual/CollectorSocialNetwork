@@ -206,6 +206,10 @@
         AddCommentViewController  *itemController = [segue destinationViewController];
         itemController.selectedItem = self.selectedItem;
     }
+    else if ( [segue.identifier isEqualToString:@"backToCommentsSegue"] == YES ) {
+        DetailFeedViewController  *itemController = [segue destinationViewController];
+        itemController.selectedItem = self.selectedItem;
+    }
 }
 
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

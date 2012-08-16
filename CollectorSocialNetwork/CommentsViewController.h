@@ -13,6 +13,7 @@
 #import "CJSONDeserializer.h"
 #import "NSDictionary_JSONExtensions.h"
 #import "SVStatusHUD.h"
+#import "DetailFeedViewController.h"
 
 @interface CommentsViewController : UIViewController
 
