@@ -95,9 +95,9 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    // Append the new data to receivedData.
-    // receivedData is an instance variable declared elsewhere.
+    // Finished receiving data, read it.
     //NSLog(@"data returned: %@", data);
+ 
     NSString* newStr = [NSString stringWithUTF8String:[self.collectedData bytes]];
     NSLog(@"data returned String: %@", newStr);
     
