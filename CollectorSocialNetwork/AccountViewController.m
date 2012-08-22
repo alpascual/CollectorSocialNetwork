@@ -132,18 +132,31 @@
         NSString *accountID = [defaults objectForKey:@"userid"];
         
         //@todo delete now here and then delete the keys
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Deleting Account" message:@"Are you sure? TODO right now does not delete it on the server" delegate:nil cancelButtonTitle:@"TODO" otherButtonTitles:nil];
-        [alert show];
+        //DeleteUser(string UserId)
+        NSString *stringToOpen = [[NSString alloc] initWithFormat:@"%@%@", [ServerRestUrl getUrlPlus:@"DeleteUser?UserId="], accountID];
+        NSURL *urlToOpen = [[NSURL alloc] initWithString:stringToOpen];
+        NSURLRequest *aReq = [NSURLRequest requestWithURL:urlToOpen];
+        NSURLConnection *theConnection=[[NSURLConnection alloc] initWithRequest:aReq delegate:nil];
         
-        [defaults removeObjectForKey:@"userid"];
-        [defaults removeObjectForKey:@"email"];
-        [defaults removeObjectForKey:@"password"];
-        [defaults removeObjectForKey:@"passwordhash"];
-        [defaults removeObjectForKey:@"twitter"];
-        
-        [defaults synchronize];
-    }
-    
+        if (theConnection) {
+            
+            [SVStatusHUD showWithoutImage:@"Deleting Account"];
+            
+            [defaults removeObjectForKey:@"userid"];
+            [defaults removeObjectForKey:@"email"];
+            [defaults removeObjectForKey:@"password"];
+            [defaults removeObjectForKey:@"passwordhash"];
+            [defaults removeObjectForKey:@"twitter"];
+            
+            [defaults synchronize];
+        } else {
+            // inform the user that the download could not be made
+            NSLog(@"cannot fetch now");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Connection Error" message:@"Cannot delete account, internet down or problem on the server" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+            [alert show];
+        }        
+       
+    }    
     
 }
 

@@ -10,6 +10,7 @@
 #import "Reachability.h"
 #import "AppDelegate.h"
 #import "SVStatusHUD.h"
+#import "ServerRestUrl.h"
 
 @interface AccountViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
