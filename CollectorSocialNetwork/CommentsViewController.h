@@ -14,6 +14,7 @@
 #import "NSDictionary_JSONExtensions.h"
 #import "SVStatusHUD.h"
 #import "DetailFeedViewController.h"
+#import "ServerRestUrl.h"
 
 @interface CommentsViewController : UIViewController
 

@@ -79,7 +79,7 @@
     self.fetchedDataArray = [[NSMutableArray alloc] init];
     self.collectedData = [[NSMutableData alloc] init];
     
-    NSString *fetchUrl = @"http://birds.alsandbox.us/api/LastPosts?many=50";
+    NSString *fetchUrl = [ServerRestUrl getUrlPlus:@"LastPosts?many=50"];
     NSURL * nURL = [NSURL URLWithString:fetchUrl];
     NSURLRequest *aReq = [NSURLRequest requestWithURL:nURL];
     NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:aReq delegate:self];
@@ -317,7 +317,7 @@
         cell.imageView.layer.cornerRadius = 7;
         
         // Picture uploaded
-        NSString *fullImageUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/upload/get?filename=%@", item.PictureUrl];
+        NSString *fullImageUrl = [[NSString alloc] initWithFormat:@"%@%@", [ServerRestUrl getUploadUrlPlus:@"get?filename="] ,item.PictureUrl];
         NSURL * imageURL = [NSURL URLWithString:fullImageUrl];
         NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
         UIImage * image = [UIImage imageWithData:imageData];

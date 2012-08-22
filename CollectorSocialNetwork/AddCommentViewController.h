@@ -11,6 +11,7 @@
 #import "FeedItems.h"
 #import "JFUrlUtil.h"
 #import "CommentsViewController.h"
+#import "ServerRestUrl.h"
 
 @interface AddCommentViewController : UIViewController <UITextViewDelegate>
 

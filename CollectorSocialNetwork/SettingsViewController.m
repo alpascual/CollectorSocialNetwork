@@ -87,7 +87,7 @@
     
     //string password, string email, string twitterUsername)
     // Submit
-    NSString *myRequestString = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/api/CreateUser?password=%u&email=%@&twitterUsername=%@", [self.password1.text hash], self.email.text, self.twitter.text ];
+    NSString *myRequestString = [[NSString alloc] initWithFormat:@"%@%u&email=%@&twitterUsername=%@", [ServerRestUrl getUrlPlus:@"CreateUser?password="], [self.password1.text hash], self.email.text, self.twitter.text ];
     
     NSURL *urlToOpen = [[NSURL alloc] initWithString:myRequestString];
     

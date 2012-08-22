@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ServerRestUrl.h"
 
 @interface ShareViewController : UIViewController <UITextViewDelegate>
 

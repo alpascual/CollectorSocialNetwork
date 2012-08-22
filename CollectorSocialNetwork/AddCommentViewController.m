@@ -96,7 +96,7 @@
     
     //CreateComment(string userid, string postid, string text, string username)
     NSMutableString *postUrl = [[NSMutableString alloc] init];
-    [postUrl appendString:@"http://birds.alsandbox.us/api/CreateComment?userid="];
+    [postUrl appendString:[ServerRestUrl getUrlPlus:@"CreateComment?userid="]];
     
     NSString *encodedUserID = [JFUrlUtil encodeUrl:sUserID];
     [postUrl appendString:encodedUserID];

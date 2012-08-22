@@ -47,7 +47,7 @@
     self.fetchedDataArray = [[NSMutableArray alloc] init];
     self.collectedData = [[NSMutableData alloc] init];
     
-    NSString *fetchUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/api/ListComments?postid=%@", self.selectedItem.ID];
+    NSString *fetchUrl = [[NSString alloc] initWithFormat:@"%@%@", [ServerRestUrl getUrlPlus:@"ListComments?postid="] ,self.selectedItem.ID];
     NSURL * nURL = [NSURL URLWithString:fetchUrl];
     NSURLRequest *aReq = [NSURLRequest requestWithURL:nURL];
     NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:aReq delegate:self];

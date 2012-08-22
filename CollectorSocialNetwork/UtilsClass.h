@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ServerRestUrl.h"
 
 @interface UtilsClass : NSObject
 

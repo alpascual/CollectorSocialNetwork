@@ -40,6 +40,7 @@
 		76D903C915BF91D2000FDAFB /* 53-house.png in Resources */ = {isa = PBXBuildFile; fileRef = 76D903C815BF91D2000FDAFB /* 53-house.png */; };
 		8820720815C08EC10090075C /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8820720715C08EC10090075C /* AccountViewController.m */; };
 		884B149615DAFBD90030A2ED /* CommentItems.m in Sources */ = {isa = PBXBuildFile; fileRef = 884B149515DAFBD90030A2ED /* CommentItems.m */; };
+		884B14F515E572960030A2ED /* ServerRestUrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 884B14F415E572960030A2ED /* ServerRestUrl.m */; };
 		885167D515C1D30300AC91F3 /* birdwatching.png in Resources */ = {isa = PBXBuildFile; fileRef = 885167CE15C1D30300AC91F3 /* birdwatching.png */; };
 		885167D615C1D30300AC91F3 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = 885167CF15C1D30300AC91F3 /* default.png */; };
 		885167D715C1D30300AC91F3 /* default512.png in Resources */ = {isa = PBXBuildFile; fileRef = 885167D015C1D30300AC91F3 /* default512.png */; };
@@ -140,6 +141,8 @@
 		8820720715C08EC10090075C /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		884B149415DAFBD90030A2ED /* CommentItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentItems.h; sourceTree = "<group>"; };
 		884B149515DAFBD90030A2ED /* CommentItems.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentItems.m; sourceTree = "<group>"; };
+		884B14F315E572960030A2ED /* ServerRestUrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerRestUrl.h; sourceTree = "<group>"; };
+		884B14F415E572960030A2ED /* ServerRestUrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerRestUrl.m; sourceTree = "<group>"; };
 		885167CE15C1D30300AC91F3 /* birdwatching.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birdwatching.png; sourceTree = "<group>"; };
 		885167CF15C1D30300AC91F3 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
 		885167D015C1D30300AC91F3 /* default512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default512.png; sourceTree = "<group>"; };
@@ -358,6 +361,8 @@
 				888D4BAB15C870E000F0C3EF /* TMQuiltView.h */,
 				885167EF15C3304900AC91F3 /* UtilsClass.h */,
 				885167F015C3304900AC91F3 /* UtilsClass.m */,
+				884B14F315E572960030A2ED /* ServerRestUrl.h */,
+				884B14F415E572960030A2ED /* ServerRestUrl.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -605,6 +610,7 @@
 				8887987F15D4C4460016D3B3 /* Reachability.m in Sources */,
 				7690DF7715D9FA64006E7831 /* CommentsViewController.m in Sources */,
 				884B149615DAFBD90030A2ED /* CommentItems.m in Sources */,
+				884B14F515E572960030A2ED /* ServerRestUrl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

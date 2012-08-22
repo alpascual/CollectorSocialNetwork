@@ -45,7 +45,7 @@
     
     if ( [defaults objectForKey:@"lastupload"] != nil) {
         self.imageName = [defaults objectForKey:@"lastupload"];
-        self.fullImageUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/upload/get?filename=%@", self.imageName];
+        self.fullImageUrl = [[NSString alloc] initWithFormat:@"%@%@", [ServerRestUrl getUploadUrlPlus:@"get?filename="] ,self.imageName];
         NSURL * imageURL = [NSURL URLWithString:self.fullImageUrl];
         NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
         UIImage * image = [UIImage imageWithData:imageData];
@@ -80,7 +80,7 @@
     NSString *sUserID = [defaults objectForKey:@"userid"];
     
     NSMutableString *postUrl = [[NSMutableString alloc] init];
-    [postUrl appendString:@"http://birds.alsandbox.us/api/CreatePost?userid="];
+    [postUrl appendString:[ServerRestUrl getUrlPlus:@"CreatePost?userid="]];
     
     NSString *encodedUserID = [JFUrlUtil encodeUrl:sUserID];
     [postUrl appendString:encodedUserID];
@@ -142,7 +142,7 @@
         
         if ( [defaults objectForKey:@"lastupload"] != nil) {
             NSString *filename = [defaults objectForKey:@"lastupload"];
-            NSString *deleteUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/upload/delete?filename=%@", filename];
+            NSString *deleteUrl = [[NSString alloc] initWithFormat:@"%@%@", [ServerRestUrl getUploadUrlPlus:@"delete?filename="] ,filename];
             NSURL * delURL = [NSURL URLWithString:deleteUrl];
             NSURLRequest *aReq = [NSURLRequest requestWithURL:delURL];
             NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:aReq delegate:nil];

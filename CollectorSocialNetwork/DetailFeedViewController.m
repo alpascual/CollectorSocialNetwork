@@ -44,7 +44,7 @@
         
         //add the images from url
         // Picture uploaded
-        NSString *fullImageUrl = [[NSString alloc] initWithFormat:@"http://birds.alsandbox.us/upload/get?filename=%@", self.selectedItem.PictureUrl];
+        NSString *fullImageUrl = [[NSString alloc] initWithFormat:@"%@%@", [ServerRestUrl getUrlPlus:@"upload/get?filename="] ,self.selectedItem.PictureUrl];
         NSURL * imageURL = [NSURL URLWithString:fullImageUrl];
         NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
         UIImage * image = [UIImage imageWithData:imageData];
