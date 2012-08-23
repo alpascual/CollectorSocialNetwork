@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="11E2620" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2549" systemVersion="12A269" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="4">
     <dependencies>
-        <deployment defaultVersion="1296" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1498"/>
     </dependencies>
     <scenes>
@@ -744,6 +743,8 @@
         <class className="AccountViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AccountViewController.h"/>
             <relationships>
+                <relationship kind="action" name="deleteAccount:"/>
+                <relationship kind="action" name="goHome:"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
                 <relationship kind="outlet" name="twitterImage" candidateClass="UIImageView"/>
             </relationships>
@@ -751,6 +752,7 @@
         <class className="AddCommentViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddCommentViewController.h"/>
             <relationships>
+                <relationship kind="action" name="postPressed:"/>
                 <relationship kind="outlet" name="charactersLeft" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="commentButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="postText" candidateClass="UITextView"/>
@@ -776,6 +778,7 @@
         <class className="FeedViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FeedViewController.h"/>
             <relationships>
+                <relationship kind="action" name="tableChanged:"/>
                 <relationship kind="outlet" name="activityView" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
@@ -792,6 +795,7 @@
         <class className="SettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
             <relationships>
+                <relationship kind="action" name="createAccountPressed:"/>
                 <relationship kind="outlet" name="email" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="password1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="password2" candidateClass="UITextField"/>
