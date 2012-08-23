@@ -24,7 +24,7 @@
 @synthesize backupResponseArray = _backupResponseArray;
 @synthesize userImageArray = _userImageArray;
 @synthesize pictureImageArray = _pictureImageArray;
-//@synthesize images = _images;
+
 
 - (void)viewDidLoad
 {
@@ -76,6 +76,9 @@
     self.activityView.hidden = NO;
     
     self.collectedData = nil;
+    self.fetchedDataArray = nil;
+    self.userImageArray = nil;
+    self.pictureImageArray = nil;
     
     //@todo get all data here
     self.fetchedDataArray = [[NSMutableArray alloc] init];
@@ -211,6 +214,10 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
+    
+    if ( self.fetchedDataArray == nil)
+        return 0;
+    
     return self.fetchedDataArray.count;
 }
 
@@ -228,7 +235,7 @@
     
     NSUInteger row = [indexPath row];
     if ( row > self.fetchedDataArray.count)
-        return nil;
+        return cell;
     
     FeedItems *item = [self.fetchedDataArray objectAtIndex:row];
     
@@ -239,7 +246,7 @@
             self.activityView.hidden = YES;
         }
     }
-    UtilsClass *util = [[UtilsClass alloc] init];
+    
     
     // Picture View Implementation
     if ( self.bPictureView == YES) {
@@ -328,22 +335,12 @@
         cell.detailTextLabel.font = [UIFont fontWithName:@"Verdana" size:12];
         cell.detailTextLabel.text = item.Comment;
         
-        //   User image first        
-//        NSURL *userImageUrl = [NSURL URLWithString:item.UsernamePictureUrl];
-//        NSData * userImageData = [NSData dataWithContentsOfURL:userImageUrl];
-//        UIImage * userImage = [UIImage imageWithData:userImageData];
-//        UIImage *userThumb = [util thumbnailOfSize:CGSizeMake(50,50) image:userImage];
+        //   User image first
         cell.imageView.image = [self.userImageArray objectAtIndex:row];
         cell.imageView.layer.masksToBounds = YES;
         cell.imageView.layer.cornerRadius = 7;
         
-        //  Picture uploaded
-//        NSString *fullImageUrl = [[NSString alloc] initWithFormat:@"%@%@", [ServerRestUrl getUploadUrlPlus:@"get?filename="] ,item.PictureUrl];
-//        NSURL * imageURL = [NSURL URLWithString:fullImageUrl];
-//        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
-//        UIImage * image = [UIImage imageWithData:imageData];
-//        UIImage *thumb = [util thumbnailOfSize:CGSizeMake(40,40) image:image];
-        
+        //  Picture uploaded        
         UIImageView *uploadCellImage=[[UIImageView alloc] initWithFrame:CGRectMake(255, 3, 40, 40)];
         uploadCellImage.image=[self.pictureImageArray objectAtIndex:row];
         uploadCellImage.layer.masksToBounds = YES;

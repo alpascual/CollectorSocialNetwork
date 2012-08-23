@@ -63,8 +63,10 @@
     else
     {
         self.commentButton.enabled = YES;
-        self.charactersLeft.text = [[NSString alloc] initWithFormat:@"%d characters left", left];
+        
     }
+    
+    self.charactersLeft.text = [[NSString alloc] initWithFormat:@"%d characters left", left];    
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

@@ -163,7 +163,7 @@
 {
     NSLog(@"number of characters %d", textView.text.length);
    
-    NSInteger left = 150 - textView.text.length;
+    int left = 150 - textView.text.length;
     if ( left < 0 )
     {
         //disable something
@@ -172,8 +172,8 @@
     else
     {
         self.shareButton.enabled = YES;
-        self.charactersLeft.text = [[NSString alloc] initWithFormat:@"%d characters left", left];
     }
+    self.charactersLeft.text = [[NSString alloc] initWithFormat:@"%d characters left", left];
 }
 
 

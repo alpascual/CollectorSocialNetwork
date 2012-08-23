@@ -7,6 +7,7 @@
 //
 
 #import "AccountViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface AccountViewController ()
 
@@ -40,6 +41,9 @@
         return;
     }
     
+    // Round corners
+    self.twitterImage.layer.masksToBounds = YES;
+    self.twitterImage.layer.cornerRadius = 7;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
