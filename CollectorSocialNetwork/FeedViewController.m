@@ -22,6 +22,8 @@
 @synthesize collectedData = _collectedData;
 @synthesize bPictureView = _bPictureView;
 @synthesize backupResponseArray = _backupResponseArray;
+@synthesize userImageArray = _userImageArray;
+@synthesize pictureImageArray = _pictureImageArray;
 //@synthesize images = _images;
 
 - (void)viewDidLoad
@@ -78,6 +80,8 @@
     //@todo get all data here
     self.fetchedDataArray = [[NSMutableArray alloc] init];
     self.collectedData = [[NSMutableData alloc] init];
+    self.userImageArray = [[NSMutableArray alloc] init];
+    self.pictureImageArray = [[NSMutableArray alloc] init];
     
     NSString *fetchUrl = [ServerRestUrl getUrlPlus:@"LastPosts?many=50"];
     NSURL * nURL = [NSURL URLWithString:fetchUrl];
@@ -138,6 +142,8 @@
         return;
     }
     
+    UtilsClass *util = [[UtilsClass alloc] init];
+    
     for(int i=0; i < theJSONArray.count; i++) {
         NSDictionary *itemDic = [theJSONArray objectAtIndex:i];
         FeedItems *item = [[FeedItems alloc] init];
@@ -156,6 +162,21 @@
         item.PictureUrl = [itemDic objectForKey:@"PictureUrl"];
         item.NumberOfComments = [[itemDic objectForKey:@"NumberOfComments"] intValue];
         item.Username = [itemDic objectForKey:@"Username"];
+        
+        //fetch Picture url and put it into self.pictureImageArray
+        NSString *fullImageUrl = [[NSString alloc] initWithFormat:@"%@%@", [ServerRestUrl getUploadUrlPlus:@"get?filename="] ,item.PictureUrl];
+        NSURL * imageURL = [NSURL URLWithString:fullImageUrl];
+        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+        UIImage * image = [UIImage imageWithData:imageData];
+        UIImage *thumb = [util thumbnailOfSize:CGSizeMake(40,40) image:image];
+        [self.pictureImageArray addObject:thumb];
+        
+        //fetch UsernamePictureUrl and put it into self.userImageArray
+        NSURL *userImageUrl = [NSURL URLWithString:item.UsernamePictureUrl];
+        NSData * userImageData = [NSData dataWithContentsOfURL:userImageUrl];
+        UIImage * userImage = [UIImage imageWithData:userImageData];
+        UIImage *userThumb = [util thumbnailOfSize:CGSizeMake(50,50) image:userImage];
+        [self.userImageArray addObject:userThumb];
         
         [self.fetchedDataArray addObject:item];
     }
@@ -307,24 +328,24 @@
         cell.detailTextLabel.font = [UIFont fontWithName:@"Verdana" size:12];
         cell.detailTextLabel.text = item.Comment;
         
-        // User image first        
-        NSURL *userImageUrl = [NSURL URLWithString:item.UsernamePictureUrl];
-        NSData * userImageData = [NSData dataWithContentsOfURL:userImageUrl];
-        UIImage * userImage = [UIImage imageWithData:userImageData];
-        UIImage *userThumb = [util thumbnailOfSize:CGSizeMake(50,50) image:userImage];
-        cell.imageView.image = userThumb;
+        //   User image first        
+//        NSURL *userImageUrl = [NSURL URLWithString:item.UsernamePictureUrl];
+//        NSData * userImageData = [NSData dataWithContentsOfURL:userImageUrl];
+//        UIImage * userImage = [UIImage imageWithData:userImageData];
+//        UIImage *userThumb = [util thumbnailOfSize:CGSizeMake(50,50) image:userImage];
+        cell.imageView.image = [self.userImageArray objectAtIndex:row];
         cell.imageView.layer.masksToBounds = YES;
         cell.imageView.layer.cornerRadius = 7;
         
-        // Picture uploaded
-        NSString *fullImageUrl = [[NSString alloc] initWithFormat:@"%@%@", [ServerRestUrl getUploadUrlPlus:@"get?filename="] ,item.PictureUrl];
-        NSURL * imageURL = [NSURL URLWithString:fullImageUrl];
-        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
-        UIImage * image = [UIImage imageWithData:imageData];
-        UIImage *thumb = [util thumbnailOfSize:CGSizeMake(40,40) image:image];
+        //  Picture uploaded
+//        NSString *fullImageUrl = [[NSString alloc] initWithFormat:@"%@%@", [ServerRestUrl getUploadUrlPlus:@"get?filename="] ,item.PictureUrl];
+//        NSURL * imageURL = [NSURL URLWithString:fullImageUrl];
+//        NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
+//        UIImage * image = [UIImage imageWithData:imageData];
+//        UIImage *thumb = [util thumbnailOfSize:CGSizeMake(40,40) image:image];
         
         UIImageView *uploadCellImage=[[UIImageView alloc] initWithFrame:CGRectMake(255, 3, 40, 40)];
-        uploadCellImage.image=thumb;
+        uploadCellImage.image=[self.pictureImageArray objectAtIndex:row];
         uploadCellImage.layer.masksToBounds = YES;
         uploadCellImage.layer.cornerRadius = 5;
         [cell.contentView addSubview:uploadCellImage];

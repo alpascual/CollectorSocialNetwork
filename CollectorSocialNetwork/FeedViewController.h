@@ -28,6 +28,8 @@
 @property (nonatomic,strong) IBOutlet UIActivityIndicatorView *activityView;
 @property (nonatomic,strong) NSMutableData *collectedData;
 @property (nonatomic,strong) NSArray *backupResponseArray;
+@property (nonatomic,strong) NSMutableArray *userImageArray;
+@property (nonatomic,strong) NSMutableArray *pictureImageArray;
 @property (nonatomic) BOOL bPictureView;
 
 
