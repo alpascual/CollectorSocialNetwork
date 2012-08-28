@@ -50,6 +50,12 @@
 
     [super viewDidLoad];
     
+    //Show something first
+    if ([defaults objectForKey:@"rawJSON"] != nil ) {
+        NSString *rawJson = [defaults objectForKey:@"rawJSON"];
+        [self processJsonResults:rawJson];
+    }
+    
     //self.quiltView.backgroundColor = [UIColor blackColor];
     
     [self fetchData];
@@ -108,9 +114,15 @@
     NSString* newStr = [NSString stringWithUTF8String:[self.collectedData bytes]];
     NSLog(@"data returned String: %@", newStr);
     
+    [self processJsonResults:newStr];
+}
+
+- (void) processJsonResults:(NSString*)newStr
+{   
     //parse the json string.
     NSError *error = nil;
     NSArray *theJSONArray = [NSDictionary dictionaryWithJSONString:newStr error:&error];
+    
     self.collectedData = nil;
     
     if ( theJSONArray == nil)
@@ -183,6 +195,10 @@
         
         [self.fetchedDataArray addObject:item];
     }
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:newStr forKey:@"rawJSON"];
+    [defaults synchronize];
     
     [self.tableView reloadData];
 }

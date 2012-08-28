@@ -34,5 +34,6 @@
 
 
 - (void) fetchData;
+- (void) processJsonResults:(NSString*)newStr;
 
 @end
