@@ -651,7 +651,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Bun-0o-Ifq">
-                                <rect key="frame" x="108" y="53" width="192" height="31"/>
+                                <rect key="frame" x="123" y="53" width="177" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
@@ -687,12 +687,18 @@
                                 </items>
                                 <color key="tintColor" red="0.28087082079999998" green="0.58639856980000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </toolbar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="gray" id="6eV-SM-NGD">
+                                <rect key="frame" x="140" y="12" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="20-gear2.png" id="6"/>
                     <navigationItem key="navigationItem" id="XWg-Pc-39t"/>
                     <connections>
+                        <outlet property="createAccount" destination="LZG-VM-iTC" id="x8L-tQ-c0l"/>
+                        <outlet property="creatingActivity" destination="6eV-SM-NGD" id="AlQ-OC-ggv"/>
                         <outlet property="email" destination="Bun-0o-Ifq" id="Aea-0e-UFo"/>
                         <outlet property="password1" destination="WhT-JM-K6l" id="zEQ-ZE-Neb"/>
                         <outlet property="password2" destination="OdP-GC-L8n" id="95t-nL-wXG"/>
@@ -792,6 +798,8 @@
         <class className="SettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="createAccount" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="creatingActivity" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="email" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="password1" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="password2" candidateClass="UITextField"/>

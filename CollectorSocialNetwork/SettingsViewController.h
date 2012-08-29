@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "ServerRestUrl.h"
+#import "SVStatusHUD.h"
 
 @interface SettingsViewController : UIViewController <NSURLConnectionDataDelegate>
 
@@ -16,5 +17,11 @@
 @property (nonatomic,strong) IBOutlet UITextField *password2;
 @property (nonatomic,strong) IBOutlet UITextField *twitter;
 @property (nonatomic) BOOL bEditing;
+
+@property (nonatomic,strong) IBOutlet UIBarButtonItem *createAccount;
+@property (nonatomic,strong) IBOutlet UIActivityIndicatorView *creatingActivity;
+
+
+- (void) createAccountBackgroundProcess:(NSString *)nothing;
 
 @end

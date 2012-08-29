@@ -19,6 +19,8 @@
 @synthesize password2 = _password2;
 @synthesize twitter = _twitter;
 @synthesize bEditing = _bEditing;
+@synthesize createAccount = _createAccount;
+@synthesize creatingActivity = _creatingActivity;
 
 - (void)viewDidLoad
 {
@@ -72,11 +74,23 @@
         return;
     }
     
+    self.createAccount.title = @"Creating";
+    [SVStatusHUD showWithoutImage:@"Creating..."];
+    
+    [self performSelectorInBackground:@selector(createAccountBackgroundProcess:) withObject:nil];
+    
+    
     /*if ( self.twitter.text.length < 1) {
         [self alertme:@"Twitter username required for sharing"];
         return;
     }*/
     
+    
+}
+
+
+- (void) createAccountBackgroundProcess:(NSString *)nothing
+{
     
     // Check email address that does not exist
     // @todo in the server needs to check if email address exists
@@ -125,6 +139,7 @@
     [defaults synchronize];
     
     [self performSegueWithIdentifier:@"segueSettingsView" sender:self];
+    //[self performSelectorOnMainThread:@selector(doneParsing) withObject:nil waitUntilDone:NO];
 }
 
 - (void) alertme:(NSString*)message
