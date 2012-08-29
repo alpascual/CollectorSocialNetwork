@@ -17,6 +17,7 @@
 #import "SVStatusHUD.h"
 #import "AppDelegate.h"
 #import "Reachability.h"
+#import "CacheObjects.h"
 
 @interface FeedViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 

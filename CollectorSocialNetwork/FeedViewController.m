@@ -50,19 +50,30 @@
 
     [super viewDidLoad];
     
-    //Show something first
-    if ([defaults objectForKey:@"rawJSON"] != nil ) {
-        NSString *rawJson = [defaults objectForKey:@"rawJSON"];
-        [self processJsonResults:rawJson];
+    self.refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableView];
+    [self.refreshControl addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
+    
+    CacheObjects *cached = [CacheObjects sharedCache];
+    if ( cached.cachedFetchedArray != nil && cached.cachedFetchedArray.count > 0)
+    {
+        self.fetchedDataArray = cached.cachedFetchedArray;
+        self.userImageArray = cached.cachedUserImageArray;
+        self.pictureImageArray = cached.cachedPictureImageArray;
+        [self.tableView reloadData];
+    }
+    
+    else {
+        //Show something first
+        if ([defaults objectForKey:@"rawJSON"] != nil ) {
+            NSString *rawJson = [defaults objectForKey:@"rawJSON"];
+            [self processJsonResults:rawJson];
+        }
+        else
+            [self fetchData];
     }
     
     //self.quiltView.backgroundColor = [UIColor blackColor];
     
-    [self fetchData];
-    
-	
-    self.refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableView];
-    [self.refreshControl addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)dropViewDidBeginRefreshing:(ODRefreshControl *)refreshControl
@@ -81,16 +92,7 @@
     [self.activityView startAnimating];
     self.activityView.hidden = NO;
     
-    self.collectedData = nil;
-    self.fetchedDataArray = nil;
-    self.userImageArray = nil;
-    self.pictureImageArray = nil;
     
-    //@todo get all data here
-    self.fetchedDataArray = [[NSMutableArray alloc] init];
-    self.collectedData = [[NSMutableData alloc] init];
-    self.userImageArray = [[NSMutableArray alloc] init];
-    self.pictureImageArray = [[NSMutableArray alloc] init];
     
     NSString *fetchUrl = [ServerRestUrl getUrlPlus:@"LastPosts?many=50"];
     NSURL * nURL = [NSURL URLWithString:fetchUrl];
@@ -118,7 +120,19 @@
 }
 
 - (void) processJsonResults:(NSString*)newStr
-{   
+{
+    
+    self.collectedData = nil;
+    self.fetchedDataArray = nil;
+    self.userImageArray = nil;
+    self.pictureImageArray = nil;
+    
+    //@todo get all data here
+    self.fetchedDataArray = [[NSMutableArray alloc] init];
+    self.collectedData = [[NSMutableData alloc] init];
+    self.userImageArray = [[NSMutableArray alloc] init];
+    self.pictureImageArray = [[NSMutableArray alloc] init];
+    
     //parse the json string.
     NSError *error = nil;
     NSArray *theJSONArray = [NSDictionary dictionaryWithJSONString:newStr error:&error];
@@ -199,6 +213,11 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:newStr forKey:@"rawJSON"];
     [defaults synchronize];
+    
+    CacheObjects *cached = [CacheObjects sharedCache];
+    cached.cachedFetchedArray = self.fetchedDataArray;
+    cached.cachedPictureImageArray = self.pictureImageArray;
+    cached.cachedUserImageArray = self.userImageArray;
     
     [self.tableView reloadData];
 }

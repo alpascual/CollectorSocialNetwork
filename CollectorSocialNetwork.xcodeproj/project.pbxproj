@@ -76,6 +76,7 @@
 		888C7B7F15C1BB2200A78E87 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 888C7B7E15C1BB2200A78E87 /* QuartzCore.framework */; };
 		888D4BAA15C86EFD00F0C3EF /* libTMQuiltView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 888D4BA715C86E3400F0C3EF /* libTMQuiltView.a */; };
 		888D4BAF15C872EF00F0C3EF /* TMPhotoQuiltViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 888D4BAE15C872EF00F0C3EF /* TMPhotoQuiltViewCell.m */; };
+		88A1F4B215EEA7A7001DF109 /* CacheObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A1F4B115EEA7A7001DF109 /* CacheObjects.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +200,8 @@
 		888D4BAB15C870E000F0C3EF /* TMQuiltView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TMQuiltView.h; path = TMQuiltView/TMQuiltView/TMQuiltView.h; sourceTree = "<group>"; };
 		888D4BAD15C872EF00F0C3EF /* TMPhotoQuiltViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMPhotoQuiltViewCell.h; sourceTree = "<group>"; };
 		888D4BAE15C872EF00F0C3EF /* TMPhotoQuiltViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMPhotoQuiltViewCell.m; sourceTree = "<group>"; };
+		88A1F4B015EEA7A7001DF109 /* CacheObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CacheObjects.h; sourceTree = "<group>"; };
+		88A1F4B115EEA7A7001DF109 /* CacheObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CacheObjects.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,6 +366,8 @@
 				885167F015C3304900AC91F3 /* UtilsClass.m */,
 				884B14F315E572960030A2ED /* ServerRestUrl.h */,
 				884B14F415E572960030A2ED /* ServerRestUrl.m */,
+				88A1F4B015EEA7A7001DF109 /* CacheObjects.h */,
+				88A1F4B115EEA7A7001DF109 /* CacheObjects.m */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -611,6 +616,7 @@
 				7690DF7715D9FA64006E7831 /* CommentsViewController.m in Sources */,
 				884B149615DAFBD90030A2ED /* CommentItems.m in Sources */,
 				884B14F515E572960030A2ED /* ServerRestUrl.m in Sources */,
+				88A1F4B215EEA7A7001DF109 /* CacheObjects.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
