@@ -57,20 +57,37 @@
 {
     if ( buttonIndex == 1 )
     {
-        // Upload here
-        UtilsClass *util = [[UtilsClass alloc] init];
-        NSString *stringID = [util uploadImage:self.resultImage];
-        NSLog(@"Picture ID %@", stringID);
+        [self.activityView startAnimating];        
+        [SVStatusHUD showWithoutImage:@"Uploading..."];
         
-        if ( stringID.length < 200) {
-            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-            [defaults setObject:stringID forKey:@"lastupload"];
-            [defaults synchronize];
-        }
+        [self performSelectorInBackground:@selector(UploadingBackgroundProcess:) withObject:nil];
         
-        // to the share controller
-        [self performSegueWithIdentifier:@"uploadPicture" sender:self];
     }
+}
+
+- (void) UploadingBackgroundProcess:(NSString*)nothing
+{
+    // Upload here
+    UtilsClass *util = [[UtilsClass alloc] init];
+    NSString *stringID = [util uploadImage:self.resultImage];
+    NSLog(@"Picture ID %@", stringID);
+    
+    if ( stringID.length < 200) {
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:stringID forKey:@"lastupload"];
+        [defaults synchronize];
+    }
+    
+    [self performSelectorOnMainThread:@selector(doneParsing) withObject:nil waitUntilDone:NO];
+    
+    
+}
+
+-(void)doneParsing
+{
+    [self.activityView stopAnimating];    
+    // to the share controller
+    [self performSegueWithIdentifier:@"uploadPicture" sender:self];
 }
 
 - (void)viewDidUnload

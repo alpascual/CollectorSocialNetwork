@@ -599,10 +599,15 @@
                                 </items>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" id="fpL-uV-jg0">
+                                <rect key="frame" x="265" y="3" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="activityView" destination="fpL-uV-jg0" id="Cm2-qF-iGS"/>
                         <outlet property="resultImage" destination="Kfg-zz-uid" id="Vfi-TC-c3h"/>
                     </connections>
                 </viewController>
@@ -792,6 +797,7 @@
         <class className="SelectPictureViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectPictureViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="activityView" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="resultImage" candidateClass="UIImageView"/>
             </relationships>
         </class>
@@ -829,10 +835,10 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Lpo-Ht-5rU"/>
-        <segue reference="egx-Ac-n9N"/>
-        <segue reference="Prk-vK-JAi"/>
         <segue reference="bHB-0Q-xpc"/>
         <segue reference="DYK-N0-OEc"/>
+        <segue reference="BQX-ku-LSc"/>
+        <segue reference="Prk-vK-JAi"/>
+        <segue reference="egx-Ac-n9N"/>
     </inferredMetricsTieBreakers>
 </document>

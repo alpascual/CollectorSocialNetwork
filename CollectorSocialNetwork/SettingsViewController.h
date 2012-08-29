@@ -23,5 +23,6 @@
 
 
 - (void) createAccountBackgroundProcess:(NSString *)nothing;
+-(void)doneParsing;
 
 @end

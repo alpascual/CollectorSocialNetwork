@@ -74,6 +74,7 @@
         return;
     }
     
+    [self.creatingActivity startAnimating];
     self.createAccount.title = @"Creating";
     [SVStatusHUD showWithoutImage:@"Creating..."];
     
@@ -133,13 +134,17 @@
     [defaults setObject:self.password1.text forKey:@"password"];
     [defaults setObject:passwordHash forKey:@"passwordhash"];
     if ( self.twitter.text.length > 0)
-        [defaults setObject:self.twitter.text forKey:@"twitter"];
-    
+        [defaults setObject:self.twitter.text forKey:@"twitter"];    
     
     [defaults synchronize];
     
+    [self performSelectorOnMainThread:@selector(doneParsing) withObject:nil waitUntilDone:NO];
+}
+
+-(void)doneParsing
+{
+    [self.creatingActivity stopAnimating];
     [self performSegueWithIdentifier:@"segueSettingsView" sender:self];
-    //[self performSelectorOnMainThread:@selector(doneParsing) withObject:nil waitUntilDone:NO];
 }
 
 - (void) alertme:(NSString*)message
