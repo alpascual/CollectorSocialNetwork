@@ -92,7 +92,8 @@
     [self.activityView startAnimating];
     self.activityView.hidden = NO;
     
-    
+    self.collectedData = nil;
+    self.collectedData = [[NSMutableData alloc] init];
     
     NSString *fetchUrl = [ServerRestUrl getUrlPlus:@"LastPosts?many=50"];
     NSURL * nURL = [NSURL URLWithString:fetchUrl];
@@ -122,14 +123,12 @@
 - (void) processJsonResults:(NSString*)newStr
 {
     
-    self.collectedData = nil;
     self.fetchedDataArray = nil;
     self.userImageArray = nil;
     self.pictureImageArray = nil;
     
     //@todo get all data here
-    self.fetchedDataArray = [[NSMutableArray alloc] init];
-    self.collectedData = [[NSMutableData alloc] init];
+    self.fetchedDataArray = [[NSMutableArray alloc] init];    
     self.userImageArray = [[NSMutableArray alloc] init];
     self.pictureImageArray = [[NSMutableArray alloc] init];
     
