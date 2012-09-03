@@ -58,7 +58,9 @@
     if ( buttonIndex == 1 )
     {
         [self.activityView startAnimating];        
-        [SVStatusHUD showWithoutImage:@"Uploading..."];
+        //[SVStatusHUD showWithoutImage:@"Uploading..."];
+        OLGhostAlertView *ghastly = [[OLGhostAlertView alloc] initWithTitle:@"Uploading." message: @"Uploading the image, please wait ..."];
+        [ghastly show];
         
         [self performSelectorInBackground:@selector(UploadingBackgroundProcess:) withObject:nil];
         

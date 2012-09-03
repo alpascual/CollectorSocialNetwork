@@ -15,6 +15,7 @@
 #import "SVStatusHUD.h"
 #import "DetailFeedViewController.h"
 #import "ServerRestUrl.h"
+#import "OLGhostAlertView.h"
 
 @interface CommentsViewController : UIViewController
 

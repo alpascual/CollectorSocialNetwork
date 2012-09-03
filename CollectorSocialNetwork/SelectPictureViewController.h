@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "UtilsClass.h"
 #import "SVStatusHUD.h"
+#import "OLGhostAlertView.h"
 
 @interface SelectPictureViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIAlertViewDelegate>
 

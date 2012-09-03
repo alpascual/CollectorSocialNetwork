@@ -29,12 +29,15 @@
 - (void)viewDidLoad
 {
     self.bPictureView = NO;
+    self.title = @"Bird Watcher";
     
     AppDelegate *app = [[UIApplication sharedApplication] delegate];
     NetworkStatus netStatus = [app.internetReachability currentReachabilityStatus];
     if (netStatus == NotReachable)
     {
-        [SVStatusHUD showWithoutImage:@"No internet"];
+        //[SVStatusHUD showWithoutImage:@"No internet"];
+        OLGhostAlertView *ghastly = [[OLGhostAlertView alloc] initWithTitle:@"No Internet" message: @"Cannot download the new messages, try again later."];
+        [ghastly show];
         return;
     }
     
@@ -147,7 +150,9 @@
             [self.activityView stopAnimating];
             self.activityView.hidden = YES;
             
-            [SVStatusHUD showWithoutImage:@"Failed! Try again"];
+            //[SVStatusHUD showWithoutImage:@"Failed! Try again"];
+            OLGhostAlertView *ghastly = [[OLGhostAlertView alloc] initWithTitle:@"Failed." message: @"Please try again later."];
+            [ghastly show];
             return;
         }
     }
@@ -165,7 +170,9 @@
         [self.activityView stopAnimating];
         self.activityView.hidden = YES;
         
-        [SVStatusHUD showWithoutImage:@"Failed! Try again"];
+        //[SVStatusHUD showWithoutImage:@"Failed! Try again"];
+        OLGhostAlertView *ghastly = [[OLGhostAlertView alloc] initWithTitle:@"Failed!" message: @"Please try again later."];
+        [ghastly show];
         
         return;
     }

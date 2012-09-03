@@ -37,7 +37,9 @@
     NetworkStatus netStatus = [app.internetReachability currentReachabilityStatus];
     if (netStatus == NotReachable)
     {
-        [SVStatusHUD showWithoutImage:@"No internet"];
+        //[SVStatusHUD showWithoutImage:@"No internet"];
+        OLGhostAlertView *ghastly = [[OLGhostAlertView alloc] initWithTitle:@"No internet." message: @"Or connection error, try again after you move the phone to the left."];
+        [ghastly show];
         return;
     }
     
@@ -144,7 +146,9 @@
         
         if (theConnection) {
             
-            [SVStatusHUD showWithoutImage:@"Deleting Account"];
+            //[SVStatusHUD showWithoutImage:@"Deleting Account"];
+            OLGhostAlertView *ghastly = [[OLGhostAlertView alloc] initWithTitle:@"Deleting Account" message: @"Processing request to delete account"];
+            [ghastly show];
             
             [defaults removeObjectForKey:@"userid"];
             [defaults removeObjectForKey:@"email"];

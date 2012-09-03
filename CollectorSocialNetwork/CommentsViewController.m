@@ -83,7 +83,9 @@
         [self.activityView stopAnimating];
         self.activityView.hidden = YES;
         
-        [SVStatusHUD showWithoutImage:@"Failed! Try again"];
+        //[SVStatusHUD showWithoutImage:@"Failed! Try again"];
+        OLGhostAlertView *ghastly = [[OLGhostAlertView alloc] initWithTitle:@"Failed." message: @"Failed, please try again."];
+        [ghastly show];
         return;
     }
     
@@ -100,7 +102,9 @@
         [self.activityView stopAnimating];
         self.activityView.hidden = YES;
         
-        [SVStatusHUD showWithoutImage:@"Failed! Try again"];
+        //[SVStatusHUD showWithoutImage:@"Failed! Try again"];
+        OLGhostAlertView *ghastly = [[OLGhostAlertView alloc] initWithTitle:@"Failed" message: @"Failed please try again."];
+        [ghastly show];
         
         return;
     }

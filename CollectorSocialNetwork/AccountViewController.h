@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import "SVStatusHUD.h"
 #import "ServerRestUrl.h"
+#import "OLGhostAlertView.h"
 
 @interface AccountViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
