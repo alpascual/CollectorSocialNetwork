@@ -81,6 +81,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		76F8100415F593F900DD0D54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 76F80FF815F593F900DD0D54 /* DLCImagePickerController.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6A5D9A1015E0152D001FAD14;
+			remoteInfo = DLCImagePickerController;
+		};
 		888D4BA615C86E3400F0C3EF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 888D4B9D15C86E3300F0C3EF /* TMQuiltView.xcodeproj */;
@@ -141,6 +148,7 @@
 		76D903C815BF91D2000FDAFB /* 53-house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "53-house.png"; sourceTree = "<group>"; };
 		76F80FF515F55C3B00DD0D54 /* OLGhostAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OLGhostAlertView.h; sourceTree = "<group>"; };
 		76F80FF615F55C3B00DD0D54 /* OLGhostAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OLGhostAlertView.m; sourceTree = "<group>"; };
+		76F80FF815F593F900DD0D54 /* DLCImagePickerController.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DLCImagePickerController.xcodeproj; path = DLCImagePickerController/DLCImagePickerController.xcodeproj; sourceTree = "<group>"; };
 		8820720615C08EC10090075C /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		8820720715C08EC10090075C /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
 		884B149415DAFBD90030A2ED /* CommentItems.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentItems.h; sourceTree = "<group>"; };
@@ -228,6 +236,7 @@
 		76D9036F15BF8A90000FDAFB = {
 			isa = PBXGroup;
 			children = (
+				76F80FF815F593F900DD0D54 /* DLCImagePickerController.xcodeproj */,
 				8887988215D4C54C0016D3B3 /* SystemConfiguration.framework */,
 				8887988015D4C5210016D3B3 /* CFNetwork.framework */,
 				888D4B9D15C86E3300F0C3EF /* TMQuiltView.xcodeproj */,
@@ -353,6 +362,14 @@
 				76F80FF615F55C3B00DD0D54 /* OLGhostAlertView.m */,
 			);
 			path = PopUps;
+			sourceTree = "<group>";
+		};
+		76F80FF915F593F900DD0D54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				76F8100515F593F900DD0D54 /* DLCImagePickerController.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		885167CD15C1D30300AC91F3 /* AppIcons */ = {
@@ -524,6 +541,10 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 76F80FF915F593F900DD0D54 /* Products */;
+					ProjectRef = 76F80FF815F593F900DD0D54 /* DLCImagePickerController.xcodeproj */;
+				},
+				{
 					ProductGroup = 888D4B9E15C86E3300F0C3EF /* Products */;
 					ProjectRef = 888D4B9D15C86E3300F0C3EF /* TMQuiltView.xcodeproj */;
 				},
@@ -536,6 +557,13 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		76F8100515F593F900DD0D54 /* DLCImagePickerController.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = DLCImagePickerController.app;
+			remoteRef = 76F8100415F593F900DD0D54 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		888D4BA715C86E3400F0C3EF /* libTMQuiltView.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
